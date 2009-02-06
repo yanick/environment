@@ -1,0 +1,3 @@
+alias ls='ls --color'
+alias rm='rm -i'
+alias top10='ps aux | sort -nk +5 | tail'
