@@ -1,0 +1,3 @@
+[submodule "git/willgit"]
+	path = git/willgit
+	url = git://github.com/smtlaissezfaire/willgit.git
