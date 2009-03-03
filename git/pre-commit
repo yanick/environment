@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+
+# pre-commit hook that ensures that
+# commited Perl code is tidy
+
+use Perl6::Slurp;
+
+my $status = slurp '-|', 'git-status';
+
+# only want what is going to be commited
+$status =~ s/Changed but not updated.*$//s;
+
+my @dirty =
+  grep { !file_is_tidy($_) }                   # not tidy
+  grep { /\.(pl|pod|pm|t)$/ }                  # perl file
+  map  { /(?:modified|new file):\s+(\S+)/ }    # to be commited
+  split "\n", $status;
+
+exit 0 unless @dirty;                          # Alles gut
+
+warn "following files are not tidy, tidying...\n";
+
+for my $f ( @dirty ) {
+    warn "tidying $f\n";
+    system 'perltidy', '-b', $f and die $!;
+    # putting new version in index
+    system 'git-add', $f;
+}
+
+warn "not going to commit automatically\n";
+
+exit 1;
+
+### utility functions ###############################################
+
+sub file_is_tidy {
+    my $file = shift;
+
+    my $original = slurp $file;
+    my $tidied = slurp '-|', 'perltidy', $file, '-st';
+
+    return $original eq $tidied;
+}
