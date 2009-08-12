@@ -1,0 +1,2168 @@
+APR                                  (0.009000) Perl Interface for Apache Portable Runtime (libapr and libaprutil Libraries)
+APR                                  (0.009000) Perl Interface for Apache Portable Runtime (libapr and libaprutil Libraries)
+APR::Base64                          (0.009000) Perl API for APR base64 encoding/decoding functionality
+APR::Base64                          (0.009000) Perl API for APR base64 encoding/decoding functionality
+APR::Brigade                         (0.009000) Perl API for manipulating APR Bucket Brigades
+APR::Brigade                         (0.009000) Perl API for manipulating APR Bucket Brigades
+APR::Bucket                          (0.009000) Perl API for manipulating APR Buckets
+APR::Bucket                          (0.009000) Perl API for manipulating APR Buckets
+APR::BucketAlloc                     (0.009000) Perl API for Bucket Allocation
+APR::BucketAlloc                     (0.009000) Perl API for Bucket Allocation
+APR::BucketType                      (0.009000) Perl API for APR bucket types
+APR::BucketType                      (0.009000) Perl API for APR bucket types
+APR::Const                           (0.009000) Perl Interface for APR Constants
+APR::Const                           (0.009000) Perl Interface for APR Constants
+APR::Date                            (0.009000) Perl API for APR date manipulating functions
+APR::Date                            (0.009000) Perl API for APR date manipulating functions
+APR::DummyVersions                   (2.06)    <description not available>
+APR::Error                           (0.009000) Perl API for APR/Apache/mod_perl exceptions
+APR::Error                           (0.009000) Perl API for APR/Apache/mod_perl exceptions
+APR::Finfo                           (0.009000) Perl API for APR fileinfo structure
+APR::Finfo                           (0.009000) Perl API for APR fileinfo structure
+APR::IpSubnet                        (0.009000) Perl API for accessing APRs ip_subnet structures
+APR::IpSubnet                        (0.009000) Perl API for accessing APRs ip_subnet structures
+APR::OS                              (0.009000) Perl API for Platform-specific APR API
+APR::OS                              (0.009000) Perl API for Platform-specific APR API
+APR::PerlIO                          (0.009000) Perl IO layer for APR
+APR::PerlIO                          (0.009000) Perl IO layer for APR
+APR::Pool                            (0.009000) Perl API for APR pools
+APR::Pool                            (0.009000) Perl API for APR pools
+APR::Request                         (n/a)     wrapper for libapreq2's module/handle API.
+APR::Request::Apache2                (n/a)     wrapper for a mod_apreq2 handle.
+APR::Request::CGI                    (n/a)     wrapper for libapreq2's CGI handle.
+APR::Request::Cookie                 (n/a)     wrapper for libapreq2's cookie API.
+APR::Request::Error                  (n/a)     wrapper for libapreq2's error API.
+APR::Request::Hook                   (n/a)     wrapper for libapreq2's hook API.
+APR::Request::Param                  (n/a)     wrapper for libapreq2's param API.
+APR::Request::Parser                 (n/a)     wrapper for libapreq2's parser API.
+APR::SockAddr                        (0.009000) Perl API for APR socket address structure
+APR::SockAddr                        (0.009000) Perl API for APR socket address structure
+APR::Socket                          (0.009000) Perl API for APR sockets
+APR::Socket                          (0.009000) Perl API for APR sockets
+APR::Status                          (0.009000) Perl Interface to the APR_STATUS_IS_* macros
+APR::Status                          (0.009000) Perl Interface to the APR_STATUS_IS_* macros
+APR::String                          (0.009000) Perl API for manipulating APR UUIDs
+APR::String                          (0.009000) Perl API for manipulating APR UUIDs
+APR::Table                           (0.009000) Perl API for manipulating APR opaque string-content tables
+APR::Table                           (0.009000) Perl API for manipulating APR opaque string-content tables
+APR::ThreadMutex                     (0.009000) Perl API for APR thread mutexES
+APR::ThreadMutex                     (0.009000) Perl API for APR thread mutexES
+APR::URI                             (0.009000) Perl API for URI manipulations
+APR::URI                             (0.009000) Perl API for URI manipulations
+APR::UUID                            (0.009000) Perl API for manipulating APR UUIDs
+APR::UUID                            (0.009000) Perl API for manipulating APR UUIDs
+APR::Util                            (0.009000) Perl API for Various APR Utilities
+APR::Util                            (0.009000) Perl API for Various APR Utilities
+APR::XSLoader                        (n/a)     <description not available>
+APR::XSLoader                        (n/a)     <description not available>
+Acme::EyeDrops                       (1.51)    Visual Programming in Perl
+AnyDBM_File                          (1.00)    provide framework for multiple DBMs
+Apache2::Access                      (2.000001) A Perl API for Apache request object: Access, Authentication and Authorization.
+Apache2::Access                      (2.000002) A Perl API for Apache request object: Access, Authentication and Authorization.
+Apache2::Build                       (0.01)    Methods for locating and parsing bits of Apache source code
+Apache2::Build                       (0.01)    Methods for locating and parsing bits of Apache source code
+Apache2::BuildConfig                 (n/a)     <description not available>
+Apache2::BuildConfig                 (n/a)     <description not available>
+Apache2::CmdParms                    (2.000001) Perl API for Apache command parameters object
+Apache2::CmdParms                    (2.000002) Perl API for Apache command parameters object
+Apache2::Command                     (2.000001) Perl API for accessing Apache module command information
+Apache2::Command                     (2.000002) Perl API for accessing Apache module command information
+Apache2::Connection                  (2.000001) Perl API for Apache connection object
+Apache2::Connection                  (2.000002) Perl API for Apache connection object
+Apache2::Const                       (2.000002) Perl Interface for Apache Constants
+Apache2::Const                       (2.000002) Perl Interface for Apache Constants
+Apache2::Cookie                      (n/a)     HTTP Cookies Class
+Apache2::Directive                   (2.000001) Perl API for manipulating the Apache configuration tree
+Apache2::Directive                   (2.000002) Perl API for manipulating the Apache configuration tree
+Apache2::Filter                      (2.000001) Perl API for Apache 2.0 Filtering
+Apache2::Filter                      (2.000002) Perl API for Apache 2.0 Filtering
+Apache2::FilterRec                   (2.000001) Perl API for manipulating the Apache filter record
+Apache2::FilterRec                   (2.000002) Perl API for manipulating the Apache filter record
+Apache2::HookRun                     (2.000001) Perl API for Invoking Apache HTTP phases
+Apache2::HookRun                     (2.000002) Perl API for Invoking Apache HTTP phases
+Apache2::Log                         (2.000001) Perl API for Apache Logging Methods
+Apache2::Log                         (2.000002) Perl API for Apache Logging Methods
+Apache2::MPM                         (2.000001) Perl API for accessing Apache MPM information
+Apache2::MPM                         (2.000002) Perl API for accessing Apache MPM information
+Apache2::Module                      (2.000001) Perl API for creating and working with Apache modules
+Apache2::Module                      (2.000002) Perl API for creating and working with Apache modules
+Apache2::ParseSource                 (0.02)    <description not available>
+Apache2::ParseSource                 (0.02)    <description not available>
+Apache2::PerlSections                (2.00)    write Apache configuration files in Perl
+Apache2::PerlSections                (2.00)    write Apache configuration files in Perl
+Apache2::PerlSections::Dump          (0.01)    <description not available>
+Apache2::PerlSections::Dump          (0.01)    <description not available>
+Apache2::Process                     (2.000001) Perl API for Apache process record
+Apache2::Process                     (2.000002) Perl API for Apache process record
+Apache2::Reload                      (0.09)    Reload Perl Modules when Changed on Disk
+Apache2::Reload                      (0.09)    Reload Perl Modules when Changed on Disk
+Apache2::Request                     (n/a)     Methods for dealing with client request data
+Apache2::RequestIO                   (2.000001) Perl API for Apache request record IO
+Apache2::RequestIO                   (2.000002) Perl API for Apache request record IO
+Apache2::RequestRec                  (2.000001) Perl API for Apache request record accessors
+Apache2::RequestRec                  (2.000002) Perl API for Apache request record accessors
+Apache2::RequestUtil                 (2.000001) Perl API for Apache request record utils
+Apache2::RequestUtil                 (2.000002) Perl API for Apache request record utils
+Apache2::Resource                    (1.72)    Limit resources used by httpd children
+Apache2::Resource                    (1.72)    Limit resources used by httpd children
+Apache2::Response                    (2.000001) Perl API for Apache HTTP request response methods
+Apache2::Response                    (2.000002) Perl API for Apache HTTP request response methods
+Apache2::ServerRec                   (2.000001) Perl API for Apache server record accessors
+Apache2::ServerRec                   (2.000002) Perl API for Apache server record accessors
+Apache2::ServerUtil                  (2.000001) Perl API for Apache server record utils
+Apache2::ServerUtil                  (2.000002) Perl API for Apache server record utils
+Apache2::SizeLimit                   (0.04)    Because size does matter.
+Apache2::SizeLimit                   (0.05)    Because size does matter.
+Apache2::SourceTables                (n/a)     <description not available>
+Apache2::SourceTables                (n/a)     <description not available>
+Apache2::Status                      (3.00)    Embedded interpreter status information
+Apache2::Status                      (4.00)    Embedded interpreter status information
+Apache2::SubProcess                  (2.000001) Executing SubProcesses under mod_perl
+Apache2::SubProcess                  (2.000002) Executing SubProcesses under mod_perl
+Apache2::SubRequest                  (2.000001) Perl API for Apache subrequests
+Apache2::SubRequest                  (2.000002) Perl API for Apache subrequests
+Apache2::TomKit                      (0.01_3)  Perl Module used to Transform Content
+Apache2::TomKit::Cache::AbstractCache (n/a)     <description not available>
+Apache2::TomKit::Cache::DefaultKeyBuilder (n/a)     <description not available>
+Apache2::TomKit::Cache::Entry        (n/a)     <description not available>
+Apache2::TomKit::Cache::FileSystem   (n/a)     <description not available>
+Apache2::TomKit::Config::DefaultConfig (n/a)     <description not available>
+Apache2::TomKit::IProvider           (n/a)     <description not available>
+Apache2::TomKit::Logging             (n/a)     <description not available>
+Apache2::TomKit::Processor::AbstractProcessor (n/a)     <description not available>
+Apache2::TomKit::Processor::DefinitionProvider::AbstractProvider (n/a)     <description not available>
+Apache2::TomKit::Processor::DefinitionProvider::FileSystemProvider (n/a)     <description not available>
+Apache2::TomKit::Processor::LIbXSLTEnhanced (n/a)     <description not available>
+Apache2::TomKit::Processor::LibXSLT  (n/a)     <description not available>
+Apache2::TomKit::Processor::XPathScript (n/a)     <description not available>
+Apache2::TomKit::ProcessorChain      (n/a)     <description not available>
+Apache2::TomKit::TomKitEngine        (n/a)     <description not available>
+Apache2::TomKit::Util                (n/a)     Perl Module used to Transform Content
+Apache2::URI                         (2.000001) Perl API for manipulating URIs
+Apache2::URI                         (2.000002) Perl API for manipulating URIs
+Apache2::Upload                      (n/a)     Methods for dealing with file uploads.
+Apache2::Util                        (2.000001) Perl API for Misc Apache Utility functions
+Apache2::Util                        (2.000002) Perl API for Misc Apache Utility functions
+Apache2::XSLoader                    (n/a)     <description not available>
+Apache2::XSLoader                    (n/a)     <description not available>
+Apache2::compat                      (n/a)     1.0 backward compatibility functions deprecated in 2.0
+Apache2::compat                      (n/a)     1.0 backward compatibility functions deprecated in 2.0
+Apache2::porting                     (n/a)     a helper module for mod_perl 1.0 to mod_perl 2.0 porting
+Apache2::porting                     (n/a)     a helper module for mod_perl 1.0 to mod_perl 2.0 porting
+Apache::AxKit::Language::YPathScript (1.4)     An XML Stylesheet Language
+Apache::AxKit::Language::YPathScript (1.4)     An XML Stylesheet Language
+Apache::Test                         (1.25)    Test.pm wrapper with helpers for testing Apache
+Apache::Test                         (1.27)    Test.pm wrapper with helpers for testing Apache
+Apache::Test5005compat               (0.01)    <description not available>
+Apache::Test5005compat               (0.01)    <description not available>
+Apache::TestBuild                    (n/a)     <description not available>
+Apache::TestBuild                    (n/a)     <description not available>
+Apache::TestClient                   (n/a)     <description not available>
+Apache::TestClient                   (n/a)     <description not available>
+Apache::TestCommon                   (n/a)     <description not available>
+Apache::TestCommon                   (n/a)     <description not available>
+Apache::TestCommonPost               (n/a)     <description not available>
+Apache::TestCommonPost               (n/a)     <description not available>
+Apache::TestConfig                   (n/a)     Configuration file for Apache::Test
+Apache::TestConfig                   (n/a)     Configuration file for Apache::Test
+Apache::TestConfigC                  (n/a)     <description not available>
+Apache::TestConfigC                  (n/a)     <description not available>
+Apache::TestConfigPHP                (n/a)     <description not available>
+Apache::TestConfigPHP                (n/a)     <description not available>
+Apache::TestConfigParrot             (n/a)     <description not available>
+Apache::TestConfigParse              (n/a)     <description not available>
+Apache::TestConfigParse              (n/a)     <description not available>
+Apache::TestConfigPerl               (n/a)     <description not available>
+Apache::TestConfigPerl               (n/a)     <description not available>
+Apache::TestHandler                  (n/a)     <description not available>
+Apache::TestHandler                  (n/a)     <description not available>
+Apache::TestHarness                  (n/a)     <description not available>
+Apache::TestHarness                  (n/a)     <description not available>
+Apache::TestHarnessPHP               (n/a)     <description not available>
+Apache::TestHarnessPHP               (n/a)     <description not available>
+Apache::TestMB                       (n/a)     Subclass of Module::Build to support Apache::Test
+Apache::TestMB                       (n/a)     Subclass of Module::Build to support Apache::Test
+Apache::TestMM                       (n/a)     Provide MakeMaker Wrapper Methods
+Apache::TestMM                       (n/a)     Provide MakeMaker Wrapper Methods
+Apache::TestPerlDB                   (n/a)     <description not available>
+Apache::TestPerlDB                   (n/a)     <description not available>
+Apache::TestReport                   (n/a)     A parent class for generating bug/success reports
+Apache::TestReport                   (n/a)     A parent class for generating bug/success reports
+Apache::TestReportPerl               (n/a)     <description not available>
+Apache::TestReportPerl               (n/a)     <description not available>
+Apache::TestRequest                  (n/a)     Send requests to your Apache test server
+Apache::TestRequest                  (n/a)     Send requests to your Apache test server
+Apache::TestRun                      (n/a)     Run the test suite
+Apache::TestRun                      (n/a)     Run the test suite
+Apache::TestRunPHP                   (1.00)    configure and run a PHP-based test suite
+Apache::TestRunPHP                   (1.00)    configure and run a PHP-based test suite
+Apache::TestRunParrot                (1.00)    <description not available>
+Apache::TestRunPerl                  (1.00)    Run mod_perl-requiring Test Suite
+Apache::TestRunPerl                  (1.00)    Run mod_perl-requiring Test Suite
+Apache::TestSSLCA                    (n/a)     <description not available>
+Apache::TestSSLCA                    (n/a)     <description not available>
+Apache::TestServer                   (n/a)     <description not available>
+Apache::TestServer                   (n/a)     <description not available>
+Apache::TestSmoke                    (n/a)     Special Tests Sequence Failure Finder
+Apache::TestSmoke                    (n/a)     Special Tests Sequence Failure Finder
+Apache::TestSmokePerl                (n/a)     <description not available>
+Apache::TestSmokePerl                (n/a)     <description not available>
+Apache::TestSort                     (n/a)     <description not available>
+Apache::TestSort                     (n/a)     <description not available>
+Apache::TestTrace                    (0.01)    Helper output generation functions
+Apache::TestTrace                    (0.01)    Helper output generation functions
+Apache::TestUtil                     (0.01)    Utility functions for writing tests
+Apache::TestUtil                     (0.01)    Utility functions for writing tests
+AppConfig                            (1.56)    Perl5 module for reading configuration files and parsing command line arguments.
+AppConfig::Args                      (1.60)    Perl5 module for reading command line arguments.
+AppConfig::CGI                       (1.60)    Perl5 module for processing CGI script parameters.
+AppConfig::File                      (1.62)    Perl5 module for reading configuration files.
+AppConfig::Getopt                    (1.60)    Perl5 module for processing command line arguments via delegation to Getopt::Long.
+AppConfig::State                     (1.61)    application configuration state
+AppConfig::Sys                       (1.61)    Perl5 module defining platform-specific information and methods for other AppConfig::* modules.
+Archive::Tar                         (1.23)    module for manipulations of tar archives
+Archive::Tar                         (1.24)    module for manipulations of tar archives
+Archive::Tar::Constant               (0.02)    <description not available>
+Archive::Tar::Constant               (0.02)    <description not available>
+Archive::Tar::File                   (0.02)    a subclass for in-memory extracted file from Archive::Tar
+Archive::Tar::File                   (0.02)    a subclass for in-memory extracted file from Archive::Tar
+Attribute::Handlers                  (0.78_01) Simpler definition of attribute handlers
+Attribute::Handlers::demo::Demo      (1.00)    <description not available>
+Attribute::Handlers::demo::Descriptions (1.00)    <description not available>
+Attribute::Handlers::demo::MyClass   (1.00)    <description not available>
+Attribute::Params::Validate          (n/a)     Validate method/function parameters using attributes
+AutoLoader                           (5.60)    load subroutines only on demand
+AutoSplit                            (1.04)    split a package for autoloading
+B                                    (1.07)    The Perl Compiler
+B::Asmdata                           (1.01)    Autogenerated data about Perl ops, used to generate bytecode
+B::Assembler                         (0.07)    Assemble Perl bytecode
+B::Bblock                            (1.02)    Walk basic blocks
+B::Bytecode                          (1.01)    Perl compiler's bytecode backend
+B::C                                 (1.04)    Perl compiler's C backend
+B::CC                                (1.00)    Perl compiler's optimized C translation backend
+B::Concise                           (0.64)    Walk Perl syntax tree, printing concise info about ops
+B::Debug                             (1.02)    Walk Perl syntax tree, printing debug info about ops
+B::Deparse                           (0.69)    Perl compiler backend to produce perl code
+B::Disassembler                      (1.03)    Disassemble Perl bytecode
+B::Lint                              (1.03)    Perl lint
+B::Module::Info                      (0.24)    <description not available>
+B::Showlex                           (1.02)    Show lexical variables used in functions or files
+B::Stackobj                          (1.00)    Helper module for CC backend
+B::Stash                             (1.00)    show what stashes are loaded
+B::Terse                             (1.02)    Walk Perl syntax tree, printing terse info about ops
+B::Utils                             (0.04_01) Helper functions for op tree manipulation
+B::Xref                              (1.01)    Generates cross reference reports for Perl programs
+Benchmark                            (1.06)    benchmark running times of Perl code
+Bit::Vector                          (6.4)     Efficient bit vector, set of integers and "big int" math library
+Bit::Vector::Overload                (6.4)     Overloaded operators add-on for Bit::Vector
+Bit::Vector::String                  (6.4)     Generic string import/export for Bit::Vector
+Bundle::Apache2                      (1.00)    Install Apache mod_perl2 and related modules
+Bundle::Apache2                      (1.00)    Install Apache mod_perl2 and related modules
+Bundle::ApacheTest                   (0.01)    A bundle to install all Apache-Test related modules
+Bundle::ApacheTest                   (0.01)    A bundle to install all Apache-Test related modules
+Bundle::DBD::mysql                   (2.9002)  A bundle to install Perl drivers for mSQL or MySQL
+Bundle::DBI                          (11.03)   A bundle to install DBI and required modules.
+Bundle::LWP                          (1.11)    install all libwww-perl related modules
+Bundle::LWP                          (1.11)    install all libwww-perl related modules
+Bundle::PlRPC                        (0.03)    A bundle to install PlRPC-Server, Client and prerequisites.
+ByteLoader                           (0.05)    load byte compiled perl code
+CDDB                                 (1.12)    a high-level interface to cddb protocol servers (freedb and CDDB)
+CGI                                  (3.05)    Simple Common Gateway Interface Class
+CGI                                  (3.10)    Simple Common Gateway Interface Class
+CGI::Apache                          (1.00)    Backward compatibility module for CGI.pm
+CGI::Apache                          (1.00)    Backward compatibility module for CGI.pm
+CGI::Carp                            (1.28)    CGI routines for writing to the HTTPD (or other) error log
+CGI::Carp                            (1.29)    CGI routines for writing to the HTTPD (or other) error log
+CGI::Cookie                          (1.24)    Interface to Netscape Cookies
+CGI::Cookie                          (1.25)    Interface to Netscape Cookies
+CGI::Fast                            (1.05)    CGI Interface for Fast CGI
+CGI::Fast                            (1.05)    CGI Interface for Fast CGI
+CGI::Pretty                          (1.08)    module to produce nicely formatted HTML code
+CGI::Pretty                          (1.08)    module to produce nicely formatted HTML code
+CGI::Push                            (1.04)    Simple Interface to Server Push
+CGI::Push                            (1.04)    Simple Interface to Server Push
+CGI::Switch                          (1.00)    Backward compatibility module for defunct CGI::Switch
+CGI::Switch                          (1.00)    Backward compatibility module for defunct CGI::Switch
+CGI::Util                            (1.5)     Internal utilities used by CGI module
+CGI::Util                            (1.5)     Internal utilities used by CGI module
+CPAN                                 (1.76_01) query, download and build perl modules from CPAN sites
+CPAN::Config                         (n/a)     <description not available>
+CPAN::FirstTime                      (n/a)     Utility for CPAN::Config file Initialization
+CPAN::Nox                            (1.03)    Wrapper around CPAN.pm without using any XS module
+Carp                                 (1.03)    warn of errors (from perspective of caller)
+Carp::Clan                           (5.3)     Report errors from perspective of caller of a "clan" of modules
+Carp::Heavy                          (1.03)    heavy machinery, no user serviceable parts inside
+Class::ISA                           (0.32)    report the search path for a class's ISA tree
+Class::Singleton                     (1.03)    Implementation of a "Singleton" class
+Class::Struct                        (0.63)    declare struct-like datatypes as Perl classes
+Compress::Zlib                       (1.33)    Interface to zlib compression library
+Compress::Zlib                       (1.35)    Interface to zlib compression library
+Config                               (n/a)     access Perl configuration information
+Config::Simple                       (4.58)    simple configuration file class
+Crypt::SSLeay                        (0.49)    OpenSSL glue that provides LWP https support
+Crypt::SSLeay::CTX                   (n/a)     <description not available>
+Crypt::SSLeay::Conn                  (n/a)     <description not available>
+Crypt::SSLeay::Err                   (n/a)     <description not available>
+Crypt::SSLeay::MainContext           (n/a)     <description not available>
+Crypt::SSLeay::X509                  (n/a)     <description not available>
+Cwd                                  (3.01)    get pathname of current working directory
+Cyrus::IMAP                          (1.00)    Interface to Cyrus imclient library
+Cyrus::IMAP::Admin                   (1.00)    Cyrus administrative interface Perl module
+Cyrus::IMAP::IMSP                    (1.00)    Perl module for Cyrus IMSP user options
+Cyrus::IMAP::Shell                   (1.00)    Perl version of cyradm
+Cyrus::SIEVE::managesieve            (0.01)    Perl extension for blah blah blah
+DB                                   (1.0)     programmatic interface to the Perl debugging API (draft, subject to change)
+DBD::DBM                             (0.02)    a DBI driver for DBM & MLDBM files
+DBD::ExampleP                        (11.12)   <description not available>
+DBD::File                            (0.31)    Base class for writing DBI drivers
+DBD::NullP                           (11.04)   <description not available>
+DBD::Proxy                           (0.2004)  A proxy driver for the DBI
+DBD::Sponge                          (11.10)   Create a DBI statement handle from Perl data
+DBD::mysql                           (2.9003)  MySQL driver for the Perl5 Database Interface (DBI)
+DBD::mysql::GetInfo                  (n/a)     <description not available>
+DBD::mysql::INSTALL                  (n/a)     How to install and configure DBD::mysql
+DBI                                  (1.46)    Database independent interface for Perl
+DBI::Changes                         (n/a)     List of significant changes to the DBI
+DBI::Const::GetInfo::ANSI            (1.03)    ISO/IEC SQL/CLI Constants for GetInfo
+DBI::Const::GetInfo::ODBC            (1.03)    ODBC Constants for GetInfo
+DBI::Const::GetInfoReturn            (1.04)    Data and functions for describing GetInfo results
+DBI::Const::GetInfoType              (1.05)    Data describing GetInfo type codes
+DBI::DBD                             (11.21)   Perl DBI Database Driver Writer's Guide
+DBI::DBD::Metadata                   (1.05)    Generate the code and data for some DBI metadata methods
+DBI::FAQ                             (0.38)    The Frequently Asked Questions for the Perl5 Database Interface
+DBI::Profile                         (1.07)    Performance profiling and benchmarking for the DBI
+DBI::ProfileData                     (1.0)     manipulate DBI::ProfileDumper data dumps
+DBI::ProfileDumper                   (1.0)     profile DBI usage and output data to a file
+DBI::ProfileDumper::Apache           (1.0)     capture DBI profiling data from Apache/mod_perl
+DBI::ProxyServer                     (0.3005)  a server for the DBD::Proxy driver
+DBI::PurePerl                        (1.96)    a DBI emulation using pure perl (no C/XS compilation required)
+DBI::Roadmap                         (n/a)     Planned Enhancements for the DBI
+DBI::SQL::Nano                       (0.03)    a very tiny SQL engine
+DBI::W32ODBC                         (n/a)     An experimental DBI emulation layer for Win32::ODBC
+DBM_Filter                           (0.01)    Filter DBM keys/values
+DBM_Filter::compress                 (0.01)    This DBM filter will compress all data before it is written to the database and uncompressed it on reading.
+DBM_Filter::encode                   (0.01)    This DBM filter allows you to choose the character encoding will be store in the DBM file. The usage is
+DBM_Filter::int32                    (0.01)    This DBM filter is used when interoperating with a C/C++ application that uses a C int as either the key and/or value in the DBM file.
+DBM_Filter::null                     (0.01)    This filter ensures that all data written to the DBM file is null terminated. This is useful when you have a perl script that needs to interoperate wi
+DBM_Filter::utf8                     (0.01)    This Filter will ensure that all data written to the DBM will be encoded in UTF-8.
+DB_File                              (1.810)   Perl5 access to Berkeley DB version 1.x
+Data::Dumper                         (2.121_02) stringified perl data structures, suitable for both printing and C<eval>
+Date::Calc                           (5.4)     Gregorian calendar date calculations
+Date::Calc::Object                   (5.4)     Object-oriented add-on for Date::Calc with overloaded operators
+Date::Calendar                       (5.4)     Calendar objects for different holiday schemes
+Date::Calendar::Profiles             (5.4)     Some sample profiles for Date::Calendar and Date::Calendar::Year
+Date::Calendar::Year                 (5.4)     Implements embedded "year" objects for Date::Calendar
+Date::Manip                          (5.42)    date manipulation routines
+DateTime                             (0.29)    A date and time object
+DateTime::Duration                   (n/a)     Duration objects for date math
+DateTime::Infinite                   (n/a)     Infinite past and future DateTime objects
+DateTime::LeapSecond                 (0.05)    leap seconds table and utilities
+DateTime::Locale                     (0.21)    Localization support for DateTime.pm
+DateTime::Locale::Alias::ISO639_2    (n/a)     Adds ISO 639 2 language locale id aliases
+DateTime::Locale::Base               (n/a)     Base class for individual locale objects
+DateTime::Locale::aa                 (n/a)     <description not available>
+DateTime::Locale::aa_DJ              (n/a)     <description not available>
+DateTime::Locale::aa_ER              (n/a)     <description not available>
+DateTime::Locale::aa_ER_SAAHO        (n/a)     <description not available>
+DateTime::Locale::aa_ET              (n/a)     <description not available>
+DateTime::Locale::af                 (n/a)     <description not available>
+DateTime::Locale::af_ZA              (n/a)     <description not available>
+DateTime::Locale::am                 (n/a)     <description not available>
+DateTime::Locale::am_ET              (n/a)     <description not available>
+DateTime::Locale::ar                 (n/a)     <description not available>
+DateTime::Locale::ar_AE              (n/a)     <description not available>
+DateTime::Locale::ar_BH              (n/a)     <description not available>
+DateTime::Locale::ar_DZ              (n/a)     <description not available>
+DateTime::Locale::ar_EG              (n/a)     <description not available>
+DateTime::Locale::ar_IN              (n/a)     <description not available>
+DateTime::Locale::ar_IQ              (n/a)     <description not available>
+DateTime::Locale::ar_JO              (n/a)     <description not available>
+DateTime::Locale::ar_KW              (n/a)     <description not available>
+DateTime::Locale::ar_LB              (n/a)     <description not available>
+DateTime::Locale::ar_LY              (n/a)     <description not available>
+DateTime::Locale::ar_MA              (n/a)     <description not available>
+DateTime::Locale::ar_OM              (n/a)     <description not available>
+DateTime::Locale::ar_QA              (n/a)     <description not available>
+DateTime::Locale::ar_SA              (n/a)     <description not available>
+DateTime::Locale::ar_SD              (n/a)     <description not available>
+DateTime::Locale::ar_SY              (n/a)     <description not available>
+DateTime::Locale::ar_TN              (n/a)     <description not available>
+DateTime::Locale::ar_YE              (n/a)     <description not available>
+DateTime::Locale::as                 (n/a)     <description not available>
+DateTime::Locale::as_IN              (n/a)     <description not available>
+DateTime::Locale::az                 (n/a)     <description not available>
+DateTime::Locale::az_AZ              (n/a)     <description not available>
+DateTime::Locale::az_Cyrl            (n/a)     <description not available>
+DateTime::Locale::az_Latn            (n/a)     <description not available>
+DateTime::Locale::az_Latn_AZ         (n/a)     <description not available>
+DateTime::Locale::be                 (n/a)     <description not available>
+DateTime::Locale::be_BY              (n/a)     <description not available>
+DateTime::Locale::bg                 (n/a)     <description not available>
+DateTime::Locale::bg_BG              (n/a)     <description not available>
+DateTime::Locale::bn                 (n/a)     <description not available>
+DateTime::Locale::bn_IN              (n/a)     <description not available>
+DateTime::Locale::byn                (n/a)     <description not available>
+DateTime::Locale::byn_ER             (n/a)     <description not available>
+DateTime::Locale::ca                 (n/a)     <description not available>
+DateTime::Locale::ca_ES              (n/a)     <description not available>
+DateTime::Locale::cs                 (n/a)     <description not available>
+DateTime::Locale::cs_CZ              (n/a)     <description not available>
+DateTime::Locale::cy                 (n/a)     <description not available>
+DateTime::Locale::cy_GB              (n/a)     <description not available>
+DateTime::Locale::da                 (n/a)     <description not available>
+DateTime::Locale::da_DK              (n/a)     <description not available>
+DateTime::Locale::de                 (n/a)     <description not available>
+DateTime::Locale::de_AT              (n/a)     <description not available>
+DateTime::Locale::de_BE              (n/a)     <description not available>
+DateTime::Locale::de_CH              (n/a)     <description not available>
+DateTime::Locale::de_DE              (n/a)     <description not available>
+DateTime::Locale::de_LI              (n/a)     <description not available>
+DateTime::Locale::de_LU              (n/a)     <description not available>
+DateTime::Locale::dv                 (n/a)     <description not available>
+DateTime::Locale::dv_MV              (n/a)     <description not available>
+DateTime::Locale::dz                 (n/a)     <description not available>
+DateTime::Locale::dz_BT              (n/a)     <description not available>
+DateTime::Locale::el                 (n/a)     <description not available>
+DateTime::Locale::el_GR              (n/a)     <description not available>
+DateTime::Locale::en                 (n/a)     <description not available>
+DateTime::Locale::en_AS              (n/a)     <description not available>
+DateTime::Locale::en_AU              (n/a)     <description not available>
+DateTime::Locale::en_BE              (n/a)     <description not available>
+DateTime::Locale::en_BW              (n/a)     <description not available>
+DateTime::Locale::en_BZ              (n/a)     <description not available>
+DateTime::Locale::en_CA              (n/a)     <description not available>
+DateTime::Locale::en_GB              (n/a)     <description not available>
+DateTime::Locale::en_GU              (n/a)     <description not available>
+DateTime::Locale::en_HK              (n/a)     <description not available>
+DateTime::Locale::en_IE              (n/a)     <description not available>
+DateTime::Locale::en_IN              (n/a)     <description not available>
+DateTime::Locale::en_JM              (n/a)     <description not available>
+DateTime::Locale::en_MH              (n/a)     <description not available>
+DateTime::Locale::en_MP              (n/a)     <description not available>
+DateTime::Locale::en_MT              (n/a)     <description not available>
+DateTime::Locale::en_NZ              (n/a)     <description not available>
+DateTime::Locale::en_PH              (n/a)     <description not available>
+DateTime::Locale::en_PK              (n/a)     <description not available>
+DateTime::Locale::en_SG              (n/a)     <description not available>
+DateTime::Locale::en_TT              (n/a)     <description not available>
+DateTime::Locale::en_UM              (n/a)     <description not available>
+DateTime::Locale::en_US              (n/a)     <description not available>
+DateTime::Locale::en_US_POSIX        (n/a)     <description not available>
+DateTime::Locale::en_VI              (n/a)     <description not available>
+DateTime::Locale::en_ZA              (n/a)     <description not available>
+DateTime::Locale::en_ZW              (n/a)     <description not available>
+DateTime::Locale::eo                 (n/a)     <description not available>
+DateTime::Locale::es                 (n/a)     <description not available>
+DateTime::Locale::es_AR              (n/a)     <description not available>
+DateTime::Locale::es_BO              (n/a)     <description not available>
+DateTime::Locale::es_CL              (n/a)     <description not available>
+DateTime::Locale::es_CO              (n/a)     <description not available>
+DateTime::Locale::es_CR              (n/a)     <description not available>
+DateTime::Locale::es_DO              (n/a)     <description not available>
+DateTime::Locale::es_EC              (n/a)     <description not available>
+DateTime::Locale::es_ES              (n/a)     <description not available>
+DateTime::Locale::es_GT              (n/a)     <description not available>
+DateTime::Locale::es_HN              (n/a)     <description not available>
+DateTime::Locale::es_MX              (n/a)     <description not available>
+DateTime::Locale::es_NI              (n/a)     <description not available>
+DateTime::Locale::es_PA              (n/a)     <description not available>
+DateTime::Locale::es_PE              (n/a)     <description not available>
+DateTime::Locale::es_PR              (n/a)     <description not available>
+DateTime::Locale::es_PY              (n/a)     <description not available>
+DateTime::Locale::es_SV              (n/a)     <description not available>
+DateTime::Locale::es_US              (n/a)     <description not available>
+DateTime::Locale::es_UY              (n/a)     <description not available>
+DateTime::Locale::es_VE              (n/a)     <description not available>
+DateTime::Locale::et                 (n/a)     <description not available>
+DateTime::Locale::et_EE              (n/a)     <description not available>
+DateTime::Locale::eu                 (n/a)     <description not available>
+DateTime::Locale::eu_ES              (n/a)     <description not available>
+DateTime::Locale::fa                 (n/a)     <description not available>
+DateTime::Locale::fa_AF              (n/a)     <description not available>
+DateTime::Locale::fa_IR              (n/a)     <description not available>
+DateTime::Locale::fi                 (n/a)     <description not available>
+DateTime::Locale::fi_FI              (n/a)     <description not available>
+DateTime::Locale::fo                 (n/a)     <description not available>
+DateTime::Locale::fo_FO              (n/a)     <description not available>
+DateTime::Locale::fr                 (n/a)     <description not available>
+DateTime::Locale::fr_BE              (n/a)     <description not available>
+DateTime::Locale::fr_CA              (n/a)     <description not available>
+DateTime::Locale::fr_CH              (n/a)     <description not available>
+DateTime::Locale::fr_FR              (n/a)     <description not available>
+DateTime::Locale::fr_LU              (n/a)     <description not available>
+DateTime::Locale::fr_MC              (n/a)     <description not available>
+DateTime::Locale::ga                 (n/a)     <description not available>
+DateTime::Locale::ga_IE              (n/a)     <description not available>
+DateTime::Locale::gez                (n/a)     <description not available>
+DateTime::Locale::gez_ER             (n/a)     <description not available>
+DateTime::Locale::gez_ET             (n/a)     <description not available>
+DateTime::Locale::gl                 (n/a)     <description not available>
+DateTime::Locale::gl_ES              (n/a)     <description not available>
+DateTime::Locale::gu                 (n/a)     <description not available>
+DateTime::Locale::gu_IN              (n/a)     <description not available>
+DateTime::Locale::gv                 (n/a)     <description not available>
+DateTime::Locale::gv_GB              (n/a)     <description not available>
+DateTime::Locale::haw                (n/a)     <description not available>
+DateTime::Locale::haw_US             (n/a)     <description not available>
+DateTime::Locale::he                 (n/a)     <description not available>
+DateTime::Locale::he_IL              (n/a)     <description not available>
+DateTime::Locale::hi                 (n/a)     <description not available>
+DateTime::Locale::hi_IN              (n/a)     <description not available>
+DateTime::Locale::hr                 (n/a)     <description not available>
+DateTime::Locale::hr_HR              (n/a)     <description not available>
+DateTime::Locale::hu                 (n/a)     <description not available>
+DateTime::Locale::hu_HU              (n/a)     <description not available>
+DateTime::Locale::hy                 (n/a)     <description not available>
+DateTime::Locale::hy_AM              (n/a)     <description not available>
+DateTime::Locale::hy_AM_REVISED      (n/a)     <description not available>
+DateTime::Locale::id                 (n/a)     <description not available>
+DateTime::Locale::id_ID              (n/a)     <description not available>
+DateTime::Locale::is                 (n/a)     <description not available>
+DateTime::Locale::is_IS              (n/a)     <description not available>
+DateTime::Locale::it                 (n/a)     <description not available>
+DateTime::Locale::it_CH              (n/a)     <description not available>
+DateTime::Locale::it_IT              (n/a)     <description not available>
+DateTime::Locale::iu                 (n/a)     <description not available>
+DateTime::Locale::ja                 (n/a)     <description not available>
+DateTime::Locale::ja_JP              (n/a)     <description not available>
+DateTime::Locale::ka                 (n/a)     <description not available>
+DateTime::Locale::ka_GE              (n/a)     <description not available>
+DateTime::Locale::kk                 (n/a)     <description not available>
+DateTime::Locale::kk_KZ              (n/a)     <description not available>
+DateTime::Locale::kl                 (n/a)     <description not available>
+DateTime::Locale::kl_GL              (n/a)     <description not available>
+DateTime::Locale::km                 (n/a)     <description not available>
+DateTime::Locale::km_KH              (n/a)     <description not available>
+DateTime::Locale::kn                 (n/a)     <description not available>
+DateTime::Locale::kn_IN              (n/a)     <description not available>
+DateTime::Locale::ko                 (n/a)     <description not available>
+DateTime::Locale::ko_KR              (n/a)     <description not available>
+DateTime::Locale::kok                (n/a)     <description not available>
+DateTime::Locale::kok_IN             (n/a)     <description not available>
+DateTime::Locale::kw                 (n/a)     <description not available>
+DateTime::Locale::kw_GB              (n/a)     <description not available>
+DateTime::Locale::ky                 (n/a)     <description not available>
+DateTime::Locale::ky_KG              (n/a)     <description not available>
+DateTime::Locale::lo                 (n/a)     <description not available>
+DateTime::Locale::lo_LA              (n/a)     <description not available>
+DateTime::Locale::lt                 (n/a)     <description not available>
+DateTime::Locale::lt_LT              (n/a)     <description not available>
+DateTime::Locale::lv                 (n/a)     <description not available>
+DateTime::Locale::lv_LV              (n/a)     <description not available>
+DateTime::Locale::mk                 (n/a)     <description not available>
+DateTime::Locale::mk_MK              (n/a)     <description not available>
+DateTime::Locale::ml                 (n/a)     <description not available>
+DateTime::Locale::ml_IN              (n/a)     <description not available>
+DateTime::Locale::mn                 (n/a)     <description not available>
+DateTime::Locale::mn_MN              (n/a)     <description not available>
+DateTime::Locale::mr                 (n/a)     <description not available>
+DateTime::Locale::mr_IN              (n/a)     <description not available>
+DateTime::Locale::ms                 (n/a)     <description not available>
+DateTime::Locale::ms_BN              (n/a)     <description not available>
+DateTime::Locale::ms_MY              (n/a)     <description not available>
+DateTime::Locale::mt                 (n/a)     <description not available>
+DateTime::Locale::mt_MT              (n/a)     <description not available>
+DateTime::Locale::nb                 (n/a)     <description not available>
+DateTime::Locale::nb_NO              (n/a)     <description not available>
+DateTime::Locale::nl                 (n/a)     <description not available>
+DateTime::Locale::nl_BE              (n/a)     <description not available>
+DateTime::Locale::nl_NL              (n/a)     <description not available>
+DateTime::Locale::nn                 (n/a)     <description not available>
+DateTime::Locale::nn_NO              (n/a)     <description not available>
+DateTime::Locale::om                 (n/a)     <description not available>
+DateTime::Locale::om_ET              (n/a)     <description not available>
+DateTime::Locale::om_KE              (n/a)     <description not available>
+DateTime::Locale::or                 (n/a)     <description not available>
+DateTime::Locale::or_IN              (n/a)     <description not available>
+DateTime::Locale::pa                 (n/a)     <description not available>
+DateTime::Locale::pa_IN              (n/a)     <description not available>
+DateTime::Locale::pl                 (n/a)     <description not available>
+DateTime::Locale::pl_PL              (n/a)     <description not available>
+DateTime::Locale::ps                 (n/a)     <description not available>
+DateTime::Locale::ps_AF              (n/a)     <description not available>
+DateTime::Locale::pt                 (n/a)     <description not available>
+DateTime::Locale::pt_BR              (n/a)     <description not available>
+DateTime::Locale::pt_PT              (n/a)     <description not available>
+DateTime::Locale::ro                 (n/a)     <description not available>
+DateTime::Locale::ro_RO              (n/a)     <description not available>
+DateTime::Locale::root               (n/a)     <description not available>
+DateTime::Locale::ru                 (n/a)     <description not available>
+DateTime::Locale::ru_RU              (n/a)     <description not available>
+DateTime::Locale::ru_UA              (n/a)     <description not available>
+DateTime::Locale::sa                 (n/a)     <description not available>
+DateTime::Locale::sa_IN              (n/a)     <description not available>
+DateTime::Locale::sh                 (n/a)     <description not available>
+DateTime::Locale::sh_YU              (n/a)     <description not available>
+DateTime::Locale::sid                (n/a)     <description not available>
+DateTime::Locale::sid_ET             (n/a)     <description not available>
+DateTime::Locale::sk                 (n/a)     <description not available>
+DateTime::Locale::sk_SK              (n/a)     <description not available>
+DateTime::Locale::sl                 (n/a)     <description not available>
+DateTime::Locale::sl_SI              (n/a)     <description not available>
+DateTime::Locale::so                 (n/a)     <description not available>
+DateTime::Locale::so_DJ              (n/a)     <description not available>
+DateTime::Locale::so_ET              (n/a)     <description not available>
+DateTime::Locale::so_KE              (n/a)     <description not available>
+DateTime::Locale::so_SO              (n/a)     <description not available>
+DateTime::Locale::sq                 (n/a)     <description not available>
+DateTime::Locale::sq_AL              (n/a)     <description not available>
+DateTime::Locale::sr                 (n/a)     <description not available>
+DateTime::Locale::sr_Cyrl            (n/a)     <description not available>
+DateTime::Locale::sr_Cyrl_YU         (n/a)     <description not available>
+DateTime::Locale::sr_Latn            (n/a)     <description not available>
+DateTime::Locale::sr_Latn_YU         (n/a)     <description not available>
+DateTime::Locale::sr_YU              (n/a)     <description not available>
+DateTime::Locale::sv                 (n/a)     <description not available>
+DateTime::Locale::sv_FI              (n/a)     <description not available>
+DateTime::Locale::sv_SE              (n/a)     <description not available>
+DateTime::Locale::sw                 (n/a)     <description not available>
+DateTime::Locale::sw_KE              (n/a)     <description not available>
+DateTime::Locale::sw_TZ              (n/a)     <description not available>
+DateTime::Locale::syr                (n/a)     <description not available>
+DateTime::Locale::syr_SY             (n/a)     <description not available>
+DateTime::Locale::ta                 (n/a)     <description not available>
+DateTime::Locale::ta_IN              (n/a)     <description not available>
+DateTime::Locale::te                 (n/a)     <description not available>
+DateTime::Locale::te_IN              (n/a)     <description not available>
+DateTime::Locale::th                 (n/a)     <description not available>
+DateTime::Locale::th_TH              (n/a)     <description not available>
+DateTime::Locale::ti                 (n/a)     <description not available>
+DateTime::Locale::ti_ER              (n/a)     <description not available>
+DateTime::Locale::ti_ET              (n/a)     <description not available>
+DateTime::Locale::tig                (n/a)     <description not available>
+DateTime::Locale::tig_ER             (n/a)     <description not available>
+DateTime::Locale::tr                 (n/a)     <description not available>
+DateTime::Locale::tr_TR              (n/a)     <description not available>
+DateTime::Locale::tt                 (n/a)     <description not available>
+DateTime::Locale::tt_RU              (n/a)     <description not available>
+DateTime::Locale::uk                 (n/a)     <description not available>
+DateTime::Locale::uk_UA              (n/a)     <description not available>
+DateTime::Locale::ur                 (n/a)     <description not available>
+DateTime::Locale::ur_PK              (n/a)     <description not available>
+DateTime::Locale::uz                 (n/a)     <description not available>
+DateTime::Locale::uz_AF              (n/a)     <description not available>
+DateTime::Locale::uz_UZ              (n/a)     <description not available>
+DateTime::Locale::vi                 (n/a)     <description not available>
+DateTime::Locale::vi_VN              (n/a)     <description not available>
+DateTime::Locale::wal                (n/a)     <description not available>
+DateTime::Locale::wal_ET             (n/a)     <description not available>
+DateTime::Locale::zh                 (n/a)     <description not available>
+DateTime::Locale::zh_CN              (n/a)     <description not available>
+DateTime::Locale::zh_HK              (n/a)     <description not available>
+DateTime::Locale::zh_Hans            (n/a)     <description not available>
+DateTime::Locale::zh_Hans_CN         (n/a)     <description not available>
+DateTime::Locale::zh_Hans_SG         (n/a)     <description not available>
+DateTime::Locale::zh_Hant            (n/a)     <description not available>
+DateTime::Locale::zh_Hant_HK         (n/a)     <description not available>
+DateTime::Locale::zh_Hant_MO         (n/a)     <description not available>
+DateTime::Locale::zh_Hant_TW         (n/a)     <description not available>
+DateTime::Locale::zh_MO              (n/a)     <description not available>
+DateTime::Locale::zh_SG              (n/a)     <description not available>
+DateTime::Locale::zh_TW              (n/a)     <description not available>
+DateTime::LocaleCatalog              (n/a)     Provides a list of all valid locale names
+DateTime::TimeZone                   (0.36)    Time zone object base class and factory
+DateTime::TimeZone::Africa::Abidjan  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Accra    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Addis_Ababa (n/a)     <description not available>
+DateTime::TimeZone::Africa::Algiers  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Asmera   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Bamako   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Bangui   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Banjul   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Bissau   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Blantyre (n/a)     <description not available>
+DateTime::TimeZone::Africa::Brazzaville (n/a)     <description not available>
+DateTime::TimeZone::Africa::Bujumbura (n/a)     <description not available>
+DateTime::TimeZone::Africa::Cairo    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Casablanca (n/a)     <description not available>
+DateTime::TimeZone::Africa::Ceuta    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Conakry  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Dakar    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Dar_es_Salaam (n/a)     <description not available>
+DateTime::TimeZone::Africa::Djibouti (n/a)     <description not available>
+DateTime::TimeZone::Africa::Douala   (n/a)     <description not available>
+DateTime::TimeZone::Africa::El_Aaiun (n/a)     <description not available>
+DateTime::TimeZone::Africa::Freetown (n/a)     <description not available>
+DateTime::TimeZone::Africa::Gaborone (n/a)     <description not available>
+DateTime::TimeZone::Africa::Harare   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Johannesburg (n/a)     <description not available>
+DateTime::TimeZone::Africa::Kampala  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Khartoum (n/a)     <description not available>
+DateTime::TimeZone::Africa::Kigali   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Kinshasa (n/a)     <description not available>
+DateTime::TimeZone::Africa::Lagos    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Libreville (n/a)     <description not available>
+DateTime::TimeZone::Africa::Lome     (n/a)     <description not available>
+DateTime::TimeZone::Africa::Luanda   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Lubumbashi (n/a)     <description not available>
+DateTime::TimeZone::Africa::Lusaka   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Malabo   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Maputo   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Maseru   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Mbabane  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Mogadishu (n/a)     <description not available>
+DateTime::TimeZone::Africa::Monrovia (n/a)     <description not available>
+DateTime::TimeZone::Africa::Nairobi  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Ndjamena (n/a)     <description not available>
+DateTime::TimeZone::Africa::Niamey   (n/a)     <description not available>
+DateTime::TimeZone::Africa::Nouakchott (n/a)     <description not available>
+DateTime::TimeZone::Africa::Ouagadougou (n/a)     <description not available>
+DateTime::TimeZone::Africa::Porto_Novo (n/a)     <description not available>
+DateTime::TimeZone::Africa::Sao_Tome (n/a)     <description not available>
+DateTime::TimeZone::Africa::Timbuktu (n/a)     <description not available>
+DateTime::TimeZone::Africa::Tripoli  (n/a)     <description not available>
+DateTime::TimeZone::Africa::Tunis    (n/a)     <description not available>
+DateTime::TimeZone::Africa::Windhoek (n/a)     <description not available>
+DateTime::TimeZone::America::Adak    (n/a)     <description not available>
+DateTime::TimeZone::America::Anchorage (n/a)     <description not available>
+DateTime::TimeZone::America::Anguilla (n/a)     <description not available>
+DateTime::TimeZone::America::Antigua (n/a)     <description not available>
+DateTime::TimeZone::America::Araguaina (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Buenos_Aires (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Catamarca (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::ComodRivadavia (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Cordoba (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Jujuy (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::La_Rioja (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Mendoza (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Rio_Gallegos (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::San_Juan (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Tucuman (n/a)     <description not available>
+DateTime::TimeZone::America::Argentina::Ushuaia (n/a)     <description not available>
+DateTime::TimeZone::America::Aruba   (n/a)     <description not available>
+DateTime::TimeZone::America::Asuncion (n/a)     <description not available>
+DateTime::TimeZone::America::Bahia   (n/a)     <description not available>
+DateTime::TimeZone::America::Barbados (n/a)     <description not available>
+DateTime::TimeZone::America::Belem   (n/a)     <description not available>
+DateTime::TimeZone::America::Belize  (n/a)     <description not available>
+DateTime::TimeZone::America::Boa_Vista (n/a)     <description not available>
+DateTime::TimeZone::America::Bogota  (n/a)     <description not available>
+DateTime::TimeZone::America::Boise   (n/a)     <description not available>
+DateTime::TimeZone::America::Cambridge_Bay (n/a)     <description not available>
+DateTime::TimeZone::America::Campo_Grande (n/a)     <description not available>
+DateTime::TimeZone::America::Cancun  (n/a)     <description not available>
+DateTime::TimeZone::America::Caracas (n/a)     <description not available>
+DateTime::TimeZone::America::Cayenne (n/a)     <description not available>
+DateTime::TimeZone::America::Cayman  (n/a)     <description not available>
+DateTime::TimeZone::America::Chicago (n/a)     <description not available>
+DateTime::TimeZone::America::Chihuahua (n/a)     <description not available>
+DateTime::TimeZone::America::Costa_Rica (n/a)     <description not available>
+DateTime::TimeZone::America::Cuiaba  (n/a)     <description not available>
+DateTime::TimeZone::America::Curacao (n/a)     <description not available>
+DateTime::TimeZone::America::Danmarkshavn (n/a)     <description not available>
+DateTime::TimeZone::America::Dawson  (n/a)     <description not available>
+DateTime::TimeZone::America::Dawson_Creek (n/a)     <description not available>
+DateTime::TimeZone::America::Denver  (n/a)     <description not available>
+DateTime::TimeZone::America::Detroit (n/a)     <description not available>
+DateTime::TimeZone::America::Dominica (n/a)     <description not available>
+DateTime::TimeZone::America::Edmonton (n/a)     <description not available>
+DateTime::TimeZone::America::Eirunepe (n/a)     <description not available>
+DateTime::TimeZone::America::El_Salvador (n/a)     <description not available>
+DateTime::TimeZone::America::Fortaleza (n/a)     <description not available>
+DateTime::TimeZone::America::Glace_Bay (n/a)     <description not available>
+DateTime::TimeZone::America::Godthab (n/a)     <description not available>
+DateTime::TimeZone::America::Goose_Bay (n/a)     <description not available>
+DateTime::TimeZone::America::Grand_Turk (n/a)     <description not available>
+DateTime::TimeZone::America::Grenada (n/a)     <description not available>
+DateTime::TimeZone::America::Guadeloupe (n/a)     <description not available>
+DateTime::TimeZone::America::Guatemala (n/a)     <description not available>
+DateTime::TimeZone::America::Guayaquil (n/a)     <description not available>
+DateTime::TimeZone::America::Guyana  (n/a)     <description not available>
+DateTime::TimeZone::America::Halifax (n/a)     <description not available>
+DateTime::TimeZone::America::Havana  (n/a)     <description not available>
+DateTime::TimeZone::America::Hermosillo (n/a)     <description not available>
+DateTime::TimeZone::America::Indiana::Knox (n/a)     <description not available>
+DateTime::TimeZone::America::Indiana::Marengo (n/a)     <description not available>
+DateTime::TimeZone::America::Indiana::Vevay (n/a)     <description not available>
+DateTime::TimeZone::America::Indianapolis (n/a)     <description not available>
+DateTime::TimeZone::America::Inuvik  (n/a)     <description not available>
+DateTime::TimeZone::America::Iqaluit (n/a)     <description not available>
+DateTime::TimeZone::America::Jamaica (n/a)     <description not available>
+DateTime::TimeZone::America::Juneau  (n/a)     <description not available>
+DateTime::TimeZone::America::Kentucky::Monticello (n/a)     <description not available>
+DateTime::TimeZone::America::La_Paz  (n/a)     <description not available>
+DateTime::TimeZone::America::Lima    (n/a)     <description not available>
+DateTime::TimeZone::America::Los_Angeles (n/a)     <description not available>
+DateTime::TimeZone::America::Louisville (n/a)     <description not available>
+DateTime::TimeZone::America::Maceio  (n/a)     <description not available>
+DateTime::TimeZone::America::Managua (n/a)     <description not available>
+DateTime::TimeZone::America::Manaus  (n/a)     <description not available>
+DateTime::TimeZone::America::Martinique (n/a)     <description not available>
+DateTime::TimeZone::America::Mazatlan (n/a)     <description not available>
+DateTime::TimeZone::America::Menominee (n/a)     <description not available>
+DateTime::TimeZone::America::Merida  (n/a)     <description not available>
+DateTime::TimeZone::America::Mexico_City (n/a)     <description not available>
+DateTime::TimeZone::America::Miquelon (n/a)     <description not available>
+DateTime::TimeZone::America::Monterrey (n/a)     <description not available>
+DateTime::TimeZone::America::Montevideo (n/a)     <description not available>
+DateTime::TimeZone::America::Montreal (n/a)     <description not available>
+DateTime::TimeZone::America::Montserrat (n/a)     <description not available>
+DateTime::TimeZone::America::Nassau  (n/a)     <description not available>
+DateTime::TimeZone::America::New_York (n/a)     <description not available>
+DateTime::TimeZone::America::Nipigon (n/a)     <description not available>
+DateTime::TimeZone::America::Nome    (n/a)     <description not available>
+DateTime::TimeZone::America::Noronha (n/a)     <description not available>
+DateTime::TimeZone::America::North_Dakota::Center (n/a)     <description not available>
+DateTime::TimeZone::America::Panama  (n/a)     <description not available>
+DateTime::TimeZone::America::Pangnirtung (n/a)     <description not available>
+DateTime::TimeZone::America::Paramaribo (n/a)     <description not available>
+DateTime::TimeZone::America::Phoenix (n/a)     <description not available>
+DateTime::TimeZone::America::Port_au_Prince (n/a)     <description not available>
+DateTime::TimeZone::America::Port_of_Spain (n/a)     <description not available>
+DateTime::TimeZone::America::Porto_Velho (n/a)     <description not available>
+DateTime::TimeZone::America::Puerto_Rico (n/a)     <description not available>
+DateTime::TimeZone::America::Rainy_River (n/a)     <description not available>
+DateTime::TimeZone::America::Rankin_Inlet (n/a)     <description not available>
+DateTime::TimeZone::America::Recife  (n/a)     <description not available>
+DateTime::TimeZone::America::Regina  (n/a)     <description not available>
+DateTime::TimeZone::America::Rio_Branco (n/a)     <description not available>
+DateTime::TimeZone::America::Santiago (n/a)     <description not available>
+DateTime::TimeZone::America::Santo_Domingo (n/a)     <description not available>
+DateTime::TimeZone::America::Sao_Paulo (n/a)     <description not available>
+DateTime::TimeZone::America::Scoresbysund (n/a)     <description not available>
+DateTime::TimeZone::America::St_Johns (n/a)     <description not available>
+DateTime::TimeZone::America::St_Kitts (n/a)     <description not available>
+DateTime::TimeZone::America::St_Lucia (n/a)     <description not available>
+DateTime::TimeZone::America::St_Thomas (n/a)     <description not available>
+DateTime::TimeZone::America::St_Vincent (n/a)     <description not available>
+DateTime::TimeZone::America::Swift_Current (n/a)     <description not available>
+DateTime::TimeZone::America::Tegucigalpa (n/a)     <description not available>
+DateTime::TimeZone::America::Thule   (n/a)     <description not available>
+DateTime::TimeZone::America::Thunder_Bay (n/a)     <description not available>
+DateTime::TimeZone::America::Tijuana (n/a)     <description not available>
+DateTime::TimeZone::America::Toronto (n/a)     <description not available>
+DateTime::TimeZone::America::Tortola (n/a)     <description not available>
+DateTime::TimeZone::America::Vancouver (n/a)     <description not available>
+DateTime::TimeZone::America::Whitehorse (n/a)     <description not available>
+DateTime::TimeZone::America::Winnipeg (n/a)     <description not available>
+DateTime::TimeZone::America::Yakutat (n/a)     <description not available>
+DateTime::TimeZone::America::Yellowknife (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Casey (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Davis (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::DumontDUrville (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Mawson (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::McMurdo (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Palmer (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Rothera (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Syowa (n/a)     <description not available>
+DateTime::TimeZone::Antarctica::Vostok (n/a)     <description not available>
+DateTime::TimeZone::Asia::Aden       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Almaty     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Amman      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Anadyr     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Aqtau      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Aqtobe     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Ashgabat   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Baghdad    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Bahrain    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Baku       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Bangkok    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Beirut     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Bishkek    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Brunei     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Calcutta   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Choibalsan (n/a)     <description not available>
+DateTime::TimeZone::Asia::Chongqing  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Colombo    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Damascus   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Dhaka      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Dili       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Dubai      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Dushanbe   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Gaza       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Harbin     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Hong_Kong  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Hovd       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Irkutsk    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Jakarta    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Jayapura   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Jerusalem  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kabul      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kamchatka  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Karachi    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kashgar    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Katmandu   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Krasnoyarsk (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kuala_Lumpur (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kuching    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Kuwait     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Macau      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Magadan    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Makassar   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Manila     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Muscat     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Nicosia    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Novosibirsk (n/a)     <description not available>
+DateTime::TimeZone::Asia::Omsk       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Oral       (n/a)     <description not available>
+DateTime::TimeZone::Asia::Phnom_Penh (n/a)     <description not available>
+DateTime::TimeZone::Asia::Pontianak  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Pyongyang  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Qatar      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Qyzylorda  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Rangoon    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Riyadh     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Saigon     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Sakhalin   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Samarkand  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Seoul      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Shanghai   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Singapore  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Taipei     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Tashkent   (n/a)     <description not available>
+DateTime::TimeZone::Asia::Tbilisi    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Tehran     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Thimphu    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Tokyo      (n/a)     <description not available>
+DateTime::TimeZone::Asia::Ulaanbaatar (n/a)     <description not available>
+DateTime::TimeZone::Asia::Urumqi     (n/a)     <description not available>
+DateTime::TimeZone::Asia::Vientiane  (n/a)     <description not available>
+DateTime::TimeZone::Asia::Vladivostok (n/a)     <description not available>
+DateTime::TimeZone::Asia::Yakutsk    (n/a)     <description not available>
+DateTime::TimeZone::Asia::Yekaterinburg (n/a)     <description not available>
+DateTime::TimeZone::Asia::Yerevan    (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Azores (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Bermuda (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Canary (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Cape_Verde (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Faeroe (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Madeira (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Reykjavik (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::South_Georgia (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::St_Helena (n/a)     <description not available>
+DateTime::TimeZone::Atlantic::Stanley (n/a)     <description not available>
+DateTime::TimeZone::Australia::Adelaide (n/a)     <description not available>
+DateTime::TimeZone::Australia::Brisbane (n/a)     <description not available>
+DateTime::TimeZone::Australia::Broken_Hill (n/a)     <description not available>
+DateTime::TimeZone::Australia::Darwin (n/a)     <description not available>
+DateTime::TimeZone::Australia::Hobart (n/a)     <description not available>
+DateTime::TimeZone::Australia::Lindeman (n/a)     <description not available>
+DateTime::TimeZone::Australia::Lord_Howe (n/a)     <description not available>
+DateTime::TimeZone::Australia::Melbourne (n/a)     <description not available>
+DateTime::TimeZone::Australia::Perth (n/a)     <description not available>
+DateTime::TimeZone::Australia::Sydney (n/a)     <description not available>
+DateTime::TimeZone::Europe::Amsterdam (n/a)     <description not available>
+DateTime::TimeZone::Europe::Andorra  (n/a)     <description not available>
+DateTime::TimeZone::Europe::Athens   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Belfast  (n/a)     <description not available>
+DateTime::TimeZone::Europe::Belgrade (n/a)     <description not available>
+DateTime::TimeZone::Europe::Berlin   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Brussels (n/a)     <description not available>
+DateTime::TimeZone::Europe::Bucharest (n/a)     <description not available>
+DateTime::TimeZone::Europe::Budapest (n/a)     <description not available>
+DateTime::TimeZone::Europe::Chisinau (n/a)     <description not available>
+DateTime::TimeZone::Europe::Copenhagen (n/a)     <description not available>
+DateTime::TimeZone::Europe::Dublin   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Gibraltar (n/a)     <description not available>
+DateTime::TimeZone::Europe::Helsinki (n/a)     <description not available>
+DateTime::TimeZone::Europe::Istanbul (n/a)     <description not available>
+DateTime::TimeZone::Europe::Kaliningrad (n/a)     <description not available>
+DateTime::TimeZone::Europe::Kiev     (n/a)     <description not available>
+DateTime::TimeZone::Europe::Lisbon   (n/a)     <description not available>
+DateTime::TimeZone::Europe::London   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Luxembourg (n/a)     <description not available>
+DateTime::TimeZone::Europe::Madrid   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Malta    (n/a)     <description not available>
+DateTime::TimeZone::Europe::Minsk    (n/a)     <description not available>
+DateTime::TimeZone::Europe::Monaco   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Moscow   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Oslo     (n/a)     <description not available>
+DateTime::TimeZone::Europe::Paris    (n/a)     <description not available>
+DateTime::TimeZone::Europe::Prague   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Riga     (n/a)     <description not available>
+DateTime::TimeZone::Europe::Rome     (n/a)     <description not available>
+DateTime::TimeZone::Europe::Samara   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Simferopol (n/a)     <description not available>
+DateTime::TimeZone::Europe::Sofia    (n/a)     <description not available>
+DateTime::TimeZone::Europe::Stockholm (n/a)     <description not available>
+DateTime::TimeZone::Europe::Tallinn  (n/a)     <description not available>
+DateTime::TimeZone::Europe::Tirane   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Uzhgorod (n/a)     <description not available>
+DateTime::TimeZone::Europe::Vaduz    (n/a)     <description not available>
+DateTime::TimeZone::Europe::Vienna   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Vilnius  (n/a)     <description not available>
+DateTime::TimeZone::Europe::Warsaw   (n/a)     <description not available>
+DateTime::TimeZone::Europe::Zaporozhye (n/a)     <description not available>
+DateTime::TimeZone::Europe::Zurich   (n/a)     <description not available>
+DateTime::TimeZone::Floating         (0.01)    A time zone that is always local
+DateTime::TimeZone::Indian::Antananarivo (n/a)     <description not available>
+DateTime::TimeZone::Indian::Chagos   (n/a)     <description not available>
+DateTime::TimeZone::Indian::Christmas (n/a)     <description not available>
+DateTime::TimeZone::Indian::Cocos    (n/a)     <description not available>
+DateTime::TimeZone::Indian::Comoro   (n/a)     <description not available>
+DateTime::TimeZone::Indian::Kerguelen (n/a)     <description not available>
+DateTime::TimeZone::Indian::Mahe     (n/a)     <description not available>
+DateTime::TimeZone::Indian::Maldives (n/a)     <description not available>
+DateTime::TimeZone::Indian::Mauritius (n/a)     <description not available>
+DateTime::TimeZone::Indian::Mayotte  (n/a)     <description not available>
+DateTime::TimeZone::Indian::Reunion  (n/a)     <description not available>
+DateTime::TimeZone::Local            (n/a)     Code to determine the system's local time zone
+DateTime::TimeZone::OffsetOnly       (0.02)    A DateTime::TimeZone object that just contains an offset
+DateTime::TimeZone::OlsonDB          (n/a)     An object to represent an Olson time zone database
+DateTime::TimeZone::Pacific::Apia    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Auckland (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Chatham (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Easter  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Efate   (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Enderbury (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Fakaofo (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Fiji    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Funafuti (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Galapagos (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Gambier (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Guadalcanal (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Guam    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Honolulu (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Johnston (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Kiritimati (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Kosrae  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Kwajalein (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Majuro  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Marquesas (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Midway  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Nauru   (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Niue    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Norfolk (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Noumea  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Pago_Pago (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Palau   (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Pitcairn (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Ponape  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Port_Moresby (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Rarotonga (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Saipan  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Tahiti  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Tarawa  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Tongatapu (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Truk    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Wake    (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Wallis  (n/a)     <description not available>
+DateTime::TimeZone::Pacific::Yap     (n/a)     <description not available>
+DateTime::TimeZone::UTC              (0.01)    The UTC time zone
+DateTime::TimeZoneCatalog            (n/a)     Provides a list of all valid time zone names
+DateTimePP                           (n/a)     <description not available>
+DateTimePPExtra                      (n/a)     <description not available>
+Devel::DProf                         (20030813.00) a Perl code profiler
+Devel::PPPort                        (3.03)    Perl/Pollution/Portability
+Devel::Peek                          (1.02)    A data debugging tool for the XS programmer
+Devel::SelfStubber                   (1.03)    generate stubs for a SelfLoading module
+Devel::Symdump                       (2.03)    dump symbol names or the symbol table
+Devel::Symdump::Export               (n/a)     <description not available>
+Digest                               (1.05)    Modules that calculate message digests
+Digest                               (1.08)    Modules that calculate message digests
+Digest::MD5                          (2.33)    Perl interface to the MD5 Algorithm
+Digest::MD5                          (2.33)    Perl interface to the MD5 Algorithm
+Digest::base                         (1.00)    Digest base class
+Digest::base                         (1.00)    Digest base class
+DirHandle                            (1.00)    supply object methods for directory handles
+Dumpvalue                            (1.11)    provides screen dump of Perl data.
+DynaLoader                           (1.05)    Dynamically load C libraries into Perl code
+Encode                               (2.08)    character encodings
+Encode::Alias                        (2.02)    alias definitions to encodings
+Encode::Byte                         (2.00)    Single Byte Encodings
+Encode::CJKConstants                 (2.00)    Internally used by Encode::??::ISO_2022_*
+Encode::CN                           (2.00)    China-based Chinese Encodings
+Encode::CN::HZ                       (2.01)    internally used by Encode::CN
+Encode::Config                       (2.00)    internally used by Encode
+Encode::EBCDIC                       (2.00)    EBCDIC Encodings
+Encode::Encoder                      (2.00)    Object Oriented Encoder
+Encode::Encoding                     (2.02)    Encode Implementation Base Class
+Encode::Guess                        (2.00)    Guesses encoding from data
+Encode::JP                           (2.01)    Japanese Encodings
+Encode::JP::H2Z                      (2.00)    internally used by Encode::JP::2022_JP*
+Encode::JP::JIS7                     (2.00)    internally used by Encode::JP
+Encode::KR                           (2.00)    Korean Encodings
+Encode::KR::2022_KR                  (2.00)    internally used by Encode::KR
+Encode::MIME::Header                 (2.00)    MIME 'B' and 'Q' header encoding
+Encode::PerlIO                       (n/a)     a detailed document on Encode and PerlIO
+Encode::Supported                    (n/a)     Encodings supported by Encode
+Encode::Symbol                       (2.00)    Symbol Encodings
+Encode::TW                           (2.00)    Taiwan-based Chinese Encodings
+Encode::Unicode                      (2.02)    Various Unicode Transformation Formats
+Encode::Unicode::UTF7                (2.01)    UTF-7 encoding
+English                              (1.01)    use nice English (or awk) names for ugly punctuation variables
+Env                                  (1.00)    perl module that imports environment variables as scalars or arrays
+Errno                                (1.09_00) System errno constants
+Exporter                             (5.58)    Implements default import method for modules
+Exporter::Heavy                      (5.58)    Exporter guts
+ExtUtils::Command                    (1.05)    utilities to replace common UNIX commands in Makefiles etc.
+ExtUtils::Command::MM                (0.03)    Commands for the MM's to use in Makefiles
+ExtUtils::Constant                   (0.1401)  generate XS code to import C header constants
+ExtUtils::Embed                      (1.250601) Utilities for embedding Perl in C/C++ applications
+ExtUtils::Install                    (1.32)    install files from here to there
+ExtUtils::Installed                  (0.08)    Inventory management of installed modules
+ExtUtils::Liblist                    (1.01)    determine libraries to use and how to use them
+ExtUtils::Liblist::Kid               (1.3001)  <description not available>
+ExtUtils::MM                         (0.04)    OS adjusted ExtUtils::MakeMaker subclass
+ExtUtils::MM_Any                     (0.07)    Platform-agnostic MM methods
+ExtUtils::MM_BeOS                    (1.04)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_Cygwin                  (1.06)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_DOS                     (0.02)    DOS specific subclass of ExtUtils::MM_Unix
+ExtUtils::MM_MacOS                   (1.07)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_NW5                     (2.07_02) methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_OS2                     (1.04)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_UWIN                    (0.02)    U/WIN specific subclass of ExtUtils::MM_Unix
+ExtUtils::MM_Unix                    (1.42)    methods used by ExtUtils::MakeMaker
+ExtUtils::MM_VMS                     (5.70)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_Win32                   (1.09)    methods to override UN*X behaviour in ExtUtils::MakeMaker
+ExtUtils::MM_Win95                   (0.0301)  method to customize MakeMaker for Win9X
+ExtUtils::MY                         (0.01)    ExtUtils::MakeMaker subclass for customization
+ExtUtils::MakeMaker                  (6.17)    Create a module Makefile
+ExtUtils::MakeMaker::FAQ             (n/a)     Frequently Asked Questions About MakeMaker
+ExtUtils::MakeMaker::Tutorial        (n/a)     Writing a module with MakeMaker
+ExtUtils::MakeMaker::bytes           (0.01)    Version agnostic bytes.pm
+ExtUtils::MakeMaker::vmsish          (0.01)    Platform agnostic vmsish.pm
+ExtUtils::Manifest                   (1.42)    utilities to write and check a MANIFEST file
+ExtUtils::Miniperl                   (n/a)     write the C code for perlmain.c
+ExtUtils::Mkbootstrap                (1.15)    make a bootstrap file for use by DynaLoader
+ExtUtils::Mksymlists                 (1.19)    write linker options files for dynamic extension
+ExtUtils::Packlist                   (0.04)    manage .packlist files
+ExtUtils::XSBuilder                  (0.27)    <description not available>
+ExtUtils::XSBuilder::C::grammar      (0.30)    <description not available>
+ExtUtils::XSBuilder::CallbackMap     (n/a)     <description not available>
+ExtUtils::XSBuilder::FunctionMap     (n/a)     <description not available>
+ExtUtils::XSBuilder::MapUtil         (n/a)     <description not available>
+ExtUtils::XSBuilder::PODTemplate     (n/a)     $module
+ExtUtils::XSBuilder::ParseSource     (0.03)    <description not available>
+ExtUtils::XSBuilder::StructureMap    (n/a)     <description not available>
+ExtUtils::XSBuilder::TypeMap         (n/a)     <description not available>
+ExtUtils::XSBuilder::WrapXS          (0.03)    <description not available>
+ExtUtils::testlib                    (1.15)    add blib/* directories to @INC
+ExtUtils::xsbuilder.osc2002          (n/a)     <description not available>
+Fatal                                (1.03)    replace functions with equivalents which succeed or die
+Fcntl                                (1.05)    load the C Fcntl.h defines
+File::Basename                       (2.73)    split a pathname into pieces
+File::CheckTree                      (4.3)     run many filetest checks on a tree
+File::Compare                        (1.1003)  Compare files or filehandles
+File::Copy                           (2.08)    Copy files or filehandles
+File::DosGlob                        (1.00)    DOS like globbing and then some
+File::Find                           (1.07)    Traverse a directory tree.
+File::Find::Rule                     (0.28)    Alternative interface to File::Find
+File::Find::Rule::Extending          (n/a)     the mini-guide to extending File::Find::Rule
+File::Find::Rule::Procedural         (n/a)     File::Find::Rule's procedural interface
+File::Glob                           (1.03)    Perl extension for BSD glob routine
+File::Listing                        (1.15)    parse directory listing
+File::Listing                        (1.15)    parse directory listing
+File::Path                           (1.06)    create or remove directory trees
+File::Spec                           (3.01)    portably perform operations on file names
+File::Spec::Cygwin                   (1.1)     methods for Cygwin file specs
+File::Spec::Epoc                     (1.1)     methods for Epoc file specs
+File::Spec::Functions                (1.3)     portably perform operations on file names
+File::Spec::Mac                      (1.4)     File::Spec for Mac OS (Classic)
+File::Spec::OS2                      (1.2)     methods for OS/2 file specs
+File::Spec::Unix                     (1.5)     File::Spec for Unix, base for other File::Spec modules
+File::Spec::VMS                      (1.4)     methods for VMS file specs
+File::Spec::Win32                    (1.5)     methods for Win32 file specs
+File::Temp                           (0.14)    return name and handle of a temporary file safely
+File::stat                           (1.00)    by-name interface to Perl's built-in stat() functions
+FileCache                            (1.04_01) keep more files open than the system permits
+FileHandle                           (2.01)    supply object methods for filehandles
+Filter::Simple                       (0.78)    Simplified source filtering
+Filter::Util::Call                   (1.0601)  Perl Source Filter Utility Module
+Finance::QIF                         (1.03)    Parse and create Quicken Interchange Format files
+Finance::Quote                       (1.08)    Get stock and mutual fund quotes from various exchanges
+Finance::Quote::AEX                  (0.9)     Finance::Quote::AEX Obtain quotes from Amsterdam Euronext eXchange
+Finance::Quote::ASX                  (1.04)    Obtain quotes from the Australian Stock Exchange.
+Finance::Quote::BMONesbittBurns      (0.9)     Finance::Quote::BMONesbittBurns Obtain quotes from the BMO NesbittBurns site
+Finance::Quote::Cdnfundlibrary       (0.2)     Obtain mutual fund prices from www.fundlibrary.com
+Finance::Quote::DWS                  (1.00)    Obtain quotes from DWS (Deutsche Bank Gruppe).
+Finance::Quote::FTPortfolios         (1.00)    Obtain unit trust prices from www.ftportfolios.com
+Finance::Quote::Fidelity             (1.01)    Obtain information from Fidelity Investments.
+Finance::Quote::Fool                 (0.1)     Obtain quotes from the Motley Fool web site.
+Finance::Quote::IndiaMutual          (0.1)     Obtain Indian mutual fund prices from amfiindia.com
+Finance::Quote::Tdwaterhouse         (1.00)    Obtain quotes from TD Waterhouse Canada
+Finance::Quote::Tiaacref             (1.01)    Obtain quote from TIAA-CREF.
+Finance::Quote::Troweprice           (1.00)    Obtain quotes from T. Rowe Price
+Finance::Quote::Trustnet             (1.02)    Obtain unit trust prices from trustnet.co.uk
+Finance::Quote::UserAgent            (n/a)     <description not available>
+Finance::Quote::VWD                  (1.00)    Obtain quotes from vwd Vereinigte Wirtschaftsdienste GmbH.
+Finance::Quote::Yahoo::Asia          (1.00)    Fetch quotes from Yahoo Asia
+Finance::Quote::Yahoo::Australia     (1.00)    Fetch Australian stock quotes via Yahoo.
+Finance::Quote::Yahoo::Base          (1.03)    Common functions for fetching Yahoo info.
+Finance::Quote::Yahoo::Europe        (1.03)    Fetch quotes from Yahoo Europe
+Finance::Quote::Yahoo::USA           (1.00)    Obtain information about stocks and funds in the USA and Canada.
+FindBin                              (1.44)    Locate directory of original perl script
+Foomatic::DB                         (n/a)     <description not available>
+Foomatic::Defaults                   (n/a)     <description not available>
+Foomatic::PPD                        (n/a)     <description not available>
+Foomatic::UIElem                     (n/a)     <description not available>
+GDBM_File                            (1.07)    Perl5 access to the gdbm library.
+Getopt::Long                         (2.34)    Extended processing of command line options
+Getopt::Std                          (1.05)    Process single-character switches with switch clustering
+HTML::Entities                       (1.27)    Encode or decode strings with HTML entities
+HTML::Filter                         (2.10)    Filter HTML text through the parser
+HTML::Form                           (1.039)   Class that represents an HTML form element
+HTML::Form                           (1.049)   Class that represents an HTML form element
+HTML::HeadParser                     (2.18)    Parse <HEAD> section of a HTML document
+HTML::LinkExtor                      (1.33)    Extract links from an HTML document
+HTML::Parser                         (3.34)    HTML parser class
+HTML::PullParser                     (2.07)    Alternative HTML::Parser interface
+HTML::TableExtract                   (1.10)    Perl module for extracting the text contained in tables within an HTML document.
+HTML::Tagset                         (3.03)    data tables useful in parsing HTML
+HTML::TokeParser                     (2.28)    Alternative HTML::Parser interface
+HTTP::Cookies                        (1.38)    HTTP cookie jars
+HTTP::Cookies                        (1.39)    HTTP cookie jars
+HTTP::Cookies::Microsoft             (1.07)    access to Microsoft cookies files
+HTTP::Cookies::Microsoft             (1.07)    access to Microsoft cookies files
+HTTP::Cookies::Netscape              (1.26)    access to Netscape cookies files
+HTTP::Cookies::Netscape              (1.26)    access to Netscape cookies files
+HTTP::Daemon                         (1.35)    a simple http server class
+HTTP::Daemon                         (1.36)    a simple http server class
+HTTP::Date                           (1.46)    date conversion routines
+HTTP::Date                           (1.46)    date conversion routines
+HTTP::Headers                        (1.59)    Class encapsulating HTTP Message headers
+HTTP::Headers                        (1.62)    Class encapsulating HTTP Message headers
+HTTP::Headers::Auth                  (1.03)    <description not available>
+HTTP::Headers::Auth                  (1.03)    <description not available>
+HTTP::Headers::ETag                  (1.04)    <description not available>
+HTTP::Headers::ETag                  (1.04)    <description not available>
+HTTP::Headers::Util                  (1.13)    Header value parsing utility functions
+HTTP::Headers::Util                  (1.13)    Header value parsing utility functions
+HTTP::Message                        (1.42)    HTTP style message (base class)
+HTTP::Message                        (1.56)    HTTP style message (base class)
+HTTP::Negotiate                      (1.15)    choose a variant to serve
+HTTP::Negotiate                      (1.15)    choose a variant to serve
+HTTP::Request                        (1.40)    HTTP style request message
+HTTP::Request                        (1.40)    HTTP style request message
+HTTP::Request::Common                (1.22)    Construct common HTTP::Request objects
+HTTP::Request::Common                (1.26)    Construct common HTTP::Request objects
+HTTP::Response                       (1.49)    HTTP style response message
+HTTP::Response                       (1.52)    HTTP style response message
+HTTP::Status                         (1.28)    HTTP Status code processing
+HTTP::Status                         (1.28)    HTTP Status code processing
+Hash::Util                           (0.05)    A selection of general-utility hash subroutines
+I18N::Collate                        (1.00)    compare 8-bit scalar data according to the current locale
+I18N::LangTags                       (0.35)    functions for dealing with RFC3066-style language tags
+I18N::LangTags::Detect               (1.03)    detect the user's language preferences
+I18N::LangTags::List                 (0.35)    tags and names for human languages
+I18N::Langinfo                       (0.02)    query locale information
+IO                                   (1.21)    load various IO modules
+IO::Dir                              (1.04)    supply object methods for directory handles
+IO::File                             (1.10)    supply object methods for filehandles
+IO::Handle                           (1.24)    supply object methods for I/O handles
+IO::Pipe                             (1.123)   supply object methods for pipes
+IO::Poll                             (0.06)    Object interface to system poll call
+IO::Seekable                         (1.09)    supply seek based methods for I/O objects
+IO::Select                           (1.16)    OO interface to the select system call
+IO::Socket                           (1.28)    Object interface to socket communications
+IO::Socket::INET                     (1.27)    Object interface for AF_INET domain sockets
+IO::Socket::SSL                      (0.96)    Nearly transparent SSL encapsulation for IO::Socket::INET.
+IO::Socket::UNIX                     (1.21)    Object interface for AF_UNIX domain sockets
+IO::String                           (1.06)    Emulate file interface for in-core strings
+IO::String                           (1.06)    Emulate file interface for in-core strings
+IO::Zlib                             (1.04)    IO:: style interface to L<Compress::Zlib>
+IO::Zlib                             (1.04)    IO:: style interface to L<Compress::Zlib>
+IPC::Msg                             (1.02)    SysV Msg IPC object class
+IPC::Open2                           (1.01)    open a process for both reading and writing
+IPC::Open3                           (1.0106)  open a process for reading, writing, and error handling
+IPC::Semaphore                       (1.02)    SysV Semaphore IPC object class
+IPC::SysV                            (1.04)    SysV IPC constants
+Image::Magick                        (6.1.8)   Perl extension for calling ImageMagick's libMagick methods
+LWP                                  (5.79)    The World-Wide Web library for Perl
+LWP                                  (5.803)   The World-Wide Web library for Perl
+LWP::Authen::Basic                   (n/a)     <description not available>
+LWP::Authen::Basic                   (n/a)     <description not available>
+LWP::Authen::Digest                  (n/a)     <description not available>
+LWP::Authen::Digest                  (n/a)     <description not available>
+LWP::Authen::Ntlm                    (0.05)    Library for enabling NTLM authentication (Microsoft) in LWP
+LWP::Authen::Ntlm                    (0.05)    Library for enabling NTLM authentication (Microsoft) in LWP
+LWP::ConnCache                       (0.01)    Connection cache manager
+LWP::ConnCache                       (0.01)    Connection cache manager
+LWP::Debug                           (n/a)     debug routines for the libwww-perl library
+LWP::Debug                           (n/a)     debug routines for the libwww-perl library
+LWP::DebugFile                       (n/a)     routines for tracing/debugging LWP
+LWP::DebugFile                       (n/a)     routines for tracing/debugging LWP
+LWP::MediaTypes                      (1.31)    guess media type for a file or a URL
+LWP::MediaTypes                      (1.32)    guess media type for a file or a URL
+LWP::MemberMixin                     (n/a)     Member access mixin class
+LWP::MemberMixin                     (n/a)     Member access mixin class
+LWP::Protocol                        (1.42)    Base class for LWP protocols
+LWP::Protocol                        (1.43)    Base class for LWP protocols
+LWP::Protocol::GHTTP                 (n/a)     <description not available>
+LWP::Protocol::GHTTP                 (n/a)     <description not available>
+LWP::Protocol::cpan                  (n/a)     <description not available>
+LWP::Protocol::cpan                  (n/a)     <description not available>
+LWP::Protocol::data                  (n/a)     <description not available>
+LWP::Protocol::data                  (n/a)     <description not available>
+LWP::Protocol::file                  (n/a)     <description not available>
+LWP::Protocol::file                  (n/a)     <description not available>
+LWP::Protocol::ftp                   (n/a)     <description not available>
+LWP::Protocol::ftp                   (n/a)     <description not available>
+LWP::Protocol::gopher                (n/a)     <description not available>
+LWP::Protocol::gopher                (n/a)     <description not available>
+LWP::Protocol::http                  (n/a)     <description not available>
+LWP::Protocol::http                  (n/a)     <description not available>
+LWP::Protocol::http10                (n/a)     <description not available>
+LWP::Protocol::http10                (n/a)     <description not available>
+LWP::Protocol::https                 (n/a)     <description not available>
+LWP::Protocol::https                 (n/a)     <description not available>
+LWP::Protocol::https10               (n/a)     <description not available>
+LWP::Protocol::https10               (n/a)     <description not available>
+LWP::Protocol::loopback              (n/a)     <description not available>
+LWP::Protocol::mailto                (n/a)     <description not available>
+LWP::Protocol::mailto                (n/a)     <description not available>
+LWP::Protocol::nntp                  (n/a)     <description not available>
+LWP::Protocol::nntp                  (n/a)     <description not available>
+LWP::Protocol::nogo                  (n/a)     <description not available>
+LWP::Protocol::nogo                  (n/a)     <description not available>
+LWP::RobotUA                         (1.27)    a class for well-behaved Web robots
+LWP::RobotUA                         (1.27)    a class for well-behaved Web robots
+LWP::Simple                          (1.40)    simple procedural interface to LWP
+LWP::Simple                          (1.41)    simple procedural interface to LWP
+LWP::UserAgent                       (2.031)   Web user agent class
+LWP::UserAgent                       (2.033)   Web user agent class
+List::Util                           (1.14)    A selection of general-utility list subroutines
+Locale::Constants                    (2.07)    constants for Locale codes
+Locale::Country                      (2.07)    ISO codes for country identification (ISO 3166)
+Locale::Currency                     (2.07)    ISO three letter codes for currency identification (ISO 4217)
+Locale::Language                     (2.07)    ISO two letter codes for language identification (ISO 639)
+Locale::Maketext                     (1.09)    framework for localization
+Locale::Maketext::Guts               (n/a)     <description not available>
+Locale::Maketext::GutsLoader         (n/a)     <description not available>
+Locale::Maketext::TPJ13              (n/a)     article about software localization
+Locale::Script                       (2.07)    ISO codes for script identification (ISO 15924)
+Locale::gettext                      (1.05)    message handling functions
+MIME::Base64                         (3.05)    Encoding and decoding of base64 strings
+MIME::Base64                         (3.05)    Encoding and decoding of base64 strings
+MIME::QuotedPrint                    (3.03)    Encoding and decoding of quoted-printable strings
+MIME::QuotedPrint                    (3.03)    Encoding and decoding of quoted-printable strings
+MLDBM                                (2.01)    store multi-level hash structure in single level tied hash
+MLDBM::Serializer::Data::Dumper      (n/a)     <description not available>
+MLDBM::Serializer::FreezeThaw        (n/a)     <description not available>
+MLDBM::Serializer::Storable          (n/a)     <description not available>
+Mail::Address                        (1.65)    Parse mail addresses
+Mail::Cap                            (1.65)    Parse mailcap files
+Mail::Field                          (1.65)    Base class for manipulation of mail header fields
+Mail::Field::AddrList                (1.65)    object representation of e-mail address lists
+Mail::Field::Date                    (1.65)    <description not available>
+Mail::Filter                         (1.65)    Filter mail through multiple subroutines
+Mail::Header                         (1.65)    manipulate mail RFC822 compliant headers
+Mail::Internet                       (1.65)    manipulate Internet format (RFC 822) mail messages
+Mail::Mailer                         (1.65)    Simple interface to electronic mailing mechanisms
+Mail::Mailer::qmail                  (n/a)     <description not available>
+Mail::Mailer::rfc822                 (n/a)     <description not available>
+Mail::Mailer::sendmail               (n/a)     <description not available>
+Mail::Mailer::smtp                   (n/a)     <description not available>
+Mail::Mailer::testfile               (0.02)    <description not available>
+Mail::Send                           (1.65)    Simple electronic mail interface
+Mail::Util                           (1.65)    mail utility functions
+Math::BigFloat                       (1.47)    Arbitrary size floating point math package
+Math::BigFloat::Trace                (0.01)    <description not available>
+Math::BigInt                         (1.73)    Arbitrary size integer math package
+Math::BigInt::Calc                   (0.43)    Pure Perl module to support Math::BigInt
+Math::BigInt::CalcEmu                (0.04)    Emulate low-level math with BigInt code
+Math::BigInt::Trace                  (0.01)    <description not available>
+Math::BigRat                         (0.13)    arbitrarily big rational numbers
+Math::Complex                        (1.34)    complex numbers and associated mathematical functions
+Math::Trig                           (1.02)    trigonometric functions
+Memoize                              (1.01)    Make functions faster by trading space for time
+Memoize::AnyDBM_File                 (0.65)    glue to provide EXISTS for AnyDBM_File for Storable use
+Memoize::Expire                      (1.00)    Plug-in module for automatic expiration of memoized values
+Memoize::ExpireFile                  (1.01)    test for Memoize expiration semantics
+Memoize::ExpireTest                  (0.65)    test for Memoize expiration semantics
+Memoize::NDBM_File                   (0.65)    glue to provide EXISTS for NDBM_File for Storable use
+Memoize::SDBM_File                   (0.65)    glue to provide EXISTS for SDBM_File for Storable use
+Memoize::Storable                    (0.65)    store Memoized data in Storable database
+ModPerl::BuildMM                     (n/a)     A "subclass" of ModPerl::MM used for building mod_perl 2.0
+ModPerl::BuildMM                     (n/a)     A "subclass" of ModPerl::MM used for building mod_perl 2.0
+ModPerl::BuildOptions                (n/a)     <description not available>
+ModPerl::BuildOptions                (n/a)     <description not available>
+ModPerl::CScan                       (0.75)    scan C language files for easily recognized constructs.
+ModPerl::CScan                       (0.75)    scan C language files for easily recognized constructs.
+ModPerl::Code                        (0.01)    Perl Interface for $class Constants
+ModPerl::Code                        (0.01)    Perl Interface for $class Constants
+ModPerl::Config                      (n/a)     Functions to retrieve mod_perl specific env information.
+ModPerl::Config                      (n/a)     Functions to retrieve mod_perl specific env information.
+ModPerl::Const                       (2.000002) ModPerl Constants
+ModPerl::Const                       (2.000002) ModPerl Constants
+ModPerl::FunctionMap                 (n/a)     <description not available>
+ModPerl::FunctionMap                 (n/a)     <description not available>
+ModPerl::Global                      (2.000001) Perl API for manipulating special Perl lists
+ModPerl::Global                      (2.000002) Perl API for manipulating special Perl lists
+ModPerl::MM                          (n/a)     A "subclass" of ExtUtils::MakeMaker for mod_perl 2.0
+ModPerl::MM                          (n/a)     A "subclass" of ExtUtils::MakeMaker for mod_perl 2.0
+ModPerl::Manifest                    (n/a)     <description not available>
+ModPerl::Manifest                    (n/a)     <description not available>
+ModPerl::MapUtil                     (n/a)     <description not available>
+ModPerl::MapUtil                     (n/a)     <description not available>
+ModPerl::MethodLookup                (2.000002) Lookup mod_perl modules, objects and methods
+ModPerl::MethodLookup                (n/a)     Lookup mod_perl modules, objects and methods
+ModPerl::ParseSource                 (0.01)    <description not available>
+ModPerl::ParseSource                 (0.01)    <description not available>
+ModPerl::PerlRun                     (1.99)    Run unaltered CGI scripts under mod_perl
+ModPerl::PerlRun                     (1.99)    Run unaltered CGI scripts under mod_perl
+ModPerl::PerlRunPrefork              (0.01)    Run unaltered CGI scripts under mod_perl
+ModPerl::PerlRunPrefork              (0.01)    Run unaltered CGI scripts under mod_perl
+ModPerl::Registry                    (1.99)    Run unaltered CGI scripts persistently under mod_perl
+ModPerl::Registry                    (1.99)    Run unaltered CGI scripts persistently under mod_perl
+ModPerl::RegistryBB                  (1.99)    Run unaltered CGI scripts persistently under mod_perl
+ModPerl::RegistryBB                  (1.99)    Run unaltered CGI scripts persistently under mod_perl
+ModPerl::RegistryCooker              (1.99)    Cook mod_perl 2.0 Registry Modules
+ModPerl::RegistryCooker              (1.99)    Cook mod_perl 2.0 Registry Modules
+ModPerl::RegistryLoader              (n/a)     Compile ModPerl::RegistryCooker scripts at server startup
+ModPerl::RegistryLoader              (n/a)     Compile ModPerl::RegistryCooker scripts at server startup
+ModPerl::RegistryPrefork             (0.01)    Run unaltered CGI scripts under mod_perl
+ModPerl::RegistryPrefork             (0.01)    Run unaltered CGI scripts under mod_perl
+ModPerl::StructureMap                (n/a)     <description not available>
+ModPerl::StructureMap                (n/a)     <description not available>
+ModPerl::TestReport                  (n/a)     <description not available>
+ModPerl::TestReport                  (n/a)     <description not available>
+ModPerl::TestRun                     (n/a)     <description not available>
+ModPerl::TestRun                     (n/a)     <description not available>
+ModPerl::TypeMap                     (n/a)     <description not available>
+ModPerl::TypeMap                     (n/a)     <description not available>
+ModPerl::Util                        (2.000001) Helper mod_perl Functions
+ModPerl::Util                        (2.000002) Helper mod_perl Functions
+ModPerl::WrapXS                      (0.01)    <description not available>
+ModPerl::WrapXS                      (0.01)    <description not available>
+Module::Build                        (0.2610)  Build and install Perl modules
+Module::Build                        (0.2611)  Build and install Perl modules
+Module::Build::Base                  (n/a)     Configuration for $module_name
+Module::Build::Base                  (n/a)     Configuration for $module_name
+Module::Build::Compat                (0.03)    Compatibility with ExtUtils::MakeMaker
+Module::Build::Compat                (0.03)    Compatibility with ExtUtils::MakeMaker
+Module::Build::ConfigData            (n/a)     Configuration for Module::Build
+Module::Build::ConfigData            (n/a)     Configuration for Module::Build
+Module::Build::Cookbook              (n/a)     Examples of Module::Build Usage
+Module::Build::Cookbook              (n/a)     Examples of Module::Build Usage
+Module::Build::PPMMaker              (n/a)     Perl Package Manager file creation
+Module::Build::PPMMaker              (n/a)     Perl Package Manager file creation
+Module::Build::Platform::Amiga       (n/a)     Builder class for Amiga platforms
+Module::Build::Platform::Amiga       (n/a)     Builder class for Amiga platforms
+Module::Build::Platform::Default     (n/a)     Stub class for unknown platforms
+Module::Build::Platform::Default     (n/a)     Stub class for unknown platforms
+Module::Build::Platform::EBCDIC      (n/a)     Builder class for EBCDIC platforms
+Module::Build::Platform::EBCDIC      (n/a)     Builder class for EBCDIC platforms
+Module::Build::Platform::MPEiX       (n/a)     Builder class for MPEiX platforms
+Module::Build::Platform::MPEiX       (n/a)     Builder class for MPEiX platforms
+Module::Build::Platform::MacOS       (n/a)     Builder class for MacOS platforms
+Module::Build::Platform::MacOS       (n/a)     Builder class for MacOS platforms
+Module::Build::Platform::RiscOS      (n/a)     Builder class for RiscOS platforms
+Module::Build::Platform::RiscOS      (n/a)     Builder class for RiscOS platforms
+Module::Build::Platform::Unix        (n/a)     Builder class for Unix platforms
+Module::Build::Platform::Unix        (n/a)     Builder class for Unix platforms
+Module::Build::Platform::VMS         (n/a)     Builder class for VMS platforms
+Module::Build::Platform::VMS         (n/a)     Builder class for VMS platforms
+Module::Build::Platform::VOS         (n/a)     Builder class for VOS platforms
+Module::Build::Platform::VOS         (n/a)     Builder class for VOS platforms
+Module::Build::Platform::Windows     (n/a)     Builder class for Windows platforms
+Module::Build::Platform::Windows     (n/a)     Builder class for Windows platforms
+Module::Build::Platform::aix         (n/a)     Builder class for AIX platform
+Module::Build::Platform::aix         (n/a)     Builder class for AIX platform
+Module::Build::Platform::cygwin      (n/a)     Builder class for Cygwin platform
+Module::Build::Platform::cygwin      (n/a)     Builder class for Cygwin platform
+Module::Build::Platform::darwin      (n/a)     Builder class for Mac OS X platform
+Module::Build::Platform::darwin      (n/a)     Builder class for Mac OS X platform
+Module::Build::Platform::os2         (n/a)     Builder class for OS/2 platform
+Module::Build::Platform::os2         (n/a)     Builder class for OS/2 platform
+Module::Build::PodParser             (n/a)     <description not available>
+Module::Build::PodParser             (n/a)     <description not available>
+Module::Dependency::Grapher          (1.12)    creates visual dependency charts and accessible text versions
+Module::Dependency::Indexer          (1.8)     creates the databases used by the dependency mapping module
+Module::Dependency::Info             (1.5)     retrieve dependency information for scripts and modules
+Module::Info                         (0.26)    Information about Perl modules
+Mysql                                (1.2401)  Perl interfaces to the mSQL and mysql databases
+Mysql::Statement                     (1.2401)  <description not available>
+NDBM_File                            (1.05)    Tied access to ndbm files
+NEXT                                 (0.60)    Provide a pseudo-class NEXT (et al) that allows method redispatch
+Net::Cmd                             (2.24)    Network Command class (as used by FTP, SMTP etc)
+Net::Cmd                             (2.26)    Network Command class (as used by FTP, SMTP etc)
+Net::Config                          (1.10)    Local configuration data for libnet
+Net::Config                          (1.10)    Local configuration data for libnet
+Net::Daemon                          (0.38)    Perl extension for portable daemons
+Net::Daemon::Log                     (0.01)    Utility functions for logging
+Net::Daemon::Test                    (0.02)    support functions for testing Net::Daemon servers
+Net::Domain                          (2.18)    Attempt to evaluate the current host's internet name and domain
+Net::Domain                          (2.19)    Attempt to evaluate the current host's internet name and domain
+Net::FTP                             (2.71)    FTP Client class
+Net::FTP                             (2.75)    FTP Client class
+Net::FTP::A                          (1.16)    <description not available>
+Net::FTP::A                          (1.16)    <description not available>
+Net::FTP::E                          (0.01)    <description not available>
+Net::FTP::E                          (0.01)    <description not available>
+Net::FTP::I                          (1.12)    <description not available>
+Net::FTP::I                          (1.12)    <description not available>
+Net::FTP::L                          (0.01)    <description not available>
+Net::FTP::L                          (0.01)    <description not available>
+Net::FTP::dataconn                   (0.11)    <description not available>
+Net::FTP::dataconn                   (0.11)    <description not available>
+Net::HTTP                            (1.00)    Low-level HTTP connection (client)
+Net::HTTP                            (1.00)    Low-level HTTP connection (client)
+Net::HTTP::Methods                   (1.00)    <description not available>
+Net::HTTP::Methods                   (1.02)    <description not available>
+Net::HTTP::NB                        (0.02)    Non-blocking HTTP client
+Net::HTTP::NB                        (0.03)    Non-blocking HTTP client
+Net::HTTPS                           (1.00)    <description not available>
+Net::HTTPS                           (1.00)    <description not available>
+Net::NNTP                            (2.22)    NNTP Client class
+Net::NNTP                            (2.23)    NNTP Client class
+Net::Netrc                           (2.12)    OO interface to users netrc file
+Net::Netrc                           (2.12)    OO interface to users netrc file
+Net::POP3                            (2.24)    Post Office Protocol 3 Client class (RFC1939)
+Net::POP3                            (2.28)    Post Office Protocol 3 Client class (RFC1939)
+Net::Ping                            (2.31)    check a remote host for reachability
+Net::SMTP                            (2.26)    Simple Mail Transfer Protocol Client
+Net::SMTP                            (2.29)    Simple Mail Transfer Protocol Client
+Net::SSL                             (2.77)    <description not available>
+Net::SSLeay                          (1.25)    Perl extension for using OpenSSL
+Net::SSLeay::Handle                  (0.61)    Perl module that lets SSL (HTTPS) sockets be handled as standard file handles.
+Net::Telnet                          (3.03)    interact with TELNET port or other TCP ports
+Net::Time                            (2.09)    time and daytime network client interface
+Net::Time                            (2.10)    time and daytime network client interface
+Net::hostent                         (1.01)    by-name interface to Perl's built-in gethost*() functions
+Net::libnetFAQ                       (n/a)     libnet Frequently Asked Questions
+Net::libnetFAQ                       (n/a)     libnet Frequently Asked Questions
+Net::netent                          (1.00)    by-name interface to Perl's built-in getnet*() functions
+Net::protoent                        (1.00)    by-name interface to Perl's built-in getproto*() functions
+Net::servent                         (1.01)    by-name interface to Perl's built-in getserv*() functions
+Number::Compare                      (0.01)    numeric comparisons
+O                                    (1.00)    Generic interface to Perl Compiler backends
+Opcode                               (1.05)    Disable named opcodes when compiling perl code
+POSIX                                (1.08)    Perl interface to IEEE Std 1003.1
+Params::Validate                     (0.77)    Validate method/function parameters
+Params::ValidatePP                   (n/a)     pure Perl implementation of Params::Validate
+Params::ValidateXS                   (n/a)     XS implementation of Params::Validate
+Parse::RecDescent                    (1.94)    Generate Recursive-Descent Parsers
+Perl::Tidy                           (20031021) Parses and beautifies perl source
+PerlIO                               (1.03)    On demand loader for PerlIO layers and root of PerlIO::* name space
+PerlIO::encoding                     (0.07)    encoding layer
+PerlIO::scalar                       (0.02)    in-memory IO, scalar IO
+PerlIO::via                          (0.02)    Helper class for PerlIO layers implemented in perl
+PerlIO::via::QuotedPrint             (0.06)    PerlIO layer for quoted-printable strings
+Pod::Checker                         (1.42)    check pod documents for syntax errors
+Pod::Coverage                        (0.17)    Checks if the documentation of a module is comprehensive
+Pod::Coverage::CountParents          (n/a)     subclass of Pod::Coverage that examines the inheritance tree
+Pod::Coverage::ExportOnly            (n/a)     subclass of Pod::Coverage than only examines exported functions
+Pod::Coverage::Overloader            (n/a)     deprecated subclass of Pod::Coverage
+Pod::DocBook                         (1.2)     Convert Pod data to DocBook SGML
+Pod::Escapes                         (1.04)    for resolving Pod EE<lt>...E<gt> sequences
+Pod::Find                            (0.2401)  find POD documents in directory trees
+Pod::Functions                       (1.02)    Group Perl's functions a la perlfunc.pod
+Pod::Html                            (1.0502)  module to convert pod files to HTML
+Pod::InputObjects                    (1.14)    objects representing POD input paragraphs, commands, etc.
+Pod::LaTeX                           (0.56)    Convert Pod data to formatted Latex
+Pod::Man                             (1.37)    Convert POD data to formatted *roff input
+Pod::ParseLink                       (1.06)    Parse an LE<lt>E<gt> formatting code in POD text
+Pod::ParseUtils                      (1.2)     helpers for POD parsing and conversion
+Pod::Parser                          (1.14)    base class for creating POD filters and translators
+Pod::Perldoc                         (3.13)    <description not available>
+Pod::Perldoc::BaseTo                 (n/a)     <description not available>
+Pod::Perldoc::GetOptsOO              (n/a)     <description not available>
+Pod::Perldoc::ToChecker              (n/a)     let Perldoc check Pod for errors
+Pod::Perldoc::ToMan                  (n/a)     let Perldoc render Pod as man pages
+Pod::Perldoc::ToNroff                (n/a)     let Perldoc convert Pod to nroff
+Pod::Perldoc::ToPod                  (n/a)     let Perldoc render Pod as ... Pod!
+Pod::Perldoc::ToRtf                  (n/a)     let Perldoc render Pod as RTF
+Pod::Perldoc::ToText                 (n/a)     let Perldoc render Pod as plaintext
+Pod::Perldoc::ToTk                   (n/a)     let Perldoc use Tk::Pod to render Pod
+Pod::Perldoc::ToXml                  (n/a)     let Perldoc render Pod as XML
+Pod::PlainText                       (2.02)    Convert POD data to formatted ASCII text
+Pod::Plainer                         (0.01)    Perl extension for converting Pod to old style Pod.
+Pod::Select                          (1.13)    extract selected sections of POD from input
+Pod::Simple                          (3.02)    framework for parsing Pod
+Pod::Simple::BlackBox                (n/a)     <description not available>
+Pod::Simple::Checker                 (2.02)    check the Pod syntax of a document
+Pod::Simple::Debug                   (n/a)     put Pod::Simple into trace/debug mode
+Pod::Simple::DumpAsText              (2.02)    dump Pod-parsing events as text
+Pod::Simple::DumpAsXML               (2.02)    turn Pod into XML
+Pod::Simple::HTML                    (3.01)    convert Pod to HTML
+Pod::Simple::HTMLBatch               (3.02)    convert several Pod files to several HTML files
+Pod::Simple::HTMLLegacy              (5.01)    <description not available>
+Pod::Simple::LinkSection             (n/a)     represent "section" attributes of L codes
+Pod::Simple::Methody                 (2.02)    turn Pod::Simple events into method calls
+Pod::Simple::Progress                (1.01)    <description not available>
+Pod::Simple::PullParser              (2.02)    a pull-parser interface to parsing Pod
+Pod::Simple::PullParserEndToken      (n/a)     end-tokens from Pod::Simple::PullParser
+Pod::Simple::PullParserStartToken    (n/a)     start-tokens from Pod::Simple::PullParser
+Pod::Simple::PullParserTextToken     (n/a)     text-tokens from Pod::Simple::PullParser
+Pod::Simple::PullParserToken         (2.02)    tokens from Pod::Simple::PullParser
+Pod::Simple::RTF                     (2.02)    format Pod as RTF
+Pod::Simple::Search                  (2.03)    find POD documents in directory trees
+Pod::Simple::SimpleTree              (2.02)    parse Pod into a simple parse tree
+Pod::Simple::Subclassing             (n/a)     write a formatter as a Pod::Simple subclass
+Pod::Simple::Text                    (2.02)    format Pod as plaintext
+Pod::Simple::TextContent             (2.02)    get the text content of Pod
+Pod::Simple::TiedOutFH               (n/a)     <description not available>
+Pod::Simple::Transcode               (n/a)     <description not available>
+Pod::Simple::TranscodeDumb           (2.02)    <description not available>
+Pod::Simple::TranscodeSmart          (n/a)     <description not available>
+Pod::Simple::XMLOutStream            (2.02)    turn Pod into XML
+Pod::Text                            (2.21)    Convert POD data to formatted ASCII text
+Pod::Text::Color                     (1.04)    Convert POD data to formatted color ASCII text
+Pod::Text::Overstrike                (1.1)     Convert POD data to formatted overstrike text
+Pod::Text::Termcap                   (1.11)    Convert POD data to ASCII text with format escapes
+Pod::Usage                           (1.16)    print a usage message from embedded pod documentation
+PostScript::Simple                   (0.06)    Produce PostScript files from Perl
+PostScript::Simple::EPS              (0.01)    EPS support for PostScript::Simple
+Qt                                   (3.008)   <description not available>
+Qt::GlobalSpace                      (n/a)     <description not available>
+Qt::attributes                       (n/a)     <description not available>
+Qt::constants                        (n/a)     <description not available>
+Qt::debug                            (n/a)     <description not available>
+Qt::enumerations                     (n/a)     <description not available>
+Qt::isa                              (n/a)     <description not available>
+Qt::properties                       (n/a)     <description not available>
+Qt::signals                          (n/a)     <description not available>
+Qt::slots                            (n/a)     <description not available>
+RPC::PlClient                        (0.2016)  Perl extension for writing PlRPC clients
+RPC::PlServer                        (0.2016)  Perl extension for writing PlRPC servers
+RPC::PlServer::Comm                  (0.1002)  <description not available>
+RPC::PlServer::Test                  (0.01)    <description not available>
+Roadmap                              (n/a)     Planned Enhancements for the DBI
+SDBM_File                            (1.04)    Tied access to sdbm files
+SGMLS                                (n/a)     class for postprocessing the output from the B<sgmls> and B<nsgmls> parsers.
+SGMLS::Output                        (n/a)     Stack-based Output Procedures
+SGMLS::Refs                          (n/a)     SGMLS::Refs
+SVG::TT::Graph                       (0.08)    Base object for generating SVG Graphs
+SVG::TT::Graph::Bar                  (0.07)    Create presentation quality SVG bar graphs easily
+SVG::TT::Graph::BarHorizontal        (0.06)    Create presentation quality SVG horitonzal bar graphs easily
+SVG::TT::Graph::BarLine              (0.06)    Create presentation quality SVG bar graphs easily
+SVG::TT::Graph::Line                 (0.07)    Create presentation quality SVG line graphs easily
+SVG::TT::Graph::Pie                  (0.08)    Create presentation quality SVG pie graphs easily
+SVG::TT::Graph::TimeSeries           (0.07)    Create presentation quality SVG line graphs of time series easily
+SVN::Base                            (n/a)     Base class for importing symbols for svn modules
+SVN::Client                          (n/a)     Subversion client functions
+SVN::Core                            (n/a)     Core module of the subversion perl bindings
+SVN::Delta                           (n/a)     Subversion delta functions
+SVN::Fs                              (n/a)     <description not available>
+SVN::Ra                              (n/a)     Subversion remote access functions
+SVN::Repos                           (n/a)     Subversion repository functions
+SVN::Wc                              (n/a)     Subversion working copy functions
+Safe                                 (2.11)    Compile and execute code in restricted compartments
+Scalar::Util                         (1.14)    A selection of general-utility scalar subroutines
+Search::Dict                         (1.02)    search for key in dictionary file
+SelectSaver                          (1.00)    save and restore selected file handle
+SelfLoader                           (1.0904)  load functions only on demand
+Shell                                (0.6)     run shell commands transparently within perl
+Socket                               (1.77)    load the C socket.h defines and structure manipulators
+Storable                             (2.13)    persistence for Perl data structures
+Storable                             (2.13)    persistence for Perl data structures
+Switch                               (2.10)    A switch statement for Perl
+Symbol                               (1.05)    manipulate Perl symbols and their names
+Sys::Hostname                        (1.11)    Try every conceivable way to get hostname
+Sys::Syslog                          (0.05)    Perl interface to the UNIX syslog(3) calls
+Template                             (2.14)    Front-end module to the Template Toolkit
+Template::Base                       (2.70)    Base class module implementing common functionality
+Template::Config                     (2.68)    Factory module for instantiating other TT2 modules
+Template::Constants                  (2.68)    Defines constants for the Template Toolkit
+Template::Context                    (2.91)    Runtime context in which templates are processed
+Template::Directive                  (2.19)    <description not available>
+Template::Document                   (2.74)    Compiled template document object
+Template::Exception                  (2.65)    Exception handling class module
+Template::FAQ                        (n/a)     Frequently Asked Questions about the Template Toolkit
+Template::Filters                    (2.78)    Post-processing filters for template blocks
+Template::Grammar                    (2.22)    <description not available>
+Template::Iterator                   (2.65)    Data iterator used by the FOREACH directive
+Template::Library::HTML              (n/a)     Template library for building basic HTML pages
+Template::Library::PostScript        (n/a)     Template library for generating PostScript
+Template::Library::Splash            (n/a)     Template library for building stylish HTML user interfaces
+Template::Manual                     (n/a)     User guide and reference manual for the Template Toolkit
+Template::Manual::Config             (n/a)     Configuration options
+Template::Manual::Credits            (n/a)     Author and contributor credits
+Template::Manual::Directives         (n/a)     Template directives
+Template::Manual::Filters            (n/a)     Standard filters
+Template::Manual::Internals          (n/a)     Template Toolkit internals
+Template::Manual::Intro              (n/a)     Introduction to the Template Toolkit
+Template::Manual::Plugins            (n/a)     Standard plugins
+Template::Manual::Refs               (n/a)     Related modules, projects and other resources
+Template::Manual::Syntax             (n/a)     Directive syntax, structure and semantics
+Template::Manual::VMethods           (n/a)     Virtual Methods
+Template::Manual::Variables          (n/a)     Template variables and code bindings
+Template::Manual::Views              (n/a)     Template Toolkit views (experimental)
+Template::Modules                    (n/a)     Core modules comprising the Template Toolkit
+Template::Namespace::Constants       (1.23)    Compile time constant folding
+Template::Parser                     (2.82)    LALR(1) parser for compiling template documents
+Template::Plugin                     (2.66)    Base class for Template Toolkit plugins
+Template::Plugin::Autoformat         (2.65)    Interface to Text::Autoformat module
+Template::Plugin::CGI                (2.65)    Interface to the CGI module
+Template::Plugin::DBI                (2.63)    Template interface to the DBI module
+Template::Plugin::Datafile           (2.67)    Plugin to construct records from a simple data file
+Template::Plugin::Date               (2.72)    Plugin to generate formatted date strings
+Template::Plugin::Directory          (2.65)    Plugin for generating directory listings
+Template::Plugin::Dumper             (2.65)    Plugin interface to Data::Dumper
+Template::Plugin::File               (2.65)    Plugin providing information about files
+Template::Plugin::Filter             (1.31)    Base class for plugin filters
+Template::Plugin::Format             (2.65)    Plugin to create formatting functions
+Template::Plugin::GD::Constants      (1.56)    Interface to GD module constants
+Template::Plugin::GD::Graph::area    (1.58)    Create area graphs with axes and legends
+Template::Plugin::GD::Graph::bars    (1.58)    Create bar graphs with axes and legends
+Template::Plugin::GD::Graph::bars3d  (1.58)    Create 3D bar graphs with axes and legends
+Template::Plugin::GD::Graph::lines   (1.58)    Create line graphs with axes and legends
+Template::Plugin::GD::Graph::lines3d (1.58)    Create 3D line graphs with axes and legends
+Template::Plugin::GD::Graph::linespoints (1.58)    Create line/point graphs with axes and legends
+Template::Plugin::GD::Graph::mixed   (1.58)    Create mixed graphs with axes and legends
+Template::Plugin::GD::Graph::pie     (1.56)    Create pie charts with legends
+Template::Plugin::GD::Graph::pie3d   (1.56)    Create 3D pie charts with legends
+Template::Plugin::GD::Graph::points  (1.58)    Create point graphs with axes and legends
+Template::Plugin::GD::Image          (1.56)    Interface to GD Graphics Library
+Template::Plugin::GD::Polygon        (1.56)    Interface to GD module Polygon class
+Template::Plugin::GD::Text           (1.56)    Text utilities for use with GD
+Template::Plugin::GD::Text::Align    (1.56)    Draw aligned strings in GD images
+Template::Plugin::GD::Text::Wrap     (1.56)    Break and wrap strings in GD images
+Template::Plugin::HTML               (2.57)    Plugin to create HTML elements
+Template::Plugin::Image              (1.14)    Plugin access to image sizes
+Template::Plugin::Iterator           (2.63)    Plugin to create iterators (Template::Iterator)
+Template::Plugin::Pod                (2.63)    Plugin interface to Pod::POM (Pod Object Model)
+Template::Plugin::Procedural         (1.12)    Base class for procedural plugins
+Template::Plugin::String             (2.34)    Object oriented interface for string manipulation
+Template::Plugin::Table              (2.65)    Plugin to present data in a table
+Template::Plugin::URL                (2.65)    Plugin to construct complex URLs
+Template::Plugin::View               (2.64)    Plugin to create views (Template::View)
+Template::Plugin::Wrap               (2.64)    Plugin interface to Text::Wrap
+Template::Plugin::XML::DOM           (2.6)     Plugin interface to XML::DOM
+Template::Plugin::XML::RSS           (2.65)    Plugin interface to XML::RSS
+Template::Plugin::XML::Simple        (2.65)    Plugin interface to XML::Simple
+Template::Plugin::XML::Style         (2.35)    Simple XML stylesheet transfomations
+Template::Plugin::XML::XPath         (2.70)    Plugin interface to XML::XPath
+Template::Plugins                    (2.71)    Plugin provider module
+Template::Provider                   (2.81)    Provider module for loading/compiling templates
+Template::Service                    (2.77)    General purpose template processing service
+Template::Stash                      (2.86)    Magical storage for template variables
+Template::Stash::Context             (1.59)    Experimetal stash allowing list/scalar context definition
+Template::Stash::XS                  (n/a)     Experimetal high-speed stash written in XS
+Template::Test                       (2.70)    Module for automating TT2 test scripts
+Template::Tools::tpage               (n/a)     Process templates from command line
+Template::Tools::ttree               (n/a)     Process entire directory trees of templates
+Template::Tutorial                   (n/a)     Template Toolkit Tutorials
+Template::Tutorial::Datafile         (n/a)     Creating Data Output Files Using the Template Toolkit
+Template::Tutorial::Web              (n/a)     Generating Web Content Using the Template Toolkit
+Template::View                       (2.09)    customised view of a template processing context
+Term::ANSIColor                      (1.08)    Color screen output using ANSI escape sequences
+Term::Cap                            (1.09)    Perl termcap interface
+Term::Complete                       (1.401)   Perl word completion module
+Term::ReadKey                        (2.21)    A perl module for simple terminal control
+Term::ReadKey                        (2.30)    A perl module for simple terminal control
+Term::ReadLine                       (1.01)    Perl interface to various C<readline> packages. If no real package is found, substitutes stubs instead of basic functions.
+Term::ReadLine::Perl                 (0.99)    <description not available>
+Term::ReadLine::Perl                 (0.99)    <description not available>
+Term::ReadLine::readline             (1.0203)  <description not available>
+Term::ReadLine::readline             (1.0203)  <description not available>
+Test                                 (1.25)    provides a simple framework for writing test scripts
+Test::Builder                        (0.17)    Backend for building test libraries
+Test::Builder                        (0.30)    Backend for building test libraries
+Test::Harness                        (2.42)    Run Perl standard test scripts with statistics
+Test::Harness                        (2.52)    Run Perl standard test scripts with statistics
+Test::Harness::Assert                (0.02)    simple assert
+Test::Harness::Assert                (0.02)    simple assert
+Test::Harness::Iterator              (0.02)    Internal Test::Harness Iterator
+Test::Harness::Iterator              (0.02)    Internal Test::Harness Iterator
+Test::Harness::Point                 (0.01)    object for tracking a single test point
+Test::Harness::Straps                (0.19)    detailed analysis of test results
+Test::Harness::Straps                (0.23)    detailed analysis of test results
+Test::Harness::TAP                   (n/a)     Documentation for the TAP format
+Test::More                           (0.47)    yet another framework for writing test scripts
+Test::More                           (0.60)    yet another framework for writing test scripts
+Test::Pod                            (1.22)    check for POD errors in files
+Test::Pod::Coverage                  (1.06)    Check for pod coverage in your distribution.
+Test::Simple                         (0.47)    Basic utilities for writing tests.
+Test::Simple                         (0.60)    Basic utilities for writing tests.
+Test::Tutorial                       (n/a)     A tutorial about writing really basic tests
+Test::Tutorial                       (n/a)     A tutorial about writing really basic tests
+Text::Abbrev                         (1.01)    create an abbreviation table from a list
+Text::Balanced                       (1.95)    Extract delimited text sequences from strings.
+Text::Glob                           (0.06)    match globbing patterns against text
+Text::ParseWords                     (3.23)    parse text into an array of tokens or array of arrays
+Text::Soundex                        (1.01)    Implementation of the Soundex Algorithm as Described by Knuth
+Text::Tabs                           (98.112801) expand and unexpand tabs per the unix expand(1) and unexpand(1)
+Text::Wrap                           (2001.09292) line wrapping to form simple paragraphs
+Thread                               (2.00)    manipulate threads in Perl (for old code only)
+Thread::Queue                        (2.00)    thread-safe queues
+Thread::Semaphore                    (2.01)    thread-safe semaphores
+Tie::Array                           (1.03)    base class for tied arrays
+Tie::File                            (0.97)    Access the lines of a disk file via a Perl array
+Tie::Handle                          (4.1)     base class definitions for tied handles
+Tie::Hash                            (1.01)    base class definitions for tied hashes
+Tie::IxHash                          (1.21)    ordered associative arrays for Perl
+Tie::Memoize                         (1.0)     add data to hash when needed
+Tie::RefHash                         (1.31)    use references as hash keys
+Tie::Scalar                          (1.00)    base class definitions for tied scalars
+Tie::SubstrHash                      (1.00)    Fixed-table-size, fixed-key-length hashing
+Time::HiRes                          (1.65)    High resolution alarm, sleep, gettimeofday, interval timers
+Time::Local                          (1.10)    efficiently compute time from local and GMT time
+Time::gmtime                         (1.02)    by-name interface to Perl's built-in gmtime() function
+Time::localtime                      (1.02)    by-name interface to Perl's built-in localtime() function
+Time::tm                             (1.00)    internal object used by Time::gmtime and Time::localtime
+UNIVERSAL                            (1.01)    base class for ALL classes (blessed references)
+URI                                  (1.35)    Uniform Resource Identifiers (absolute and relative)
+URI                                  (1.35)    Uniform Resource Identifiers (absolute and relative)
+URI::Escape                          (3.28)    Escape and unescape unsafe characters
+URI::Escape                          (3.28)    Escape and unescape unsafe characters
+URI::Heuristic                       (4.17)    Expand URI using heuristics
+URI::Heuristic                       (4.17)    Expand URI using heuristics
+URI::QueryParam                      (n/a)     Additional query methods for URIs
+URI::QueryParam                      (n/a)     Additional query methods for URIs
+URI::Split                           (n/a)     Parse and compose URI strings
+URI::Split                           (n/a)     Parse and compose URI strings
+URI::URL                             (5.03)    Uniform Resource Locators
+URI::URL                             (5.03)    Uniform Resource Locators
+URI::WithBase                        (2.19)    URIs which remember their base
+URI::WithBase                        (2.19)    URIs which remember their base
+URI::_foreign                        (n/a)     <description not available>
+URI::_foreign                        (n/a)     <description not available>
+URI::_generic                        (n/a)     <description not available>
+URI::_generic                        (n/a)     <description not available>
+URI::_ldap                           (1.10)    <description not available>
+URI::_ldap                           (1.10)    <description not available>
+URI::_login                          (n/a)     <description not available>
+URI::_login                          (n/a)     <description not available>
+URI::_query                          (n/a)     <description not available>
+URI::_query                          (n/a)     <description not available>
+URI::_segment                        (n/a)     <description not available>
+URI::_segment                        (n/a)     <description not available>
+URI::_server                         (n/a)     <description not available>
+URI::_server                         (n/a)     <description not available>
+URI::_userpass                       (n/a)     <description not available>
+URI::_userpass                       (n/a)     <description not available>
+URI::data                            (n/a)     URI that contains immediate data
+URI::data                            (n/a)     URI that contains immediate data
+URI::file                            (4.19)    URI that maps to local file names
+URI::file                            (4.19)    URI that maps to local file names
+URI::file::Base                      (n/a)     <description not available>
+URI::file::Base                      (n/a)     <description not available>
+URI::file::FAT                       (n/a)     <description not available>
+URI::file::FAT                       (n/a)     <description not available>
+URI::file::Mac                       (n/a)     <description not available>
+URI::file::Mac                       (n/a)     <description not available>
+URI::file::OS2                       (n/a)     <description not available>
+URI::file::OS2                       (n/a)     <description not available>
+URI::file::QNX                       (n/a)     <description not available>
+URI::file::QNX                       (n/a)     <description not available>
+URI::file::Unix                      (n/a)     <description not available>
+URI::file::Unix                      (n/a)     <description not available>
+URI::file::Win32                     (n/a)     <description not available>
+URI::file::Win32                     (n/a)     <description not available>
+URI::ftp                             (n/a)     <description not available>
+URI::ftp                             (n/a)     <description not available>
+URI::gopher                          (n/a)     <description not available>
+URI::gopher                          (n/a)     <description not available>
+URI::http                            (n/a)     <description not available>
+URI::http                            (n/a)     <description not available>
+URI::https                           (n/a)     <description not available>
+URI::https                           (n/a)     <description not available>
+URI::ldap                            (1.11)    LDAP Uniform Resource Locators
+URI::ldap                            (1.11)    LDAP Uniform Resource Locators
+URI::ldapi                           (n/a)     <description not available>
+URI::ldapi                           (n/a)     <description not available>
+URI::ldaps                           (n/a)     <description not available>
+URI::ldaps                           (n/a)     <description not available>
+URI::mailto                          (n/a)     <description not available>
+URI::mailto                          (n/a)     <description not available>
+URI::mms                             (n/a)     <description not available>
+URI::mms                             (n/a)     <description not available>
+URI::news                            (n/a)     <description not available>
+URI::news                            (n/a)     <description not available>
+URI::nntp                            (n/a)     <description not available>
+URI::nntp                            (n/a)     <description not available>
+URI::pop                             (n/a)     <description not available>
+URI::pop                             (n/a)     <description not available>
+URI::rlogin                          (n/a)     <description not available>
+URI::rlogin                          (n/a)     <description not available>
+URI::rsync                           (n/a)     <description not available>
+URI::rsync                           (n/a)     <description not available>
+URI::rtsp                            (n/a)     <description not available>
+URI::rtsp                            (n/a)     <description not available>
+URI::rtspu                           (n/a)     <description not available>
+URI::rtspu                           (n/a)     <description not available>
+URI::sip                             (0.10)    <description not available>
+URI::sip                             (0.10)    <description not available>
+URI::sips                            (n/a)     <description not available>
+URI::sips                            (n/a)     <description not available>
+URI::snews                           (n/a)     <description not available>
+URI::snews                           (n/a)     <description not available>
+URI::ssh                             (n/a)     <description not available>
+URI::ssh                             (n/a)     <description not available>
+URI::telnet                          (n/a)     <description not available>
+URI::telnet                          (n/a)     <description not available>
+URI::tn3270                          (n/a)     <description not available>
+URI::tn3270                          (n/a)     <description not available>
+URI::urn                             (n/a)     <description not available>
+URI::urn                             (n/a)     <description not available>
+URI::urn::isbn                       (n/a)     <description not available>
+URI::urn::isbn                       (n/a)     <description not available>
+URI::urn::oid                        (n/a)     <description not available>
+URI::urn::oid                        (n/a)     <description not available>
+Unicode::Collate                     (0.40)    Unicode Collation Algorithm
+Unicode::Normalize                   (0.30)    Unicode Normalization Forms
+Unicode::UCD                         (0.22)    Unicode character database
+User::grent                          (1.00)    by-name interface to Perl's built-in getgr*() functions
+User::pwent                          (1.00)    by-name interface to Perl's built-in getpw*() functions
+WWW::RobotRules                      (1.30)    database of robots.txt-derived permissions
+WWW::RobotRules                      (1.32)    database of robots.txt-derived permissions
+WWW::RobotRules::AnyDBM_File         (1.11)    Persistent RobotRules
+WWW::RobotRules::AnyDBM_File         (1.11)    Persistent RobotRules
+Win32::DBIODBC                       (n/a)     Win32::ODBC emulation layer for the DBI
+XML::LibXML                          (1.58)    Perl Binding for libxml2
+XML::LibXML::Attr                    (n/a)     XML::LibXML Attribute Class
+XML::LibXML::Boolean                 (n/a)     Boolean true/false values
+XML::LibXML::CDATASection            (n/a)     XML::LibXML Class for CDATA Sections
+XML::LibXML::Comment                 (n/a)     XML::LibXML Comment Class
+XML::LibXML::Common                  (0.13)    Routines and Constants common for XML::LibXML and XML::GDOME
+XML::LibXML::DOM                     (n/a)     XML::LibXML DOM Implementation
+XML::LibXML::Document                (n/a)     XML::LibXML DOM Document Class
+XML::LibXML::DocumentFragment        (n/a)     XML::LibXML's DOM L2 Document Fragment Implementation
+XML::LibXML::Dtd                     (n/a)     XML::LibXML DTD Handling
+XML::LibXML::Element                 (n/a)     XML::LibXML Class for Element Nodes
+XML::LibXML::Literal                 (n/a)     Simple string values.
+XML::LibXML::Namespace               (n/a)     XML::LibXML Namespace Implementation
+XML::LibXML::Node                    (n/a)     Abstract Base Class of XML::LibXML Nodes
+XML::LibXML::NodeList                (n/a)     a list of XML document nodes
+XML::LibXML::Number                  (n/a)     Simple numeric values.
+XML::LibXML::PI                      (n/a)     XML::LibXML Processing Instructions
+XML::LibXML::Parser                  (n/a)     Parsing XML Data with XML::LibXML
+XML::LibXML::SAX                     (1.00)    XML::LibXML direct SAX parser
+XML::LibXML::SAX::Builder            (n/a)     Building DOM trees from SAX events.
+XML::LibXML::SAX::Generator          (n/a)     Generate SAX events from a LibXML tree
+XML::LibXML::SAX::Parser             (1.50)    <description not available>
+XML::LibXML::Text                    (n/a)     XML::LibXML Class for Text Nodes
+XML::LibXSLT                         (1.58)    Interface to the gnome libxslt library
+XML::NamespaceSupport                (1.08)    a simple generic namespace support class
+XML::Parser                          (2.34)    A perl module for parsing XML documents
+XML::Parser::Expat                   (2.34)    Lowlevel access to James Clark's expat XML parser
+XML::Parser::Style::Debug            (n/a)     Debug style for XML::Parser
+XML::Parser::Style::Objects          (n/a)     XML::Parser::Style::Objects
+XML::Parser::Style::Stream           (n/a)     Stream style for XML::Parser
+XML::Parser::Style::Subs             (n/a)     XML::Parser::Style::Subs
+XML::Parser::Style::Tree             (n/a)     XML::Parser::Style::Tree
+XML::SAX                             (0.12)    Simple API for XML
+XML::SAX::Base                       (1.04)    Base class SAX Drivers and Filters
+XML::SAX::DocumentLocator            (n/a)     Helper class for document locators
+XML::SAX::Exception                  (1.01)    Exception classes for XML::SAX
+XML::SAX::Intro                      (n/a)     An Introduction to SAX Parsing with Perl
+XML::SAX::ParserFactory              (1.01)    Obtain a SAX parser
+XML::SAX::PurePerl                   (0.90)    Pure Perl XML Parser with SAX2 interface
+XML::SAX::PurePerl::DTDDecls         (n/a)     <description not available>
+XML::SAX::PurePerl::DebugHandler     (n/a)     <description not available>
+XML::SAX::PurePerl::DocType          (n/a)     <description not available>
+XML::SAX::PurePerl::EncodingDetect   (n/a)     <description not available>
+XML::SAX::PurePerl::Exception        (n/a)     <description not available>
+XML::SAX::PurePerl::NoUnicodeExt     (n/a)     <description not available>
+XML::SAX::PurePerl::Productions      (n/a)     <description not available>
+XML::SAX::PurePerl::Reader           (n/a)     Abstract Reader factory class
+XML::SAX::PurePerl::Reader::NoUnicodeExt (n/a)     <description not available>
+XML::SAX::PurePerl::Reader::Stream   (n/a)     <description not available>
+XML::SAX::PurePerl::Reader::String   (n/a)     <description not available>
+XML::SAX::PurePerl::Reader::URI      (n/a)     <description not available>
+XML::SAX::PurePerl::Reader::UnicodeExt (n/a)     <description not available>
+XML::SAX::PurePerl::UnicodeExt       (n/a)     <description not available>
+XML::SAX::PurePerl::XMLDecl          (n/a)     <description not available>
+XML::Simple                          (2.14)    Easy API to maintain XML (esp config files)
+XML::Simple::FAQ                     (n/a)     <description not available>
+XML::Writer                          (0.531)   Perl extension for writing XML documents.
+XML::Writer::String                  (0.1)     Capture output from XML::Writer.
+XML::XPath                           (1.13)    a set of modules for parsing and evaluating XPath statements
+XML::XPath::Boolean                  (n/a)     Boolean true/false values
+XML::XPath::Builder                  (n/a)     SAX handler for building an XPath tree
+XML::XPath::Expr                     (n/a)     <description not available>
+XML::XPath::Function                 (n/a)     <description not available>
+XML::XPath::Literal                  (n/a)     Simple string values.
+XML::XPath::LocationPath             (n/a)     <description not available>
+XML::XPath::Node                     (n/a)     internal representation of a node
+XML::XPath::Node::Attribute          (n/a)     a single attribute
+XML::XPath::Node::Comment            (n/a)     an XML comment: <!--comment-->
+XML::XPath::Node::Element            (n/a)     an <element>
+XML::XPath::Node::Namespace          (n/a)     an XML namespace node
+XML::XPath::Node::PI                 (n/a)     an XML processing instruction node
+XML::XPath::Node::Text               (n/a)     an XML text node
+XML::XPath::NodeSet                  (n/a)     a list of XML document nodes
+XML::XPath::Number                   (n/a)     Simple numeric values.
+XML::XPath::Parser                   (n/a)     <description not available>
+XML::XPath::PerlSAX                  (n/a)     A PerlSAX event generator for my wierd node structure
+XML::XPath::Root                     (n/a)     <description not available>
+XML::XPath::Step                     (n/a)     <description not available>
+XML::XPath::Variable                 (n/a)     <description not available>
+XML::XPath::XMLParser                (n/a)     The default XML parsing class that produces a node tree
+XML::XPathScript                     (0.15)    a Perl framework for XML stylesheets
+XML::XPathScript                     (0.16)    a Perl framework for XML stylesheets
+XML::XPathScript::Processor          (n/a)     the XML transformation engine in XML::XPathScript
+XML::XPathScript::Processor          (n/a)     the XML transformation engine in XML::XPathScript
+XML::lib_tomkit::Apache2::TomKit::Processor::XPathScript (n/a)     <description not available>
+XPathScript                          (0.16)    a Perl framework for XML stylesheets
+XS::APItest                          (0.05)    Test the perl C API
+XS::Typemap                          (0.01)    module to test the XS typemaps distributed with perl
+XSLoader                             (0.02)    Dynamically load C libraries into Perl code
+YAML                                 (0.39)    YAML Ain't Markup Language (tm)
+YAML::Error                          (n/a)     <description not available>
+YAML::Family                         (n/a)     <description not available>
+YAML::Node                           (n/a)     A generic data node that encapsulates YAML information
+YAML::Transfer                       (n/a)     <description not available>
+attributes                           (0.06)    get/set subroutine or variable attributes
+attrs                                (1.01)    set/get attributes of a subroutine (deprecated)
+autouse                              (1.04)    postpone load of modules until a function is used
+base                                 (2.06)    Establish IS-A relationship with base classes at compile time
+bigint                               (0.05)    Transparent BigInteger support for Perl
+bignum                               (0.15)    Transparent BigNumber support for Perl
+bigrat                               (0.06)    Transparent BigNumber/BigRational support for Perl
+blib                                 (1.02)    Use MakeMaker's uninstalled version of a package
+bytes                                (1.01)    Perl pragma to force byte semantics rather than character semantics
+charnames                            (1.04)    define character names for C<\N{named}> string literal escapes
+constant                             (1.04)    Perl pragma to declare constants
+diagnostics                          (1.14)    produce verbose warning diagnostics
+encoding                             (2.01)    allows you to write your script in non-ascii or non-utf8
+fields                               (2.03)    compile-time class fields
+filetest                             (1.01)    Perl pragma to control the filetest permission operators
+if                                   (0.03)    C<use> a Perl module if a condition holds
+integer                              (1.00)    Perl pragma to use integer arithmetic instead of floating point
+less                                 (0.01)    perl pragma to request less of something from the compiler
+lib                                  (0.5565)  manipulate @INC at compile time
+locale                               (1.00)    Perl pragma to use and avoid POSIX locales for built-in operations
+lwpcook                              (n/a)     The libwww-perl cookbook
+lwpcook                              (n/a)     The libwww-perl cookbook
+lwptut                               (n/a)     An LWP Tutorial
+lwptut                               (n/a)     An LWP Tutorial
+mod_perl2                            (2.000001) <description not available>
+mod_perl2                            (2.000002) <description not available>
+open                                 (1.04)    perl pragma to set default PerlIO layers for input and output
+ops                                  (1.00)    Perl pragma to restrict unsafe operations when compiling
+overload                             (1.02)    Package for overloading perl operations
+perllocal                            (n/a)     <description not available>
+perlpod                              (n/a)     the Plain Old Documentation format
+perlpodspec                          (n/a)     Plain Old Documentation: format specification and notes
+pod::a2p                             (n/a)     Awk to Perl translator
+pod::perl                            (n/a)     Practical Extraction and Report Language
+pod::perl5004delta                   (n/a)     what's new for perl5.004
+pod::perl5005delta                   (n/a)     what's new for perl5.005
+pod::perl561delta                    (n/a)     what's new for perl v5.6.x
+pod::perl56delta                     (n/a)     what's new for perl v5.6.0
+pod::perl570delta                    (n/a)     what's new for perl v5.7.0
+pod::perl571delta                    (n/a)     what's new for perl v5.7.1
+pod::perl572delta                    (n/a)     what's new for perl v5.7.2
+pod::perl573delta                    (n/a)     what's new for perl v5.7.3
+pod::perl581delta                    (n/a)     what is new for perl v5.8.1
+pod::perl582delta                    (n/a)     what is new for perl v5.8.2
+pod::perl583delta                    (n/a)     what is new for perl v5.8.3
+pod::perl584delta                    (n/a)     what is new for perl v5.8.4
+pod::perl585delta                    (n/a)     what is new for perl v5.8.5
+pod::perl586delta                    (n/a)     what is new for perl v5.8.6
+pod::perl58delta                     (n/a)     what is new for perl v5.8.0
+pod::perlaix                         (n/a)     Perl version 5 on IBM Unix (AIX) systems
+pod::perlamiga                       (n/a)     Perl under Amiga OS
+pod::perlapi                         (n/a)     autogenerated documentation for the perl public API
+pod::perlapio                        (n/a)     perl's IO abstraction interface.
+pod::perlapollo                      (n/a)     Perl version 5 on Apollo DomainOS
+pod::perlartistic                    (n/a)     the Perl Artistic License
+pod::perlbeos                        (n/a)     Perl version 5 on BeOS
+pod::perlbook                        (n/a)     Perl book information
+pod::perlboot                        (n/a)     Beginner's Object-Oriented Tutorial
+pod::perlbot                         (n/a)     Bag'o Object Tricks (the BOT)
+pod::perlbs2000                      (n/a)     building and installing Perl for BS2000.
+pod::perlcall                        (n/a)     Perl calling conventions from C
+pod::perlce                          (n/a)     Perl for WinCE
+pod::perlcheat                       (n/a)     Perl 5 Cheat Sheet
+pod::perlclib                        (n/a)     Internal replacements for standard C library functions
+pod::perlcn                          (n/a)     ¼òÌåÖÐÎÄ Perl Ö¸ÄÏ
+pod::perlcompile                     (n/a)     Introduction to the Perl Compiler-Translator
+pod::perlcygwin                      (n/a)     Perl for Cygwin
+pod::perldata                        (n/a)     Perl data types
+pod::perldbmfilter                   (n/a)     Perl DBM Filters
+pod::perldebguts                     (n/a)     Guts of Perl debugging
+pod::perldebtut                      (n/a)     Perl debugging tutorial
+pod::perldebug                       (n/a)     Perl debugging
+pod::perldelta                       (n/a)     what is new for perl v5.8.6
+pod::perldgux                        (n/a)     Perl under DG/UX.
+pod::perldiag                        (n/a)     various Perl diagnostics
+pod::perldoc                         (n/a)     Look up Perl documentation in Pod format.
+pod::perldos                         (n/a)     Perl under DOS, W31, W95.
+pod::perldsc                         (n/a)     Perl Data Structures Cookbook
+pod::perlebcdic                      (n/a)     Considerations for running Perl on EBCDIC platforms
+pod::perlembed                       (n/a)     how to embed perl in your C program
+pod::perlepoc                        (n/a)     Perl for EPOC
+pod::perlfaq                         (n/a)     frequently asked questions about Perl ($Date: 2004/10/05 22:15:44 $)
+pod::perlfaq1                        (n/a)     General Questions About Perl ($Revision: 1.15 $, $Date: 2004/10/11 05:06:29 $)
+pod::perlfaq2                        (n/a)     Obtaining and Learning about Perl ($Revision: 1.29 $, $Date: 2004/10/25 18:37:23 $)
+pod::perlfaq3                        (n/a)     Programming Tools ($Revision: 1.41 $, $Date: 2004/11/03 22:45:32 $)
+pod::perlfaq4                        (n/a)     Data Manipulation ($Revision: 1.56 $, $Date: 2004/11/03 22:47:56 $)
+pod::perlfaq5                        (n/a)     Files and Formats ($Revision: 1.31 $, $Date: 2004/02/07 04:29:50 $)
+pod::perlfaq6                        (n/a)     Regular Expressions ($Revision: 1.27 $, $Date: 2004/11/03 22:52:16 $)
+pod::perlfaq7                        (n/a)     General Perl Language Issues ($Revision: 1.18 $, $Date: 2004/11/03 22:54:08 $)
+pod::perlfaq8                        (n/a)     System Interaction ($Revision: 1.22 $, $Date: 2004/10/05 22:13:49 $)
+pod::perlfaq9                        (n/a)     Networking ($Revision: 1.16 $, $Date: 2004/10/30 12:20:59 $)
+pod::perlfilter                      (n/a)     Source Filters
+pod::perlfork                        (n/a)     Perl's fork() emulation
+pod::perlform                        (n/a)     Perl formats
+pod::perlfreebsd                     (n/a)     Perl version 5 on FreeBSD systems
+pod::perlfunc                        (n/a)     Perl builtin functions
+pod::perlgpl                         (n/a)     the GNU General Public License, version 2
+pod::perlguts                        (n/a)     Introduction to the Perl API
+pod::perlhack                        (n/a)     How to hack at the Perl internals
+pod::perlhist                        (n/a)     the Perl history records
+pod::perlhpux                        (n/a)     Perl version 5 on Hewlett-Packard Unix (HP-UX) systems
+pod::perlhurd                        (n/a)     Perl version 5 on Hurd
+pod::perlintern                      (n/a)     autogenerated documentation of purely B<internal> Perl functions
+pod::perlintro                       (n/a)     a brief introduction and overview of Perl
+pod::perliol                         (n/a)     C API for Perl's implementation of IO in Layers.
+pod::perlipc                         (n/a)     Perl interprocess communication (signals, fifos, pipes, safe subprocesses, sockets, and semaphores)
+pod::perlirix                        (n/a)     Perl version 5 on Irix systems
+pod::perljp                          (n/a)     ÆüËÜ¸ì Perl ¥¬¥¤¥É
+pod::perlko                          (n/a)     Perl°ú ÇÑ±¹¾î ÀÎÄÚµù
+pod::perllexwarn                     (n/a)     Perl Lexical Warnings
+pod::perllocale                      (n/a)     Perl locale handling (internationalization and localization)
+pod::perllol                         (n/a)     Manipulating Arrays of Arrays in Perl
+pod::perlmachten                     (n/a)     Perl version 5 on Power MachTen systems
+pod::perlmacos                       (n/a)     Perl under Mac OS (Classic)
+pod::perlmacosx                      (n/a)     Perl under Mac OS X
+pod::perlmint                        (n/a)     Perl version 5 on Atari MiNT
+pod::perlmod                         (n/a)     Perl modules (packages and symbol tables)
+pod::perlmodinstall                  (n/a)     Installing CPAN Modules
+pod::perlmodlib                      (n/a)     constructing new Perl modules and finding existing ones
+pod::perlmodstyle                    (n/a)     Perl module style guide
+pod::perlmpeix                       (n/a)     Perl/iX for HP e3000 MPE
+pod::perlnetware                     (n/a)     Perl for NetWare
+pod::perlnewmod                      (n/a)     preparing a new module for distribution
+pod::perlnumber                      (n/a)     semantics of numbers and numeric operations in Perl
+pod::perlobj                         (n/a)     Perl objects
+pod::perlop                          (n/a)     Perl operators and precedence
+pod::perlopentut                     (n/a)     tutorial on opening things in Perl
+pod::perlos2                         (n/a)     Perl under OS/2, DOS, Win0.3*, Win0.95 and WinNT.
+pod::perlos390                       (n/a)     building and installing Perl for OS/390 and z/OS
+pod::perlos400                       (n/a)     Perl version 5 on OS/400
+pod::perlothrtut                     (n/a)     old tutorial on threads in Perl
+pod::perlpacktut                     (n/a)     tutorial on C<pack> and C<unpack>
+pod::perlplan9                       (n/a)     Plan 9-specific documentation for Perl
+pod::perlpod                         (n/a)     the Plain Old Documentation format
+pod::perlpodspec                     (n/a)     Plain Old Documentation: format specification and notes
+pod::perlport                        (n/a)     Writing portable Perl
+pod::perlqnx                         (n/a)     Perl version 5 on QNX
+pod::perlre                          (n/a)     Perl regular expressions
+pod::perlref                         (n/a)     Perl references and nested data structures
+pod::perlreftut                      (n/a)     Mark's very short tutorial about references
+pod::perlrequick                     (n/a)     Perl regular expressions quick start
+pod::perlreref                       (n/a)     Perl Regular Expressions Reference
+pod::perlretut                       (n/a)     Perl regular expressions tutorial
+pod::perlrun                         (n/a)     how to execute the Perl interpreter
+pod::perlsec                         (n/a)     Perl security
+pod::perlsolaris                     (n/a)     Perl version 5 on Solaris systems
+pod::perlstyle                       (n/a)     Perl style guide
+pod::perlsub                         (n/a)     Perl subroutines
+pod::perlsyn                         (n/a)     Perl syntax
+pod::perlthrtut                      (n/a)     tutorial on threads in Perl
+pod::perltie                         (n/a)     how to hide an object class in a simple variable
+pod::perltoc                         (n/a)     perl documentation table of contents
+pod::perltodo                        (n/a)     Perl TO-DO List
+pod::perltooc                        (n/a)     Tom's OO Tutorial for Class Data in Perl
+pod::perltoot                        (n/a)     Tom's object-oriented tutorial for perl
+pod::perltrap                        (n/a)     Perl traps for the unwary
+pod::perltru64                       (n/a)     Perl version 5 on Tru64 (formerly known as Digital UNIX formerly known as DEC OSF/1) systems
+pod::perltw                          (n/a)     ¥¿Åé¤¤¤å Perl «ü«n
+pod::perlunicode                     (n/a)     Unicode support in Perl
+pod::perluniintro                    (n/a)     Perl Unicode introduction
+pod::perlutil                        (n/a)     utilities packaged with the Perl distribution
+pod::perluts                         (n/a)     Perl under UTS
+pod::perlvar                         (n/a)     Perl predefined variables
+pod::perlvmesa                       (n/a)     building and installing Perl for VM/ESA.
+pod::perlvms                         (n/a)     VMS-specific documentation for Perl
+pod::perlvos                         (n/a)     Perl for Stratus VOS
+pod::perlwin32                       (n/a)     Perl under Windows
+pod::perlxs                          (n/a)     XS language reference manual
+pod::perlxstut                       (n/a)     Tutorial for writing XSUBs
+re                                   (0.04)    Perl pragma to alter regular expression behaviour
+sigtrap                              (1.02)    Perl pragma to enable simple signal handling
+sort                                 (1.02)    perl pragma to control sort() behaviour
+strict                               (1.03)    Perl pragma to restrict unsafe constructs
+subs                                 (1.00)    Perl pragma to predeclare sub names
+threads                              (1.05)    Perl extension allowing use of interpreter based threads from perl
+threads::shared                      (0.92)    Perl extension for sharing data structures between threads
+utf8                                 (1.04)    Perl pragma to enable/disable UTF-8 (or UTF-EBCDIC) in source code
+vars                                 (1.01)    Perl pragma to predeclare global variable names (obsolete)
+vmsish                               (1.01)    Perl pragma to control VMS-specific language features
+warnings                             (1.03)    Perl pragma to control optional warnings
+warnings::register                   (1.00)    warnings import function

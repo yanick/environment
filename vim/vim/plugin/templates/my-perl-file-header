@@ -1,0 +1,16 @@
+#!/usr/bin/perl 
+
+use strict;
+use warnings;
+
+|CURSOR|
+
+__END__
+
+=head1 NAME
+
+|FILENAME| - blah blah blah
+
+=head1 AUTHOR
+
+|AUTHOR| (|AUTHORREF|), <|EMAIL|>

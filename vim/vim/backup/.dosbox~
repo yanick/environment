@@ -1,0 +1,2 @@
+mount c /home/yanick/.dosemu/drives/c -freesize 1024
+mount d d:\ -t cdrom usecd 0 -ioctl

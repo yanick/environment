@@ -1,0 +1,14 @@
+VCS: git
+StatusStrict: 1
+StatusAllowedList: New
+StatusAllowedList: InProgress
+StatusAllowedList: Finished
+StatusOpenList: New
+StatusOpenList: InProgress
+StatusClosedList: Finished
+LabelStrict: 1
+LabelAllowedList: Type-Enhancement
+LabelAllowedList: Type-Defect
+LabelAllowedList: Priority-High
+LabelAllowedList: Priority-Medium
+LabelAllowedList: Priority-Low

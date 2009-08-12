@@ -1,0 +1,133 @@
+
+" folding 
+set foldcolumn=3
+
+" general stuff
+
+filetype plugin on
+filetype indent on
+
+
+set autoindent
+set textwidth=78
+set backspace=indent,eol,start
+
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set shiftround
+
+set matchpairs+=<:>
+
+iab phdr #! /usr/bin/perl -w
+iab pdbg use Data::Dumper 'Dumper';<CR>warn Dumper [];^[hi
+
+set incsearch
+
+" TList
+nnoremap <silent> <F8> :Tlist<CR>
+
+
+" TagExplorer
+let TE_Ctags_Path = 'exuberant-ctags'
+nnoremap <silent> <F7> :TagExplorer<CR>
+
+" VtreeExplorer
+let treeExplVertical=1
+nnoremap <silent> <F9> :VSTreeExplore<CR>
+
+
+" backup stuff
+set backup
+set writebackup
+set   backupdir=./.backup,~/.vim/backup,.,/tmp
+set   directory=.,./.backup,/tmp
+
+function InsertTabWrapper()
+   let col = col('.') - 1
+   if !col || getline('.')[col - 1] !~ '\k'
+       return "\<tab>"
+   else
+       return "\<c-p>"
+   endif
+endfunction
+
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+" cute ai toggle
+map ,<TAB> :set ai!<CR>:set ai?<CR>
+
+" comment delimiters
+map ,~ i#<ESC>59a~<ESC>o<ESC>
+map ,# 60i#<ESC>o<ESC>
+
+
+let mapleader = ","
+
+
+"autocmd FileType perl source ~/.vim/my/perl_map.vim
+"autocmd FileType perl map ,~ i3<ESC>59a~<ESC>o<ESC>
+"autocmd FileType perl map ,3 60i3<ESC>o<ESC>
+
+" Perl stuff
+
+let g:Perl_AuthorName      = 'Yanick Champoux'     
+let g:Perl_AuthorRef       = 'YANICK'                         
+let g:Perl_Email           = 'yanick@cpan.org'            
+let g:Perl_Company         = ''    
+
+let tlist_perl_settings  = 'perl;c:constants;l:labels;p:package;s:subroutines;d:POD'
+
+" ack for grep
+set grepprg=ack\ --nocolor\ --nogroup\ '$*'\ *\ /dev/null
+nmap <C-v><C-n> :cnext<CR>
+imap <C-v><C-n> <Esc><C-v><C-n>
+nmap <C-v><C-p> :cprev<CR>
+imap <C-v><C-p> <Esc><C-v><C-p>
+
+" begone, vile HTML indentation
+autocmd BufEnter *.html setlocal indentexpr= 
+
+set complete=.,w,b,u,t " omits ',i'. This avoids full file scans.
+
+" ================= colorscheme ==============================
+" gui
+"colorscheme biogoo
+set t_Co=256
+let g:zenburn_high_Contrast = 1
+colorscheme zenburn
+hi search ctermbg=223 ctermfg=238
+hi incsearch ctermbg=216 ctermfg=242
+
+function! PerlMappings()
+    " run the code
+    noremap <buffer> <leader>r :!perl %<cr>
+ 
+    " or check that it compiles
+    noremap <buffer> <leader>r :!perl -c %<cr>
+ 
+    " or run tall of the tests for it
+    noremap <buffer> <leader>t :call TestModuleCoverage()<cr>
+endfunction
+ 
+function! PerlTestMappings()
+    noremap <buffer> <leader>r :!prove -vl %<cr>
+ 
+    " or check that it compiles
+    noremap <buffer> <leader>r :!perl -c %<cr>
+ 
+    noremap <buffer> <leader>t :!prove -vl %<CR>
+endfunction
+ 
+function! TestModuleCoverage()
+    let filename = bufname('%')
+ 
+    let tests = system('covered covering --source_file="'. filename .'"')
+ 
+    let result  = split( tests, "\n" )
+ 
+    if empty(result)
+        echomsg "No tests found for: ". filename
+    else
+        execute ':!prove  ' . join(result)
+    endif
+endfunction

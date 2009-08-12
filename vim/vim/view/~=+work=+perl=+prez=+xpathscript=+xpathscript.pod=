@@ -1,0 +1,413 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <silent> <F9> :call Perl_Debugger()
+imap <buffer> <silent> <S-F1> :call Perl_perldoc()
+imap <buffer> <silent> <S-F9> :call Perl_Arguments()
+imap <buffer> <silent> <C-F9> :call Perl_Run()
+imap <buffer> <silent> <M-F9> :call Perl_SyntaxCheck():redraw!:call Perl_SyntaxCheckMsg()
+nmap <buffer> <silent> \ry :call Perl_Perltidy("n")
+nmap <buffer> <silent> \rh :call Perl_Hardcopy("n")
+map <buffer> <silent> \ro :call Perl_Toggle_Gvim_Xterm()
+map <buffer> <silent> \rx :call Perl_XtermSize()
+map <buffer> <silent> \rk :call Perl_Settings()
+vmap <buffer> <silent> \rh :call Perl_Hardcopy("v")
+omap <buffer> <silent> \rh :call Perl_Hardcopy("n")
+map <buffer> <silent> \rt :call Perl_SaveWithTimestamp()
+map <buffer> <silent> \rc :call Perl_Perlcritic():redraw:call Perl_PerlcriticMsg()
+map <buffer> <silent> \rm :call Perl_Smallprof()
+vmap <buffer> <silent> \ry :call Perl_Perltidy("v")
+omap <buffer> <silent> \ry :call Perl_Perltidy("n")
+map <buffer> <silent> \rg :call Perl_perldoc_generate_module_list():redraw!
+map <buffer> <silent> \ri :call Perl_perldoc_show_module_list()
+map <buffer> <silent> \h :call Perl_perldoc()
+map <buffer> <silent> \rp :call Perl_perldoc()
+nmap <buffer> <silent> \re :call Perl_MakeScriptExecutable()
+map <buffer> <silent> \rd :call Perl_Debugger()
+map <buffer> <silent> \rw :call Perl_PerlSwitches()
+map <buffer> <silent> \ra :call Perl_Arguments()
+map <buffer> <silent> \rs :call Perl_SyntaxCheck():redraw!:call Perl_SyntaxCheckMsg()
+map <buffer> <silent> \rr :call Perl_Run()
+nnoremap <buffer> <silent> \px a[:xdigit:]
+nnoremap <buffer> <silent> \pw a[:word:]
+nnoremap <buffer> <silent> \pu a[:upper:]
+nnoremap <buffer> <silent> \ps a[:space:]
+nnoremap <buffer> <silent> \pn a[:punct:]
+nnoremap <buffer> <silent> \pp a[:print:]
+nnoremap <buffer> <silent> \pl a[:lower:]
+nnoremap <buffer> <silent> \pg a[:graph:]
+nnoremap <buffer> <silent> \pd a[:digit:]
+nnoremap <buffer> <silent> \pc a[:cntrl:]
+nnoremap <buffer> <silent> \pb a[:blank:]
+nnoremap <buffer> <silent> \pi a[:ascii:]
+nnoremap <buffer> <silent> \ph a[:alpha:]
+nnoremap <buffer> <silent> \pa a[:alnum:]
+vnoremap <buffer> <silent> \ipi :call Perl_OpenPipe("v")a
+nnoremap <buffer> <silent> \ipi :call Perl_OpenPipe("a")a
+vnoremap <buffer> <silent> \io :call Perl_OpenOutputFile("v")a
+nnoremap <buffer> <silent> \io :call Perl_OpenOutputFile("a")a
+vnoremap <buffer> <silent> \ii :call Perl_OpenInputFile("v")a
+nnoremap <buffer> <silent> \ii :call Perl_OpenInputFile("a")a
+vnoremap <buffer> <silent> \isu :call Perl_Subroutine("v")f(a
+nnoremap <buffer> <silent> \isu :call Perl_Subroutine("a")A
+nnoremap <buffer> <silent> \ip aprint "\n";<Left><Left><Left><Left>
+nnoremap <buffer> <silent> \it a$ =~ tr///xmF$a
+nnoremap <buffer> <silent> \is a$ =~ s///xmF$a
+nnoremap <buffer> <silent> \im a$ =~ m//xmF$a
+nnoremap <buffer> <silent> \ir omy	$rgx_	= q//;F_a
+nnoremap <buffer> <silent> \%= omy	%	= )=> ,=> ,);k0i		k0i		2k^f%a
+nnoremap <buffer> <silent> \% omy	%;i
+nnoremap <buffer> <silent> \@= omy	@	= ( , ,  );F@a
+nnoremap <buffer> <silent> \@ omy	@;i
+nnoremap <buffer> <silent> \$$ omy	( $, $ );2F$a
+nnoremap <buffer> <silent> \$= omy	$	= ;F$a
+nnoremap <buffer> <silent> \$ omy	$;i
+vnoremap <buffer> <silent> \s{ :call Perl_Block("v")
+vnoremap <buffer> <silent> \sw :call Perl_StatBlock( "v", "while (  ) {", "}" )f(la
+vnoremap <buffer> <silent> \st :call Perl_StatBlock( "v", "until (  ) {", "}" )f(la
+vnoremap <buffer> <silent> \sue :call Perl_StatBlock( "v", "unless (  ) {", "}\nelse {\n}" )f(la
+vnoremap <buffer> <silent> \su :call Perl_StatBlock( "v", "unless (  ) {", "}" )f(la
+vnoremap <buffer> <silent> \sie :call Perl_StatBlock( "v", "if (  ) {", "}\nelse {\n}" )f(la
+vnoremap <buffer> <silent> \si :call Perl_StatBlock( "v", "if (  ) {", "}" )f(la
+vnoremap <buffer> <silent> \sfe :call Perl_StatBlock( "v", "foreach my $ (  ) {", "}" )f$a
+vnoremap <buffer> <silent> \sf :call Perl_StatBlock( "v", "for ( ; ; ) {", "}" )f;i
+vnoremap <buffer> <silent> \sd :call Perl_DoWhile("v")f(la
+nnoremap <buffer> <silent> \s{ :call Perl_Block("a")o
+nnoremap <buffer> <silent> \sw :call Perl_StatBlock( "a", "while (  ) {\n}", "" )f(la
+nnoremap <buffer> <silent> \st :call Perl_StatBlock( "a", "until (  ) {\n}", "" )f(la
+nnoremap <buffer> <silent> \sue :call Perl_StatBlock( "a", "unless (  ) {\n}\nelse {\n}", "" )f(la
+nnoremap <buffer> <silent> \su :call Perl_StatBlock( "a", "unless (  ) {\n}", "" )f(la
+nnoremap <buffer> <silent> \sie :call Perl_StatBlock( "a", "if (  ) {\n}\nelse {\n}", "" )f(la
+nnoremap <buffer> <silent> \si :call Perl_StatBlock( "a", "if (  ) {\n}", "" )f(la
+nnoremap <buffer> <silent> \sfe :call Perl_StatBlock( "a", "foreach my $ (  ) {\n}", "" )f$a
+nnoremap <buffer> <silent> \sf :call Perl_StatBlock( "a", "for ( ; ; ) {\n}","" )f;i
+nnoremap <buffer> <silent> \sd :call Perl_DoWhile("a")f(la
+nnoremap <buffer> <silent> \cn :call Perl_UncommentBlock()
+vnoremap <buffer> <silent> \cb :call Perl_CommentBlock("v")
+nnoremap <buffer> <silent> \cb :call Perl_CommentBlock("a")
+nnoremap <buffer> <silent> \cv :call Perl_CommentVimModeline()
+nnoremap <buffer> <silent> \ct a=strftime("%x %X %Z")
+nnoremap <buffer> <silent> \cd a=strftime("%x")
+vnoremap <buffer> <silent> \co :'<,'>s/^#//:nohlsearchj
+nnoremap <buffer> <silent> \co :s/^#//:nohlsearchj
+vnoremap <buffer> <silent> \cc :'<,'>s/^/#/:nohlsearchj
+nnoremap <buffer> <silent> \cc :s/^/#/:nohlsearchj
+nnoremap <buffer> <silent> \ckn :call Perl_CommentClassified("")          3F:i
+nnoremap <buffer> <silent> \cko :call Perl_CommentClassified("WORKAROUND")A
+nnoremap <buffer> <silent> \ckw :call Perl_CommentClassified("WARNING")   A
+nnoremap <buffer> <silent> \ckr :call Perl_CommentClassified("TRICKY")    A
+nnoremap <buffer> <silent> \ckt :call Perl_CommentClassified("TODO")      A
+nnoremap <buffer> <silent> \ckb :call Perl_CommentClassified("BUG")       A
+nnoremap <buffer> <silent> \ca :call Perl_CommentTemplates('test')
+nnoremap <buffer> <silent> \ce :call Perl_CommentTemplates('module')
+nnoremap <buffer> <silent> \ch :call Perl_CommentTemplates('header')
+nnoremap <buffer> <silent> \cm :call Perl_CommentTemplates('method')
+nnoremap <buffer> <silent> \cfu :call Perl_CommentTemplates('function')
+nnoremap <buffer> <silent> \cfr :call Perl_CommentTemplates('frame')
+nnoremap <buffer> <silent> \cs :call Perl_GetLineEndCommCol()
+vnoremap <buffer> <silent> \cj :call Perl_AlignLineEndComm("v")
+nnoremap <buffer> <silent> \cj :call Perl_AlignLineEndComm("a")
+vnoremap <buffer> <silent> \cl :call Perl_MultiLineEndComments()A
+nnoremap <buffer> <silent> \cl :call Perl_LineEndComment("")A
+map <buffer> <silent> <F9> :call Perl_Debugger()
+map <buffer> <silent> <S-F1> :call Perl_perldoc()
+map <buffer> <silent> <S-F9> :call Perl_Arguments()
+map <buffer> <silent> <C-F9> :call Perl_Run()
+map <buffer> <silent> <M-F9> :call Perl_SyntaxCheck():redraw!:call Perl_SyntaxCheckMsg()
+inoremap <buffer> <silent> \px [:xdigit:]
+inoremap <buffer> <silent> \pw [:word:]
+inoremap <buffer> <silent> \pu [:upper:]
+inoremap <buffer> <silent> \ps [:space:]
+inoremap <buffer> <silent> \pn [:punct:]
+inoremap <buffer> <silent> \pp [:print:]
+inoremap <buffer> <silent> \pl [:lower:]
+inoremap <buffer> <silent> \pg [:graph:]
+inoremap <buffer> <silent> \pd [:digit:]
+inoremap <buffer> <silent> \pc [:cntrl:]
+inoremap <buffer> <silent> \pb [:blank:]
+inoremap <buffer> <silent> \pi [:ascii:]
+inoremap <buffer> <silent> \ph [:alpha:]
+inoremap <buffer> <silent> \pa [:alnum:]
+inoremap <buffer> <silent> \ipi :call Perl_OpenPipe("a")a
+inoremap <buffer> <silent> \io :call Perl_OpenOutputFile("a")a
+inoremap <buffer> <silent> \ii :call Perl_OpenInputFile("a")a
+inoremap <buffer> <silent> \isu :call Perl_Subroutine("a")A
+inoremap <buffer> <silent> \ip print "\n";<Left><Left><Left><Left>
+inoremap <buffer> <silent> \it $ =~ tr///xmF$a
+inoremap <buffer> <silent> \is $ =~ s///xmF$a
+inoremap <buffer> <silent> \im $ =~ m//xmF$a
+inoremap <buffer> <silent> \ir my	$rgx_	= q//;F_a
+inoremap <buffer> <silent> \%= my	%	= )=> ,=> ,);k0i		k0i		2k^f%a
+inoremap <buffer> <silent> \% my	%;i
+inoremap <buffer> <silent> \@= my	@	= ( , ,  );F@a
+inoremap <buffer> <silent> \@ my	@;i
+inoremap <buffer> <silent> \$$ my	( $, $ );2F$a
+inoremap <buffer> <silent> \$= my	$	= ;F$a
+inoremap <buffer> <silent> \$ my	$;i
+inoremap <buffer> <silent> \sw :call Perl_StatBlock( "a", "while (  ) {\n}", "" )f(la
+inoremap <buffer> <silent> \st :call Perl_StatBlock( "a", "until (  ) {\n}", "" )f(la
+inoremap <buffer> <silent> \sue :call Perl_StatBlock( "a", "unless (  ) {\n}\nelse {\n}", "" )f(la
+inoremap <buffer> <silent> \su :call Perl_StatBlock( "a", "unless (  ) {\n}", "" )f(la
+inoremap <buffer> <silent> \sie :call Perl_StatBlock( "a", "if (  ) {\n}\nelse {\n}", "" )f(la
+inoremap <buffer> <silent> \si :call Perl_StatBlock( "a", "if (  ) {\n}", "" )f(la
+inoremap <buffer> <silent> \sfe :call Perl_StatBlock( "a", "foreach my $ (  ) {\n}", "" )f$a
+inoremap <buffer> <silent> \sf :call Perl_StatBlock( "a", "for ( ; ; ) {\n}","" )f;i
+inoremap <buffer> <silent> \sd :call Perl_DoWhile("a")f(la
+inoremap <buffer> <silent> \ct =strftime("%x %X %Z")
+inoremap <buffer> <silent> \cd =strftime("%x")
+inoremap <buffer> <silent> \ckn :call Perl_CommentClassified("")          3F:i
+inoremap <buffer> <silent> \cko :call Perl_CommentClassified("WORKAROUND")A
+inoremap <buffer> <silent> \ckw :call Perl_CommentClassified("WARNING")   A
+inoremap <buffer> <silent> \ckr :call Perl_CommentClassified("TRICKY")    A
+inoremap <buffer> <silent> \ckt :call Perl_CommentClassified("TODO")      A
+inoremap <buffer> <silent> \ckb :call Perl_CommentClassified("BUG")       A
+inoremap <buffer> <silent> \ca :call Perl_CommentTemplates('test')
+inoremap <buffer> <silent> \ce :call Perl_CommentTemplates('module')
+inoremap <buffer> <silent> \ch :call Perl_CommentTemplates('header')
+inoremap <buffer> <silent> \cm :call Perl_CommentTemplates('method')
+inoremap <buffer> <silent> \cfu :call Perl_CommentTemplates('function')
+inoremap <buffer> <silent> \cfr :call Perl_CommentTemplates('frame')
+inoremap <buffer> <silent> \cj :call Perl_AlignLineEndComm("a")a
+inoremap <buffer> <silent> \cl :call Perl_LineEndComment("")A
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal noarabic
+setlocal autoindent
+setlocal autoread
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal comments=:#
+setlocal commentstring=#%s
+setlocal complete=.,w,b,u,t
+setlocal completefunc=
+setlocal nocopyindent
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=[^A-Za-z_]
+setlocal dictionary=~/.vim/perl-support/wordlists/perl.list
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'perl'
+setlocal filetype=perl
+endif
+setlocal foldcolumn=3
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=999
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcrq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=\\<\\(use\\|require\\)\\>
+setlocal includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.pm','')
+setlocal indentexpr=GetPerlIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e,0=,0),0=or,0=and
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255,:
+setlocal keymap=
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:],<:>
+setlocal nomodeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+setlocal nonumber
+setlocal numberwidth=3
+setlocal omnifunc=
+setlocal path=/usr/local/lib/perl5/5.10.0/i686-linux,/usr/local/lib/perl5/5.10.0,/usr/local/lib/perl5/site_perl/5.10.0/i686-linux,/usr/local/lib/perl5/site_perl/5.10.0,/usr/local/lib/perl5/site_perl/5.8.6,/usr/local/lib/perl5/site_perl,,
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'perl'
+setlocal syntax=perl
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=78
+setlocal thesaurus=
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+5,9fold
+11,15fold
+17,42fold
+44,48fold
+50,55fold
+57,61fold
+63,71fold
+73,89fold
+91,118fold
+120,132fold
+134,147fold
+149,165fold
+167,188fold
+190,197fold
+202,209fold
+202,212fold
+215,229fold
+231,253fold
+215,253fold
+255,279fold
+255,281fold
+282,297fold
+299,311fold
+299,313fold
+316,333fold
+316,333fold
+316,333fold
+336,356fold
+336,356fold
+358,374fold
+376,398fold
+401,421fold
+423,435fold
+438,456fold
+458,500fold
+401,500fold
+517,540fold
+542,566fold
+1,566fold
+1
+normal zo
+5
+normal zc
+11
+normal zc
+17
+normal zc
+44
+normal zc
+50
+normal zc
+57
+normal zc
+63
+normal zc
+73
+normal zc
+91
+normal zo
+120
+normal zc
+134
+normal zc
+149
+normal zc
+167
+normal zc
+190
+normal zo
+202
+normal zo
+202
+normal zo
+202
+normal zc
+215
+normal zo
+215
+normal zc
+231
+normal zc
+215
+normal zo
+255
+normal zo
+255
+normal zc
+255
+normal zo
+282
+normal zo
+299
+normal zo
+299
+normal zo
+299
+normal zc
+316
+normal zo
+316
+normal zo
+316
+normal zc
+316
+normal zo
+316
+normal zo
+336
+normal zo
+336
+normal zc
+336
+normal zo
+358
+normal zc
+376
+normal zc
+401
+normal zo
+401
+normal zc
+423
+normal zc
+438
+normal zc
+458
+normal zo
+401
+normal zo
+517
+normal zo
+542
+normal zc
+1
+normal zo
+let s:l = 486 - ((15 * winheight(0) + 18) / 37)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+486
+normal! 027l
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
