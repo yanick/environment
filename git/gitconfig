@@ -1,0 +1,19 @@
+[user]
+	email = yanick@babyl.dyndns.org
+	name = Yanick Champoux
+[core]
+	editor = vim -f
+    pager = less -FRSX
+[diff]
+#	external = 
+[alias]
+	diffc = diff --color-words
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[color]
+	interactive = auto
+	status = auto
+	diff = auto
+	ui = auto
+	pager = true
+[merge]
+    tool=gvimdiff
