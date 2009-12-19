@@ -3,4 +3,4 @@ alias rm='rm -i'
 alias top10='ps aux | sort -nk +5 | tail'
 
 # taken from http://www.modernperlbooks.com/mt/2009/10/remove-the-little-pessimizations.html
-alias realias='$EDITOR ~/.aliases; source ~/.aliases'
+alias realias='$EDITOR ~/.bash/aliases; source ~/.bash/aliases'
