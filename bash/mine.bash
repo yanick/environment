@@ -15,3 +15,13 @@ function sshdel { perl -i -ne "print unless \$. == $1" ~/.ssh/known_hosts; }
 
 source ~/.bash/git-completion.bash
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+
+###########################
+# Misc 
+###########################
+
+# create the dir and move in it
+function ccd { 
+    mkdir -p $1 && cd $1 
+}
