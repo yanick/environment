@@ -25,3 +25,13 @@ PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 function ccd { 
     mkdir -p $1 && cd $1 
 }
+
+# Perl 
+###########################
+
+# taken from http://use.perl.org/~domm/journal/40039
+sack () {
+    ack "sub $1" lib
+}
+
+complete -C pod_complete pod

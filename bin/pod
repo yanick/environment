@@ -1,0 +1,13 @@
+#!/bin/bash
+
+POD_PORT=8787
+
+# if it fails, it's because there's a copy already
+# present
+perl -MPod::POM::Web -e"Pod::POM::Web->server($POD_PORT)" 2> /dev/null &
+
+PAGE=`perl -e's#::#/#g for @ARGV; print @ARGV' $1`
+
+HOSTNAME=`hostname`
+
+kfmclient openURL "http://${HOSTNAME}:$POD_PORT/$PAGE";
