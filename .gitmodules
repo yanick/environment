@@ -1,3 +1,6 @@
 [submodule "git/willgit"]
 	path = git/willgit
 	url = git://github.com/smtlaissezfaire/willgit.git
+[submodule "perldoc-complete"]
+	path = perldoc-complete
+	url = git://github.com/yanick/perldoc-complete.git
