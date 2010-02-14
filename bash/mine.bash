@@ -34,4 +34,5 @@ sack () {
     ack "sub $1" lib
 }
 
-complete -C pod_complete pod
+complete -C perldoc_complete perldoc
+complete -C perldoc_complete pod
