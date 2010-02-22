@@ -1,0 +1,5 @@
+= Git commands I use
+
+== git ignore
+
+    git ignore <files>
