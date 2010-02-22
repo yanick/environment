@@ -1,0 +1,21 @@
+#!/usr/bin/perl
+
+use 5.010;
+
+use strict;
+use warnings;
+
+use autodie;
+use File::chdir;
+use File::Spec::Functions;
+
+my $current = $CWD;
+
+# get to the git root dir
+chdir '..' until -d '.git';
+
+$current = File::Spec->abs2rel( $current );
+
+open my $ign_fh, '>>', '.gitignore';
+
+say {$ign_fh} catfile( $current, $_ ) for @ARGV;
