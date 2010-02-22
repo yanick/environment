@@ -76,6 +76,21 @@ let g:Perl_Company         = ''
 
 let tlist_perl_settings  = 'perl;c:constants;l:labels;p:package;s:subroutines;d:POD'
 
+" taken from http://use.perl.org/~Ovid/journal/33567
+fun! TestClassRunThisMethod()
+    let save_cursor=getpos('.')
+    let SAVE_TEST_METHOD=$TEST_METHOD
+
+    call search('^sub \+\zs.*:.*Test','bcW')
+    let $TEST_METHOD = expand('<cword>')
+    exe '!printenv | sort'
+
+    let $TEST_METHOD=SAVE_TEST_METHOD
+    call setpos('.', save_cursor)
+endfun
+
+nnoremap <expr> ,tm TestClassRunThisMethod()
+
 " ack for grep
 set grepprg=ack\ --nocolor\ --nogroup\ '$*'\ *\ /dev/null
 nmap <C-v><C-n> :cnext<CR>
