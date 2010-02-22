@@ -1,0 +1,13 @@
+== General
+
+(i) <tab>  autocomplete or tab
+
+== SnipMate
+
+<c-s> trigger snippet
+<c-d> backward snippet
+<c-r><tab> show snippets
+
+== Perl
+
+,tm  run Test::Class method
