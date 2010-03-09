@@ -4,3 +4,6 @@
 [submodule "perldoc-complete"]
 	path = perldoc-complete
 	url = git://github.com/yanick/perldoc-complete.git
+[submodule "mempeek"]
+	path = mempeek
+	url = git://gist.github.com/326881.git
