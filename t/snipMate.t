@@ -20,7 +20,7 @@ sub wanted {
     return unless -f $_;
     my $file = $File::Find::name;
     $file =~ s#^.*snipMate/##;
-    compare_ok $ENV{HOME}.'/.vim/'.$file, $_;
+    compare_ok $ENV{HOME}.'/.vim/'.$file, $_, $File::Find::name;
 
 }
 
