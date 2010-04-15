@@ -29,6 +29,9 @@ function ccd {
 # Perl 
 ###########################
 
+# perlbrew
+source $HOME/perl5/perlbrew/etc/bashrc
+
 # taken from http://use.perl.org/~domm/journal/40039
 sack () {
     ack "sub $1" lib
