@@ -21,7 +21,11 @@ set matchpairs+=<:>
 iab phdr #! /usr/bin/perl -w
 iab pdbg use Data::Dumper 'Dumper';<CR>warn Dumper [];^[hi
 
-set incsearch
+
+" Searching
+set ignorecase   
+set smartcase         " don't ignore case if there's a uppercase
+set incsearch         " show me right now!
 
 " TList
 nnoremap <silent> <F8> :Tlist<CR>
