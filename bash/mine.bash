@@ -42,4 +42,4 @@ complete -C perldoc_complete pod
 
 
 # aliases
-source ~/.bashrc/aliases
+source ~/.bash/aliases
