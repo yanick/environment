@@ -19,6 +19,9 @@ file_contents_like $ENV{HOME}.'/.bashrc',
     qr#^\s*source \$HOME/\.bash/mine\.bash#m,
     q{echo 'source $HOME/.bash/mine.bash' > ~/.bashrc};
 
+compare_ok $ENV{HOME} . '/.bash/aliases', 'bash/aliases',
+    'aliases';
+
 
 done_testing();
 

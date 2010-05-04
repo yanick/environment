@@ -4,3 +4,6 @@ alias top10='ps aux | sort -nk +5 | tail'
 
 # taken from http://www.modernperlbooks.com/mt/2009/10/remove-the-little-pessimizations.html
 alias realias='$EDITOR ~/.bash/aliases; source ~/.bash/aliases'
+
+# From Hanekomu 
+alias json_pretty='perl -0007 -MJSON -nE"say to_json(from_json(\$_, {allow_nonref=>1}),{pretty=>1})"'

@@ -39,3 +39,7 @@ sack () {
 
 complete -C perldoc_complete perldoc
 complete -C perldoc_complete pod
+
+
+# aliases
+source ~/.bashrc/aliases
