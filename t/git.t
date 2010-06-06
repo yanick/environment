@@ -22,5 +22,8 @@ my $home = $ENV{HOME};
 file_contents_identical( catfile( $home, 'bin', 'git-ignore' ),
     catfile( 'bin', 'git-ignore' ), 'git-ignore' );
 
+file_contents_identical( catfile( $home, 'bin', 'git-ghclone' ),
+    catfile( 'git', 'commands', 'git-ghclone' ), 'git-ghclone' );
+
 done_testing();
 

@@ -1,0 +1,56 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Git;
+
+GetOptions( 
+    'network!' => \my $network,
+    'private!' => \my $private,
+);
+
+my $project = shift;
+
+unless ( $project =~ m#/# ) {
+    my $user = Git::command_oneline( qw/ config --global --get github.user /) or
+    die;
+    $project = join '/', $user, $project;
+    $private = 1;
+}
+
+my ( $owner, $repo ) = split '/', $project;
+
+my $url = ( $private ? 'git@github.com:' : 'git://github.com/' )  . $project .  '.git';
+
+Git::command_oneline( 'clone', $url );
+
+if ( $network ) {
+    use File::chdir;
+
+    require Net::GitHub::V2::Repositories;
+
+my $github = Net::GitHub::V2::Repositories->new(
+        owner => $owner,
+        repo => $repo,
+);
+
+    my $git = Git->repository( join '/', $CWD, $repo );
+
+    for ( grep { $_ ne $owner } map { $_->{owner} } @{ $github->network } ) {
+        $git->command_oneline( 'remote', 'add', "github/$_", public_github_url(
+        $_, $repo ) );
+    }
+}
+
+sub public_github_url {
+    my ( $owner, $repo ) = @_;
+    return 'git://github.com/' . $owner . '/' . $repo . '.git';
+}
+
+
+__END__
+git gh-clone foo   => yanick/foo
+git gh-clone bob/foo  => bob/goo
+git gh-clone --network bob/foo  # gather the whole network
