@@ -37,9 +37,10 @@ sack () {
     ack "sub $1" lib
 }
 
-complete -C perldoc_complete perldoc
-complete -C perldoc_complete pod
-
-
 # aliases
 source ~/.bash/aliases
+
+for file in ~/.bash/bits/*.bash
+do
+    source $file
+done
