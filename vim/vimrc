@@ -6,6 +6,8 @@ set foldcolumn=3
 filetype plugin on
 filetype indent on
 
+set vb
+
 
 set autoindent
 set textwidth=78
@@ -149,3 +151,5 @@ function! TestModuleCoverage()
         execute ':!prove  ' . join(result)
     endif
 endfunction
+
+au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
