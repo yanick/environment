@@ -1,0 +1,46 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Git::Wrapper;
+use List::Util qw/ first /;
+use Net::GitHub::V2::Repositories;
+
+GetOptions( 
+    'import!' => \my $import,
+    'private!' => \my $private,
+);
+
+my $git = Git::Wrapper->new('.');
+
+my @remotes = $git->remote( { verbose => 1 } );
+
+my ( $user, $project ) = map { my @a = m#[:/]([^/]+)/([^/]+)\.git# } first {  /github\.com/ } 
+    @remotes;
+
+my ($myself) = $git->config( { global => 1 }, '--get', 'github.user'  );
+
+my $github = Net::GitHub::V2::Repositories->new(
+        owner => $user,
+        repo => $project,
+);
+
+for ( @{ $github->network } ) {
+    my $owner = $_->{owner};
+    print $owner, "... ";
+    print "that's you, skipping\n" and next if $owner eq $myself;
+    print "already exists, skipping\n" and next if grep { $_ =~ m#$owner/$project# } @remotes;
+
+    $git->remote( 'add', $owner,  public_github_url( $owner, $project ) );
+    print "added\n";
+}
+
+
+sub public_github_url {
+    my ( $owner, $repo ) = @_;
+    return 'git://github.com/' . $owner . '/' . $repo . '.git';
+}
+
+__END__

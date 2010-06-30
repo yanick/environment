@@ -22,8 +22,11 @@ my $home = $ENV{HOME};
 file_contents_identical( catfile( $home, 'bin', 'git-ignore' ),
     catfile( 'bin', 'git-ignore' ), 'git-ignore' );
 
-file_contents_identical( catfile( $home, 'bin', 'git-ghclone' ),
-    catfile( 'git', 'commands', 'git-ghclone' ), 'git-ghclone' );
+for ( map { "git-$_" } qw/ ghclone ghnetwork / ) {
+file_contents_identical( catfile( $home, 'bin', $_ ),
+    catfile( 'git', 'commands', $_ ), $_,
+    ) or diag "cp git/commands/$_ ~/bin/";
+}
 
 done_testing();
 
