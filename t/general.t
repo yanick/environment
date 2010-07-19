@@ -21,7 +21,8 @@ file_contents_like $ENV{HOME}.'/.bashrc',
     q{echo 'source $HOME/.bash/mine.bash' > ~/.bashrc};
 
 compare_ok $ENV{HOME} . '/.bash/aliases', 'bash/aliases',
-    'aliases';
+    'aliases'
+        or diag "gvimdiff bash/aliases $ENV{HOME}/.bash/aliases";
 
 
 done_testing();
