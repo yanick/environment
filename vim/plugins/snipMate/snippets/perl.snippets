@@ -89,3 +89,7 @@ snippet cl
 snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+
+
+snippet stash
+	$c->stash{${1}}${2}
