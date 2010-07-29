@@ -1,11 +1,34 @@
+" some ideas stolen from http://items.sjbach.com/319/configuring-vim-right
+set history=1000
+"
+" buffer stuff
+set hidden
+
+runtime macros/matchit.vim
+
+set title
+
 " folding 
 set foldcolumn=3
 
+" scrolling and viewport
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+set scrolloff=3
+
+set ruler
+
+nnoremap ' `
+nnoremap ` '
+
 " general stuff
 
+syntax on
+filetype on
 filetype plugin on
 filetype indent on
 
+" visual bell
 set vb
 
 
@@ -28,6 +51,7 @@ iab pdbg use Data::Dumper 'Dumper';<CR>warn Dumper [];^[hi
 set ignorecase   
 set smartcase         " don't ignore case if there's a uppercase
 set incsearch         " show me right now!
+set hlsearch
 
 " TList
 nnoremap <silent> <F8> :Tlist<CR>
@@ -45,8 +69,8 @@ nnoremap <silent> <F9> :VSTreeExplore<CR>
 " backup stuff
 set backup
 set writebackup
-set   backupdir=./.backup,~/.vim/backup,.,/tmp
-set   directory=.,./.backup,/tmp
+set   backupdir=~/.vim/backup,./.backup,~/.vim/backup,.,/tmp
+set   directory=~/.vim/backup,.,./.backup,/tmp
 
 function InsertTabWrapper()
    let col = col('.') - 1
