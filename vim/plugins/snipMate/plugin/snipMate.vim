@@ -157,6 +157,10 @@ fun! TriggerSnippet()
 		call feedkeys(SuperTabKey)
 		return ''
 	endif
+
+    " yanick was here
+    return InsertTabWrapper()
+
 	return "\<tab>"
 endf
 

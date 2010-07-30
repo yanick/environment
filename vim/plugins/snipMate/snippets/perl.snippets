@@ -2,9 +2,6 @@
 snippet #!
 	#!/usr/bin/perl
 	
-# Hash Pointer
-snippet .
-	 =>
 # Function
 snippet sub
 	sub ${1:function_name} {
@@ -60,8 +57,8 @@ snippet xwh
 	${1:expression} while ${2:condition};${3}
 # For Loop
 snippet for
-	for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${4:# body...}
+	for my $${1:i} ( ${2:@array} ) { 
+		${3:# body...}
 	}
 # Foreach Loop
 snippet fore
@@ -93,3 +90,12 @@ snippet slurp
 
 snippet stash
 	$c->stash->{${1}}${2}
+
+# Catalyst stuff
+
+snippet chained
+	sub ${1:name} :Chained('${2:chain}') :PathPart('${3:path}') :${4:capture}Args(${5:0}) {
+		my ( $self, $c, ${6:@others} ) = @_;
+
+		${7:# do stuff}
+	}
