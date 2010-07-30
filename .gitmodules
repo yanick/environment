@@ -13,3 +13,6 @@
 [submodule "cpantest2rt"]
 	path = cpantest2rt
 	url = git://gist.github.com/657197.git
+[submodule "snipmate.vim"]
+	path = snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
