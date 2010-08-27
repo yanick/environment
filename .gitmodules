@@ -7,3 +7,6 @@
 [submodule "mempeek"]
 	path = mempeek
 	url = git://gist.github.com/326881.git
+[submodule "zencoding-vim"]
+	path = zencoding-vim
+	url = git://github.com/mattn/zencoding-vim.git
