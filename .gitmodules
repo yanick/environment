@@ -10,3 +10,6 @@
 [submodule "zencoding-vim"]
 	path = zencoding-vim
 	url = git://github.com/mattn/zencoding-vim.git
+[submodule "cpantest2rt"]
+	path = cpantest2rt
+	url = git://gist.github.com/657197.git
