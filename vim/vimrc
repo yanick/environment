@@ -177,3 +177,5 @@ function! TestModuleCoverage()
 endfunction
 
 au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
+
+map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
