@@ -40,6 +40,8 @@ sack () {
 # aliases
 source ~/.bash/aliases
 
+#xmodmap ~/bin/esc_swapper
+
 for file in ~/.bash/bits/*.bash
 do
     source $file
