@@ -8,7 +8,7 @@
 	path = mempeek
 	url = git://gist.github.com/326881.git
 [submodule "zencoding-vim"]
-	path = zencoding-vim
+	path = vim-plugins/zencoding-vim
 	url = git://github.com/mattn/zencoding-vim.git
 [submodule "cpantest2rt"]
 	path = cpantest2rt
