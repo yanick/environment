@@ -77,3 +77,66 @@ function! PerlAddUseStatement()
 endfunction
 
 map ,use :<C-u>call PerlAddUseStatement()<CR>
+
+let g:NumberRowRemapped = 0
+
+function! RemapNumberRow()
+    if ( g:NumberRowRemapped == 0 )
+" map each number to its shift-key character
+inoremap 1 !
+inoremap 2 @
+inoremap 3 #
+inoremap 4 $
+inoremap 5 %
+inoremap 6 ^
+inoremap 7 &
+inoremap 8 *
+inoremap 9 (
+inoremap 0 )
+" and then the opposite
+inoremap ! 1
+inoremap @ 2
+inoremap # 3
+inoremap $ 4
+inoremap % 5
+inoremap ^ 6
+inoremap & 7
+inoremap * 8
+inoremap ( 9
+inoremap ) 0
+
+let g:NumberRowRemapped = 1
+
+else
+
+inoremap 1 1
+inoremap 2 2
+inoremap 3 3
+inoremap 4 4
+inoremap 5 5
+inoremap 6 6
+inoremap 7 7
+inoremap 8 8
+inoremap 9 9
+inoremap 0 0
+" and then the opposite
+inoremap ! !
+inoremap @ @
+inoremap # #
+inoremap $ $
+inoremap % %
+inoremap ^ ^
+inoremap & &
+inoremap * *
+inoremap ( (
+inoremap ) )
+
+let g:NumberRowRemapped = 0
+
+endif
+
+endfunction
+
+call RemapNumberRow()
+
+map <Leader>1 :call RemapNumberRow()<CR>
