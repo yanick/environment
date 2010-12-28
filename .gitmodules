@@ -9,7 +9,7 @@
 	url = git://gist.github.com/326881.git
 [submodule "zencoding-vim"]
 	path = vim-plugins/zencoding-vim
-	url = git://github.com/mattn/zencoding-vim.git
+	url = git://github.com/yanick/zencoding-vim.git
 [submodule "cpantest2rt"]
 	path = cpantest2rt
 	url = git://gist.github.com/657197.git
