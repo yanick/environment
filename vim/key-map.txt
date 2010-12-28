@@ -10,4 +10,7 @@
 
 == Perl
 
-,tm  run Test::Class method
+=== command mode
+
+,tm     run Test::Class method
+,use    add 'use <module>' at top of file

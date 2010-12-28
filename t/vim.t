@@ -17,3 +17,9 @@ file_contents_identical(
     "vim/vim/after/plugin/snipMate.vim",
     '.vim/after/plugin/snipMate.vim'
 );
+
+file_contents_identical(
+    "$home/.vim/after/syntax/perl.vim",
+    'vim/vim/after/syntax/perl.vim',
+    "cp vim/vim/after/syntax/perl.vim $home/.vim/after/syntax/perl.vim"
+);
