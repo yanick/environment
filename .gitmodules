@@ -21,4 +21,4 @@
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "vim-plugins/vim-perl"]
 	path = vim-plugins/vim-perl
-	url = https://github.com/petdance/vim-perl.git
+	url = git://github.com/yanick/vim-perl.git
