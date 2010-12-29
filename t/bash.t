@@ -14,4 +14,7 @@ for my $bit ( <bits/*.bash> ) {
         or diag "cp bash/$bit $ENV{HOME}/.bash/bits";
 }
 
+file_contents_identical( $ENV{HOME}.'/.bash/aliases', 'aliases', 
+    'vimdiff bash/aliases ~/.bash' );
+
 done_testing;
