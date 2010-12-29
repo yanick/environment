@@ -178,4 +178,6 @@ endfunction
 
 au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
 
+au BufRead,BufNewFile entry* set filetype=galuga
+
 map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
