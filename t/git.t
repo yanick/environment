@@ -7,7 +7,12 @@ use Test::Files;
 use Test::File::Contents;
 use File::Spec::Functions;
 
+use lib 't/lib';
+use MyUtils;
+
 my $bindir = $ENV{HOME} . '/bin';
+
+diff_file "git/gitconfig" => "~/.gitconfig";
 
 for my $script (
     qw/ git-publish-branch
@@ -29,4 +34,3 @@ file_contents_identical( catfile( $home, 'bin', $_ ),
 }
 
 done_testing();
-
