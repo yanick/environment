@@ -7,8 +7,27 @@
 [diff]
 #	external = 
 [alias]
+# lots stolen from https://git.wiki.kernel.org/index.php/Aliases
 	diffc = diff --color-words
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    sp = safepush
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+    ci = commit
+    lc = log ORIG_HEAD.. --stat --no-merges
+    undo=reset --hard
+    diffstat = diff --stat -r
+    changes= diff --name-status -r
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+    prune-all = !git remote | xargs -n 1 git remote prune
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    amend = commit --amend
+    co = checkout
+    cob = checkout -b
+    k = !gitk
+    alias = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /'
+
 [color]
 	interactive = auto
 	status = auto
@@ -17,3 +36,5 @@
 	pager = true
 [merge]
     tool=gvimdiff
+[github]
+	user = yanick
