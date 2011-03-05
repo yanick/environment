@@ -5,7 +5,7 @@ use warnings;
 use File::HomeDir;
 use Path::Class;
 
-use Test::More tests => 1;                      # last test to print
+use Test::More tests => 2;                      # last test to print
 
 use Test::File::Contents;
 

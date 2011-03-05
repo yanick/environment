@@ -1,3 +1,6 @@
+" pathogen plugin
+call pathogen#runtime_append_all_bundles()
+
 " some ideas stolen from http://items.sjbach.com/319/configuring-vim-right
 set history=1000
 "

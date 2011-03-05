@@ -137,6 +137,6 @@ endif
 
 endfunction
 
-call RemapNumberRow()
+"call RemapNumberRow()
 
 map <Leader>1 :call RemapNumberRow()<CR>
