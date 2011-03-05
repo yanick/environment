@@ -7,7 +7,7 @@ use File::chdir;
 
 my $f = "$CWD/cpantest2rt/cpantest2rt.pl";
 
-file_contents_identical( $ENV{HOME}.'/'.'cpantest2rt.pl', $f, $f )
+file_contents_identical( $ENV{HOME}.'/bin/'.'cpantest2rt.pl', $f, $f )
             or diag "cp $f $ENV{HOME}/bin";
 
 done_testing;
