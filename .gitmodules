@@ -22,3 +22,6 @@
 [submodule "vim-plugins/vim-perl"]
 	path = vim-plugins/vim-perl
 	url = git://github.com/yanick/vim-perl.git
+[submodule "vim-plugins/vim-colors-solarized"]
+	path = vim-plugins/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
