@@ -8,7 +8,7 @@ use Test::Files qw/ compare_dirs_ok file_filter_ok /;
 
 
 compare_dirs_ok 'vim-plugins/vim-colors-solarized', $ENV{HOME}.'/.vim/bundle/solarized'
-    or diag "rm -fr $ENV{HOME}.'/.vim/bundle/solarized && cp -r vim-plugins/vim-colors-solarized ~/.vim/bundle/solarized";
+    or diag "rm -fr $ENV{HOME}/.vim/bundle/solarized && cp -r vim-plugins/vim-colors-solarized ~/.vim/bundle/solarized";
 
 my $vim_config = 'colorscheme solarized';
 
