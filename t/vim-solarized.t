@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 1;                      # last test to print
+use Test::More tests => 2;                      # last test to print
 
 use Test::Files qw/ compare_dirs_ok file_filter_ok /;
 
