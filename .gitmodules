@@ -25,3 +25,6 @@
 [submodule "vim-plugins/vim-colors-solarized"]
 	path = vim-plugins/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vim-plugins/nerd-tree"]
+	path = vim-plugins/nerd-tree
+	url = git://github.com/vim-scripts/The-NERD-tree.git

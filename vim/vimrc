@@ -64,9 +64,8 @@ nnoremap <silent> <F8> :Tlist<CR>
 let TE_Ctags_Path = 'exuberant-ctags'
 nnoremap <silent> <F7> :TagExplorer<CR>
 
-" VtreeExplorer
-let treeExplVertical=1
-nnoremap <silent> <F9> :VSTreeExplore<CR>
+" NerdTree
+nnoremap <silent> <F9> :NERDTree<CR>
 
 
 " backup stuff
