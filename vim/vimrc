@@ -137,10 +137,8 @@ set complete=.,w,b,u,t " omits ',i'. This avoids full file scans.
 
 " ================= colorscheme ==============================
 " gui
-"colorscheme biogoo
 set t_Co=256
 "let g:zenburn_high_Contrast = 1
-colorscheme khaki
 hi search ctermbg=223 ctermfg=238
 hi incsearch ctermbg=216 ctermfg=242
 
@@ -183,4 +181,5 @@ au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
 au BufRead,BufNewFile entry* set filetype=galuga
 
 map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
+let g:solarized_termcolors=256
 colorscheme solarized
