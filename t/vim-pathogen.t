@@ -13,7 +13,7 @@ my $vim_txt = 'call pathogen#runtime_append_all_bundles()';
 
 my $vimrc = file( File::HomeDir->my_home, '.vimrc' );
 
-file_contents_like $vimrc,  qr/\Q$vim_txt/, '.vimrc config' or diag "echo '$vim_txt' > $vimrc";
+file_contents_like $vimrc,  qr/\Q$vim_txt/, '.vimrc config' or diag "echo '$vim_txt' >> $vimrc";
 
 my $src  = file( qw/ vim-plugins vim-pathogen autoload pathogen.vim / );
 my $dest = file( File::HomeDir->my_home, '.vim', 'autoload', 'pathogen.vim' );
