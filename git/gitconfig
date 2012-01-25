@@ -65,3 +65,9 @@
 	user = yanick
 [push]
 	default = tracking
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 994x550+118+26
+	history-view-vpane-position = 226
+	main-window-view = HistoryView
+	file-view-vpane-position = 229
