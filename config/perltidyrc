@@ -1,0 +1,42 @@
+
+# ON-OFF style options
+
+
+# Numeric-value style options
+
+--maximum-line-length=78 
+
+# Text-value style options
+
+
+# Color options
+
+
+# List-selection style options
+
+
+# options not supported by tidyview
+
+# my options
+#
+# indent by 4
+-i=4
+# continue indentation with a leadign 2 spaces
+-ci=2
+# opening brace is on the line, even if it's a long one
+-bar
+# vertical tightness (try to squeeze in less lines)
+-vt=2
+# stacking opening tokens
+-sot
+# ... and the closing tokens
+-sct
+# horizontal tightness
+-pt=1
+-sbt=1
+-bt=1
+-bbt=0
+
+# comment indentation
+-olc
+-nolq
