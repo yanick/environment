@@ -1,0 +1,3 @@
+# parallelism ftw
+# http://www.modernperlbooks.com/mt/2012/01/speed-up-perlbrew-with-test-parallelism.html
+TEST_JOBS=9
