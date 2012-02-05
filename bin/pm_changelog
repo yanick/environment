@@ -1,0 +1,73 @@
+#!/usr/bin/env perl
+
+use 5.10.0;
+
+use strict;
+use warnings;
+
+use version;
+
+use MetaCPAN::API;
+use CPAN::Changes;
+
+use Getopt::Long;
+
+my %opt;
+GetOptions( \%opt, 'all!' );
+
+my $mcpan = MetaCPAN::API->new;
+
+my $module = shift;
+(my $distro = $module) =~ s/::/-/g;
+
+my $dist = eval { $mcpan->release( distribution => $distro ); }
+    or die "couldn't find release '$distro'";
+
+my $source;
+
+for ( qw/ Changes CHANGES Changelog / ) {
+    $source = eval {
+        $mcpan->source(
+            author => $dist->{author},
+            release => $dist->{name},
+            path => $_,
+        )
+    } and last;
+}
+$source or die "no changelog found\n";
+
+my $changes = CPAN::Changes->load_string( $source );
+
+if ( my @releases = $changes->releases ) {
+    # only print the newer stuff
+
+    # will get us 0 if the module is not locally installed
+    my $installed_version = version->parse( 
+        eval "use $module; $module->VERSION" 
+    );
+
+    if ( $installed_version >= version->parse(0) ) {
+        say "installed version: ", $installed_version;
+    }
+
+    say "latest version: ", $releases[-1]->{version};
+
+    if ( !($opt{all}) and $installed_version == version->parse( $releases[-1]->{version} ) ) {
+        say "we are on the bleeding edge!";
+        exit;
+    }
+
+    unless ( $opt{all} ) {
+        @releases = grep { 
+            my $v = eval { 
+             version->parse( $_->{version} ) > $installed_version }; 
+             defined $v ? $v : 1 
+        } @releases;
+    }
+
+    say $_->serialize for @releases;
+
+}
+else {
+    print $source;
+}
