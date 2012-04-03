@@ -2,6 +2,9 @@ alias ls='ls --color'
 alias rm='rm -i'
 alias top10='ps aux | sort -nk +5 | tail'
 
+# stolen from David Perry
+alias g=gvim
+
 # taken from http://www.modernperlbooks.com/mt/2009/10/remove-the-little-pessimizations.html
 alias realias='$EDITOR ~/.bash/aliases; source ~/.bash/aliases'
 
