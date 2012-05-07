@@ -8,7 +8,7 @@ use Test::File::Contents;
 use File::HomeDir;
 use Path::Class qw/ file /;
 
-for ( qw# perlcriticrc  perltidyrc # ) {
+for ( qw# perlcriticrc  perltidyrc ackrc # ) {
     my $local = file( home(), '.'.$_ );
     my $template = file( 'config', $_ );
     file_contents_identical $local => $template, $_
