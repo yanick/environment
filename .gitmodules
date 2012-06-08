@@ -28,3 +28,6 @@
 [submodule "vim-plugins/nerd-tree"]
 	path = vim-plugins/nerd-tree
 	url = git://github.com/vim-scripts/The-NERD-tree.git
+[submodule "vim-plugins/vim-fugitive"]
+	path = vim-plugins/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
