@@ -1,0 +1,342 @@
+#!/usr/bin/env perl 
+
+# :map ,r <ESC>:!perl parse_project.pl %:h<CR>
+
+package Node;
+
+use 5.16.0;
+
+use strict;
+use warnings;
+
+use autodie;
+
+use lib 'lib';
+
+use Moo;
+use Data::Printer;
+
+use List::AllUtils qw/ any /;
+use Data::Printer;
+use Set::Object;
+use Method::Signatures;
+use Path::Class;
+
+has project_filename => (
+    is => 'ro',
+    default => sub { 'project.vim' },
+    coerce => sub { file(shift) },
+);
+
+has project_file => (
+    is => 'ro',
+    lazy => 1,
+    default => method { [ $self->project_filename->slurp ] },
+);
+
+method get_project_line {
+    shift $self->project->project_file;
+}
+
+has root => (
+    is => 'rw',
+    coerce => sub {
+        return unless defined $_[0];
+        ref $_[0] ? $_[0] : dir($_[0]);
+    }
+);
+
+has name => (
+    is => 'rw',
+);
+
+has absolute_path => (
+    is => 'ro',
+    lazy => 1,
+    default => method {
+        $self->root ||
+        $self->parent->absolute_path->subdir($self->location)->cleanup;
+    },
+);
+
+has project => (
+    is => 'ro',
+    default => sub { shift },
+);
+
+has parent => (
+    is => 'ro',
+);
+
+has 'location' => (
+    is => 'rw',
+    default => sub { '.' },
+    coerce => sub {
+        ref $_[0] ? $_[0] : dir( $_[0] );
+    },
+);
+
+has [ qw/ subdirs files ignores / ] => (
+    is => 'ro',
+    default => sub { [] },
+);
+
+has file_hash => (
+    is => 'ro',
+    lazy => 1,
+    default => method {
+        my @dirs = ( $self );
+
+        my $hash = {};
+
+        while ( my $d = shift @dirs ) {
+            push @dirs, $d->all_subdirs;
+            $hash->{$_->stringify} = 1 for $d->all_files;
+        }
+
+        return $hash;
+    }
+);
+
+method all_subdirs { @{ $self->subdirs } }
+method all_files { @{ $self->files } }
+method all_ignores { @{ $self->ignores } }
+
+
+method read_dir {
+
+    while($_ = $self->get_project_line ) {
+        return if /^\s*}\s*$/;
+
+        if ( /^ \s* (\S+) \s+ Files=(\S+) \s+ \{/x ) {
+            $self->add_subdir(
+                name     => $1, 
+                location =>  $2,
+                project  => $self->project,
+                parent   => $self,
+            );
+            next;
+        }
+
+        s/^\s+|\s+$//g;
+
+        next unless length $_;
+
+        if ( /^ \# \s* (\S+) /x ) {
+            push $self->ignores, $1;
+            next;
+        }
+
+        push $self->files, $self->absolute_path->file($_);
+    }
+}
+
+method add_subdir(:$name, :$location, :$project, :$parent){
+    my $d = Node->new( name => $name, location => $location, project =>
+        $project, parent => $parent );
+    push $self->subdirs, $d;
+    $d->read_dir;
+}
+
+
+method read_project {
+    while($_ = $self->get_project_line ) {
+        next until /^(\S+)=(\S+).*?\{/;
+        $self->name($1);
+        $self->root($2);
+        last;
+    }
+
+    $self->read_dir;
+}
+
+has new_files => (
+    is => 'ro',
+    lazy => 1,
+    default => sub { Set::Object->new }
+);
+
+method save_project {
+    local *STDOUT;
+
+    open STDOUT, '>', \my $output;
+
+    $self->print_project;
+
+    die "something went wrong" unless $output;
+
+    $self->project->project_filename->spew($output);
+}
+
+method print_project {
+    printf "%s=%s CD=%s {\n\n",
+        $self->name, $self->root, $self->location;
+
+    $self->print_children;
+
+    say "}";
+}
+
+has indent => (
+    is => 'ro',
+    lazy => 1,
+    default => method {
+        my $i = 0;
+        $i++ while $self = $self->parent;
+        $i;
+    },
+);
+
+method print_children {
+
+    for my $file ( $self->all_files ) {
+        #my $fp = $path->file($file) =~ s#^/##r;
+        #next unless -f $fp;
+        #next if any { $path->file($file)->cleanup->stringify =~ $_ } @ignores;
+        next if $self->project->should_ignore($file);
+        say '  ' x $self->indent, $file->relative($self->absolute_path);
+    }
+
+    $_->print_dir for @{$self->subdirs};
+
+    print '  ' x $self->indent, '# ', $_, "\n" for @{$self->ignores};
+}
+
+method print_dir {
+
+    return if $self->parent and
+        $self->project->should_ignore($self->absolute_path);
+
+    printf "%s%s Files=%s {\n",
+        '  ' x ($self->indent-1),
+        $self->name, $self->location;
+
+    $self->print_children;
+
+    print '  ' x ($self->indent-1), "}\n";
+
+}
+
+method file_exists( $file ) {
+    return $self->project->file_hash->{$file->stringify};
+}
+
+method should_ignore($file){
+
+    my @dirs = ( $self );
+
+    while( my $d = shift @dirs ) {
+        next unless $d->subsumes($file);
+
+        push @dirs, $d->all_subdirs;
+
+        my $rel = $file->relative($d->absolute_path);
+        $rel .= '/' if ref $file eq 'Path::Class::Dir';
+        return 1 if any { $rel =~ /^$_$/ } $d->all_ignores;
+
+    }
+
+    return 0;
+}
+
+method subsumes($path) {
+    return $self->absolute_path->subsumes($path);
+}
+
+method add_file($file) {
+    my ($sub) = sort { length($a) <=> length($b) } grep { $_->subsumes($file) } $self->all_subdirs;
+
+    return $sub->add_file($file) if $sub;
+
+    push $self->files, $file;
+}
+
+method add_new_files {
+
+    my @files = #grep { not $self->should_ignore($_) } 
+                grep { not $self->file_exists($_) } 
+                     $self->absolute_path->traverse(sub{
+            my( $child, $cont ) = @_;
+
+            if ( ref $child eq 'Path::Class::Dir' ) {
+                return if $self->project->should_ignore($child);
+                return $cont->();
+            }
+
+            return $child;
+    });
+
+    $self->add_file($_) for @files;
+}
+
+1;
+
+package main;
+
+chdir shift if @ARGV;
+
+my $p = Node->new;
+$p->read_project;
+$p->add_new_files;
+$p->save_project;
+
+
+__END__
+
+
+my $project_dir = shift || '.';
+chdir $project_dir;
+
+my $project_file = file( 'project.vim' );
+
+my $p = read_project( $project_file );
+
+add_new_files($p);
+
+# create ignore regexes
+my @ignores = generate_ignores($p);
+
+save_project($p);
+
+#####
+
+
+
+sub generate_ignores {
+    my $dir = shift;
+    my $path = shift || dir('/');
+
+    $path = $path->subdir($dir->{dir})->cleanup;
+
+    my $re_path = quotemeta $path;
+    $re_path .= '\/' unless $re_path =~ m#\\/$#;
+
+    return map( { join '', '^', 
+        "$re_path$_" ,
+            , '$' }
+        @{ $dir->{ignores} } ),
+        map { __SUB__->($_,$path) } @{ $dir->{dirs} };
+}
+
+
+
+
+sub read_project {
+    open my $fh, '<', shift;
+
+    my $p;
+
+    while(<$fh>) {
+        next until /^(\S+)=(\S+).*?\{/;
+        $p->{name} = $1;
+        $p->{root}  = dir($2);
+        last;
+    }
+
+    $p = { %$p, read_dir($fh, $p) };
+
+    return $p;
+}
+
+
+
