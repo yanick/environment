@@ -1221,7 +1221,7 @@ function! s:Project(filename) " <<<
         nnoremap <buffer> <silent> <LocalLeader>r :call <SID>RefreshEntriesFromDir(0)<CR>
         nnoremap <buffer> <silent> <LocalLeader>R :call <SID>RefreshEntriesFromDir(1)<CR>
         " For Windows users: same as \R
-        nnoremap <buffer> <silent>           <F5> :call <SID>RefreshEntriesFromDir(1)<CR>
+        nnoremap <buffer> <silent>           <F5> 1GdG:r !gen_pvim %:h<CR>1Gdd
         nnoremap <buffer> <silent> <LocalLeader>e :call <SID>OpenEntry(line('.'), '', '', 0)<CR>
         nnoremap <buffer> <silent> <LocalLeader>E :call <SID>OpenEntry(line('.'), '', 'e', 1)<CR>
         " The :help command stomps on the Project Window.  Try to avoid that.

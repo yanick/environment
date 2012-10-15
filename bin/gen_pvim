@@ -1,4 +1,4 @@
-#!/usr/bin/env perl 
+#!/usr/bin/env perl
 
 # :map ,r <ESC>:!perl parse_project.pl %:h<CR>
 
@@ -27,6 +27,10 @@ has project_filename => (
     default => sub { 'project.vim' },
     coerce => sub { file(shift) },
 );
+
+method has_project_file {
+    return -f $self->project_filename;
+}
 
 has project_file => (
     is => 'ro',
@@ -57,6 +61,7 @@ has absolute_path => (
         $self->root ||
         $self->parent->absolute_path->subdir($self->location)->cleanup;
     },
+    handles => [ 'subsumes' ],
 );
 
 has project => (
@@ -112,8 +117,6 @@ method read_dir {
             $self->add_subdir(
                 name     => $1, 
                 location =>  $2,
-                project  => $self->project,
-                parent   => $self,
             );
             next;
         }
@@ -131,9 +134,9 @@ method read_dir {
     }
 }
 
-method add_subdir(:$name, :$location, :$project, :$parent){
-    my $d = Node->new( name => $name, location => $location, project =>
-        $project, parent => $parent );
+method add_subdir(:$name, :$location){
+    my $d = Node->new( name => $name, location => $location, parent => $self,
+    project => $self->project );
     push $self->subdirs, $d;
     $d->read_dir;
 }
@@ -190,9 +193,6 @@ has indent => (
 method print_children {
 
     for my $file ( $self->all_files ) {
-        #my $fp = $path->file($file) =~ s#^/##r;
-        #next unless -f $fp;
-        #next if any { $path->file($file)->cleanup->stringify =~ $_ } @ignores;
         next if $self->project->should_ignore($file);
         say '  ' x $self->indent, $file->relative($self->absolute_path);
     }
@@ -207,7 +207,7 @@ method print_dir {
     return if $self->parent and
         $self->project->should_ignore($self->absolute_path);
 
-    printf "%s%s Files=%s {\n",
+    printf "%s%-20s Files=%s {\n",
         '  ' x ($self->indent-1),
         $self->name, $self->location;
 
@@ -231,16 +231,11 @@ method should_ignore($file){
         push @dirs, $d->all_subdirs;
 
         my $rel = $file->relative($d->absolute_path);
-        $rel .= '/' if ref $file eq 'Path::Class::Dir';
         return 1 if any { $rel =~ /^$_$/ } $d->all_ignores;
 
     }
 
     return 0;
-}
-
-method subsumes($path) {
-    return $self->absolute_path->subsumes($path);
 }
 
 method add_file($file) {
@@ -276,67 +271,25 @@ package main;
 chdir shift if @ARGV;
 
 my $p = Node->new;
-$p->read_project;
+if ( $p->has_project_file ) {
+    $p->read_project;
+}
+else {
+    # build default skeleton
+    use Cwd;
+    my $path = getcwd();
+    $p->root($path);
+    $path =~ s#.*/##;
+    $p->name($path);
+
+    push $p->subdirs,
+        Node->new( name => 'lib/', location => 'lib', parent => $p, project => $p ),
+        Node->new( name => 't/', location => 't' , parent => $p, project => $p ),
+        Node->new( name => 'distro', location => '.' , parent => $p, project => $p );
+    push $p->ignores, qw/ \.git /;
+}
 $p->add_new_files;
-$p->save_project;
+$p->print_project;
 
 
 __END__
-
-
-my $project_dir = shift || '.';
-chdir $project_dir;
-
-my $project_file = file( 'project.vim' );
-
-my $p = read_project( $project_file );
-
-add_new_files($p);
-
-# create ignore regexes
-my @ignores = generate_ignores($p);
-
-save_project($p);
-
-#####
-
-
-
-sub generate_ignores {
-    my $dir = shift;
-    my $path = shift || dir('/');
-
-    $path = $path->subdir($dir->{dir})->cleanup;
-
-    my $re_path = quotemeta $path;
-    $re_path .= '\/' unless $re_path =~ m#\\/$#;
-
-    return map( { join '', '^', 
-        "$re_path$_" ,
-            , '$' }
-        @{ $dir->{ignores} } ),
-        map { __SUB__->($_,$path) } @{ $dir->{dirs} };
-}
-
-
-
-
-sub read_project {
-    open my $fh, '<', shift;
-
-    my $p;
-
-    while(<$fh>) {
-        next until /^(\S+)=(\S+).*?\{/;
-        $p->{name} = $1;
-        $p->{root}  = dir($2);
-        last;
-    }
-
-    $p = { %$p, read_dir($fh, $p) };
-
-    return $p;
-}
-
-
-
