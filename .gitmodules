@@ -30,4 +30,7 @@
 	url = git://github.com/vim-scripts/The-NERD-tree.git
 [submodule "vim-plugins/vim-fugitive"]
 	path = vim-plugins/vim-fugitive
-	url = git://github.com/tpope/vim-fugitive.git
+    url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim-plugins/vim-unimpaired"]
+    path = vim-plugins/vim-unimpaired
+    url  = https://github.com/tpope/vim-unimpaired
