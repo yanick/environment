@@ -15,3 +15,8 @@ alias ghist="history | grep"
 
 # Git
 alias gitka="gitk --all &"
+
+#  Three hurrahs for Michael!
+alias padoff='sudo modprobe -r psmouse'
+alias padon='sudo modprobe psmouse'
+
