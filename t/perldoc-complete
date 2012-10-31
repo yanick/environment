@@ -1,0 +1,20 @@
+use strict;
+use warnings;
+
+use Test::More; 
+
+use Test::Files;
+use Test::File::Contents;
+
+file_contents_identical $ENV{HOME} . '/bin/perldoc-complete',
+  'perldoc-complete/perldoc-complete',
+  'perldoc-complete' 
+      or diag "cp perldoc-complete/perldoc-complete $ENV{HOME}/bin";
+
+my $bit = 'bash/bits/perldoc.bash';
+open my $fh, '<', $bit;
+file_contents_like $ENV{HOME}.'/.bashrc'
+    => qr/@{[ quotemeta join '', <$fh> ]}/
+    or diag "vimdiff ~/.bashrc $bit";
+
+done_testing();
