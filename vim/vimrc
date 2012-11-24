@@ -183,3 +183,10 @@ au BufRead,BufNewFile entry* set filetype=galuga
 map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
 let g:solarized_termcolors=256
 colorscheme solarized
+
+" copy filepath (relative) in unnamed buffer
+nmap cf :let @"=expand("%")<CR>
+
+" perlprove
+au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
+
