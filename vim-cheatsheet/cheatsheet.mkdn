@@ -1,5 +1,32 @@
 # Vim Cheatsheet
 
+## Surround
+
+command | function
+:------ | :--------
+ds"     | delete quotes
+cs])    | change quotes
+ysW(    | you surround Word with (
+vlS'    | visual surround
+
+t | tag
+w | word
+W | WORD
+s | sentence
+p | paragraph
+f | function
+
+
+## CtrlP
+
+command | function
+:------ | :--------
+<ctl-p> | unleash the pawah
+<ctl-y> | create new file
+<ctl-o> | open all files
+<ctl-z> | mark for opening
+
+
 ## UltiSnips
 
 <tab>   insert snippet
