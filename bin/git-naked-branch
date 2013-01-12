@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Creates an empty branch
+# Inspired from http://madduck.net/blog/2007.07.11:creating-a-git-branch-without-ancestry/
+
+E_BADARGS=65
+
+if [ $# -ne 1 ]
+then
+	echo "Usage: `basename $0` naked-branch name"
+	exit $E_BADARGS
+fi
+
+git symbolic-ref HEAD "refs/heads/$1"
+rm .git/index
+git clean -f -d > /dev/null
