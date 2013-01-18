@@ -11,7 +11,9 @@ use File::HomeDir;
 my $home = File::HomeDir->my_home;
 
 my %files = (
-    'vim/vimrc' => "$home/.vimrc",
+    'vim/vimrc'   => "$home/.vimrc",
+    'bash/bashrc' => "$home/.bashrc",
+    'bash/bash_local' => "$home/.bash_local",
 );
 
 while( my ( $s, $d ) = each %files ) {
