@@ -4,7 +4,8 @@ use warnings;
 
 use Test::More;
 
-use Test::File::Contents; 
+use Test::File;
+use Path::Class;
 use File::HomeDir;
 
 my $home = File::HomeDir->my_home;
@@ -14,7 +15,7 @@ my %files = (
 );
 
 while( my ( $s, $d ) = each %files ) {
-    files_eq $d => $s, $s;
+    symlink_target_is $d => file($s)->absolute;
 }
 
 done_testing;
