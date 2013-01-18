@@ -1,5 +1,37 @@
+" VAM
+set runtimepath+=~/.vim/vim-addon-manager
+call vam#ActivateAddons([ 'github:ervandew/supertab'])
+call vam#ActivateAddons([ 'github:altercation/vim-colors-solarized'])
+call vam#ActivateAddons([ 'github:scrooloose/nerdtree'])
+call vam#ActivateAddons([ 'github:mattn/zencoding-vim'])
+call vam#ActivateAddons([ 'github:yanick/vim-project'])
+call vam#ActivateAddons([ 'github:tpope/vim-unimpaired'])
+call vam#ActivateAddons([ 'github:tpope/vim-fugitive'])
+call vam#ActivateAddons([ 'github:kien/ctrlp.vim'])
+call vam#ActivateAddons([ 'github:tpope/vim-surround'])
+call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
+
+let g:UltiSnipsEditSplit='vertical'
+cmap ,snip :UltiSnipsEdit<CR>
+
+" vim-perl
+call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
+
+" http://babyl.dyndns.org/techblog/entry/statement-toggler
+vmap <leader>f :! ~/bin/postfix_toggle.pl<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pathogen plugin
-call pathogen#runtime_append_all_bundles()
+" 
+call pathogen#infect()
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Solarized
+"
+let g:solarized_termcolors=256
+colorscheme solarized
+
 
 " some ideas stolen from http://items.sjbach.com/319/configuring-vim-right
 set history=1000
@@ -181,8 +213,6 @@ au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
 au BufRead,BufNewFile entry* set filetype=galuga
 
 map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
-let g:solarized_termcolors=256
-colorscheme solarized
 
 " copy filepath (relative) in unnamed buffer
 nmap cf :let @"=expand("%")<CR>
