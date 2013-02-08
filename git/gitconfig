@@ -73,3 +73,8 @@
 	history-view-vpane-position = 226
 	main-window-view = HistoryView
 	file-view-vpane-position = 229
+
+
+# https://twitter.com/franckcuny/status/299653957641441280
+[url "ssh://git@github.com/"]
+    insteadOf = "gh:"
