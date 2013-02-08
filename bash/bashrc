@@ -1,12 +1,52 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+## Aliases
+
+source ~/.bash/aliases
+
+#
+# colors!
+export TERM=xterm-color
+export ADOBE_SVG_VIEWER_PATH=/usr/lib/adobesvg
+
 source $HOME/.bash/mine.bash
+
+#  Three hurrahs for Michael!
+alias padoff='sudo modprobe -r psmouse'
+alias padon='sudo modprobe psmouse'
+
+alias pinstall="pinto install --message='proxy install' -v --pull"
+alias ppull="pinto pull -v"
+
+########################################
+# vim
+########################################
+alias pvim="gvim +'Project project.vim'"
 
 # me <3 vim
 export EDITOR=vim
 export SVN_EDITOR=$EDITOR
 export GIT_EDITOR=$EDITOR
 
-alias padoff="sudo modprobe -r psmouse"
-alias padon="sudo modprobe psmouse"
+### Catalyst aliases, stolen from the Catalyst book from MST and Kieren Diment
+alias cats='CATALYST_DEBUG=0 script/*server.pl'
+alias catsd='CATALYST_DEBUG=1 script/*server.pl'
+alias catsdd='CATALYST_DEBUG=0 perl -d script/*server.pl -d'
+alias catsddd='CATALYST_DEBUG=1 perl -d script/*server.pl'
+
+# my private scripts
+export PATH=$PATH:~/bin
+
+# parallelism ftw
+# http://www.modernperlbooks.com/mt/2012/01/speed-up-perlbrew-with-test-parallelism.html
+export TEST_JOBS=9
+
+export DBIC_TRACE_PROFILE=console
 
 # perldoc autocompletion
 complete -C perldoc-complete -o nospace -o default perldoc
@@ -15,14 +55,26 @@ complete -C perldoc-complete -o nospace -o default xpod
 
 alias pod=perldoc 
 
-##################################################
-# Perl Stuff
-#
+alias ls='ls --color'
+alias rm='rm -i'
+alias top10='ps aux | sort -nk +5 | tail'
 
-# perlbrew
-source $HOME/perl5/perlbrew/etc/bashrc
+# stolen from David Perry
+alias g=gvim
 
-export DBIC_TRACE_PROFILE=console
+# taken from http://www.modernperlbooks.com/mt/2009/10/remove-the-little-pessimizations.html
+alias realias='$EDITOR ~/.bash/aliases; source ~/.bash/aliases'
+
+# From Hanekomu 
+alias json_pretty='perl -0007 -MJSON -nE"say to_json(from_json(\$_, {allow_nonref=>1}),{pretty=>1})"'
+
+alias ghist="history | grep"
+
+# Git
+source ~/.bash/git-completion.bash
+alias gitka="gitk --all &"
+export PATH="$PATH:~/work/git-achievements"
+alias git=git-achievements
 
 # taken from http://use.perl.org/~domm/journal/40039
 sack () {
@@ -44,7 +96,10 @@ function ccd {
     mkdir -p $1 && cd $1 
 }
 
-##################################################
+for file in ~/.bash/bits/*.bash
+do
+    source $file
+done
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases

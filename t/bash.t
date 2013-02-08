@@ -17,4 +17,11 @@ for my $bit ( <bits/*.bash> ) {
 file_contents_identical( $ENV{HOME}.'/.bash/aliases', 'aliases', 'aliases' )
     or diag "vimdiff bash/aliases ~/.bash";
 
+file_contents_identical( $ENV{HOME}.'/.bashrc', 'bashrc', 'bashrc' )
+    or diag "vimdiff bash/bashrc ~/.bashrc";
+
+file_contents_identical( $ENV{HOME}.'/.bash_profile', 'bash_profile',
+    'bash_profile' )
+    or diag "vimdiff bash/bash_profile ~/.bash_profile";
+
 done_testing;
