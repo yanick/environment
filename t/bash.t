@@ -24,4 +24,8 @@ file_contents_identical( $ENV{HOME}.'/.bash_profile', 'bash_profile',
     'bash_profile' )
     or diag "vimdiff bash/bash_profile ~/.bash_profile";
 
+file_contents_identical( $ENV{HOME}.'/.bash_local', 'bash_local',
+    'bash_local' )
+    or diag "vimdiff bash/bash_local ~/.bash_local";
+
 done_testing;
