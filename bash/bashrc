@@ -96,6 +96,15 @@ function ccd {
     mkdir -p $1 && cd $1 
 }
 
+
+## App::GitGot and tricks
+complete -C got-complete -o nospace -o default got
+complete -C got-complete -o nospace -o default hack
+complete -C got-complete -o nospace -o default tweak
+alias hack='got mux'
+function tweak { devinc $1; hack $1; }
+
+
 for file in ~/.bash/bits/*.bash
 do
     source $file

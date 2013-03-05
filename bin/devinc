@@ -1,0 +1,41 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Path::Tiny;
+use YAML::Any qw/ LoadFile /;
+use List::AllUtils qw/ uniq /;
+
+my %projects;
+
+my $file = path('devlibs');
+my $got = path( $ENV{HOME}, '.gitgot' );
+
+if ( $got->exists ) {
+   %projects = map { $_->{name} => $_->{path}.'/lib' } @{ LoadFile($got) };
+}
+
+my @paths;
+
+if( $file->exists ) {
+    chomp(my @lines = $file->lines);
+    s/:.$// for @lines;
+    shift @lines;
+    pop @lines;
+    @paths = @lines;
+}
+
+push @paths, map { m#^[/.]# ? $_ : $projects{$_} || $_ } @ARGV;
+
+@paths = uniq sort @paths;
+
+my @content = (
+    "export PERL5LIB=\\",
+    map { $_.":\\" } @paths );
+push @content, ';';
+
+@content = map { "$_\n" } @content;
+
+$file->spew( @content );
+
