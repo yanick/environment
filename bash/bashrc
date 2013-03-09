@@ -101,6 +101,7 @@ function ccd {
 complete -C got-complete -o nospace -o default got
 complete -C got-complete -o nospace -o default hack
 complete -C got-complete -o nospace -o default tweak
+complete -C got-complete -o nospace -o default devinc
 alias hack='got mux'
 function tweak { devinc $1; hack $1; }
 
