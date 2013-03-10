@@ -57,6 +57,9 @@
     # genehack++
     origin=config remote.origin.url
 
+    # I think I have to thank mjd for that one
+    retcon=rebase -i
+
 
 [color]
 	interactive = auto
