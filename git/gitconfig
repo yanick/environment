@@ -54,6 +54,9 @@
 
     upstream = branch --set-upstream
 
+    # genehack++
+    origin=config remote.origin.url
+
 
 [color]
 	interactive = auto
