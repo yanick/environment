@@ -43,6 +43,9 @@ runtime macros/matchit.vim
 
 set title
 
+" show line numbers
+set number
+
 " folding 
 set foldcolumn=3
 
