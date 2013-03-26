@@ -60,6 +60,8 @@
     # I think I have to thank mjd for that one
     retcon=rebase -i
 
+    screwthis = reset --hard
+    s = status
 
 [color]
 	interactive = auto
