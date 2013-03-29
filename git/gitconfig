@@ -62,6 +62,8 @@
 
     screwthis = reset --hard
     s = status
+    up=push -u
+
 
 [color]
 	interactive = auto
