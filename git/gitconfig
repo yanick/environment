@@ -65,6 +65,9 @@
     up=push -u
 
 
+    prs = "!sh -c 'git config --add remote.${1}.fetch +refs/pull/*/head:refs/remotes/$1/pr/*' -"
+
+
 [color]
 	interactive = auto
 	status = auto
