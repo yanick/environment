@@ -67,6 +67,11 @@
 
     prs = "!sh -c 'git config --add remote.${1}.fetch +refs/pull/*/head:refs/remotes/$1/pr/*' -"
 
+    credit = commit --allow-empty --author 
+
+    # for merging to the master branches
+    weld= commit --no-ff
+
 
 [color]
 	interactive = auto
