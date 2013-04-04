@@ -105,6 +105,11 @@ complete -C got-complete -o nospace -o default devinc
 alias hack='got mux'
 function tweak { devinc $1; hack $1; }
 
+## KDE stuff
+
+alias seeya="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
+alias goodnight="qdbus org.kde.ksmserver /KSMServer logout 0 2 2"
+
 
 for file in ~/.bash/bits/*.bash
 do
