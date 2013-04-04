@@ -62,7 +62,7 @@
 
     screwthis = reset --hard
     s = status
-    up=push -u
+    up="!bash -c 'git push -u $1 `git rev-parse --abbrev-ref HEAD`' -"
 
 
     prs = "!sh -c 'git config --add remote.${1}.fetch +refs/pull/*/head:refs/remotes/$1/pr/*' -"
