@@ -34,3 +34,6 @@
 [submodule "vim-plugins/vim-unimpaired"]
     path = vim-plugins/vim-unimpaired
     url  = https://github.com/tpope/vim-unimpaired
+[submodule "konsole-colors-solarized"]
+	path = konsole-colors-solarized
+	url = git://github.com/phiggins/konsole-colors-solarized.git
