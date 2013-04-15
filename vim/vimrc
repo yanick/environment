@@ -10,27 +10,11 @@ call vam#ActivateAddons([ 'github:tpope/vim-fugitive'])
 call vam#ActivateAddons([ 'github:kien/ctrlp.vim'])
 call vam#ActivateAddons([ 'github:tpope/vim-surround'])
 call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
+call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
 
 let g:UltiSnipsEditSplit='vertical'
 cmap ,snip :UltiSnipsEdit<CR>
 
-" vim-perl
-call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
-
-" http://babyl.dyndns.org/techblog/entry/statement-toggler
-vmap <leader>f :! ~/bin/postfix_toggle.pl<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" pathogen plugin
-" 
-call pathogen#infect()
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Solarized
-"
-let g:solarized_termcolors=256
-colorscheme solarized
 
 
 " some ideas stolen from http://items.sjbach.com/319/configuring-vim-right
@@ -118,7 +102,7 @@ function InsertTabWrapper()
    endif
 endfunction
 
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 " cute ai toggle
 map ,<TAB> :set ai!<CR>:set ai?<CR>
 

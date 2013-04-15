@@ -1,0 +1,48 @@
+au BufNewFile,BufRead *.pl,*.pm  call s:detectTypeOfPerl()
+fun! s:detectTypeOfPerl()
+perl <<EOF
+    for ( 0..$curbuf->Count ) {
+        if ( $curbuf->Get($_) =~ /use Dancer/ ) {
+           VIM::DoCommand(':UltiSnipsAddFiletypes dancer');
+           return;
+        }
+        if ( $curbuf->Get($_) =~ /use Moose/ ) {
+           VIM::DoCommand(':UltiSnipsAddFiletypes moose');
+           return;
+        }
+    }
+EOF
+endfun
+
+fun! SnippefyModule()
+perl <<EOF
+    use Module::Locate qw/ locate /;
+    use Path::Class;
+
+    my $module = "DBIx::NoSQL::Store::Manager";
+    # DBIxNoSQLStoreManager
+    ( my $modname = $module ) =~ s/:://g;
+
+    for ( file( locate( $module ) )->slurp ) {
+        next unless /^\s*method\s+(\w+)\s*\(?([^)]+)/;
+        my $method = $1;
+        my @args = split /\s*,\s*/, $2;
+
+        my $snippet = $method;
+        my $i;
+        if ( @args ) {
+            $i++;
+            $snippet .= '( ';
+            for my $arg ( @args ) { 
+                $i++;
+                $snippet .= "\${$i:$arg}, ";
+            }
+            $snippet .= ' )';
+
+        }
+        VIM::Msg(":call UltiSnips_AddSnippet( '$method',  ,'$snippet','!','$modname')");
+        VIM::DoCommand(":call UltiSnips_AddSnippet( '$method',  ,'$snippet','!','$modname')");
+    }
+
+EOF
+endfun
