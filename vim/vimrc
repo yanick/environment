@@ -173,7 +173,9 @@ set complete=.,w,b,u,t " omits ',i'. This avoids full file scans.
 " ================= colorscheme ==============================
 " gui
 set t_Co=256
-"let g:zenburn_high_Contrast = 1
+let g:solarized_termcolors=256
+colorscheme solarized
+
 hi search ctermbg=223 ctermfg=238
 hi incsearch ctermbg=216 ctermfg=242
 
@@ -223,6 +225,25 @@ nmap cf :let @"=expand("%")<CR>
 " perlprove
 au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
 
+" http://babyl.dyndns.org/techblog/entry/statement-toggler
+vmap <leader>f :! ~/bin/postfix_toggle.pl<CR>
+
+" package name
+vmap <leader>pn ! ~/bin/path2packagename.pl %<CR>
+
+" from http://www.slideshare.net/c9s/perlhacksonvim (Cornelius++)
+nmap <C-x><C-i> :call InstallCPANModule()<CR>
+function! InstallCPANModule()
+    let l = getline('.')
+    let cw = substitute( expand('<cWORD>'), ";$", "", "g" )
+    let cw = substitute( cw, "['\"]", "", "g" )
+    echo "installing module " . cw . "\n"
+    exec "!cpanm " . cw
+    echo "done\n"
+endfunction
+
+map <F12> :!ptags<CR>
+
 " allow creation of directories on-the-fly
 function s:MkNonExDir(file, buf)
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
@@ -237,3 +258,4 @@ augroup BWCCreateDir
     autocmd!
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
+
