@@ -123,3 +123,13 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+alias wp="perlbrew list"
+up () {
+    local perl=$1
+    if [ $perl ]; then
+        perlbrew use $perl@std
+    fi
+    local current=$(perlbrew list | grep \* | sed -e 's/\* //')
+    echo "Current perl is $current"
+}

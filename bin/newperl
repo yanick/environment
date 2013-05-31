@@ -1,0 +1,50 @@
+#!/usr/bin/env perl
+
+# http://www.dagolden.com/index.php/2134/how-i-manage-new-perls-with-perlbrew/
+
+use v5.10;
+use strict;
+use warnings;
+use autodie qw/:all/;
+ 
+my $as = shift
+  or die "Usage: $0 <perl-version>";
+my @args = @ARGV;
+ 
+# trailing "t" means do threads
+my @threads = ( $as =~ /t$/ ) ? (qw/-D usethreads/) : ();
+ 
+$as =~ s/^5\.//;
+my $perl = "5.$as";
+$perl =~ s/t$//; # strip trailing "t" if any
+my $lib = $as . '@std';
+ 
+my @problem_modules = qw(
+  JSON::XS
+);
+ 
+my @to_install = qw(
+  Task::BeLike::YANICK
+);
+ 
+my @no_man = qw/-D man1dir=none -D man3dir=none/;
+ 
+# install perl and lock it down
+system( qw/perlbrew install -j 9 --as/, $as, $perl, @threads, @no_man, @args );
+system( qw/chmod -R a-w/, "$ENV{HOME}/perl5/perlbrew/perls/$as" );
+ 
+# give us a local::lib for installing things
+system( qw/perlbrew lib create/, $lib );
+ 
+# let's avoid any pod tests when we try to install stuff
+system( qw/perlbrew exec --with/, $lib, qw/cpanm TAP::Harness::Restricted/ );
+local $ENV{HARNESS_SUBCLASS} = "TAP::Harness::Restricted";
+ 
+# some things need forcing
+system( qw/perlbrew exec --with/, $lib, qw/cpanm -f/, @problem_modules );
+ 
+# now install the rest
+system( qw/perlbrew exec --with/, $lib, qw/cpanm/, @to_install );
+ 
+# repeat to catch any circularity problems
+system( qw/perlbrew exec --with/, $lib, qw/cpanm/, @to_install );

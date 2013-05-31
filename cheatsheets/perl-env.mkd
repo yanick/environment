@@ -1,0 +1,13 @@
+# Perl Environment
+
+## Perlbrew stuff
+
+    $ wp
+
+Alias for 'perlbrew --list'
+
+    $ up 18.0
+
+Alias for `perlbrew use $perl@std` plus some goodies
+
+* `wp` - 
