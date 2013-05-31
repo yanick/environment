@@ -21,119 +21,44 @@ f | function
 
 command | function
 :------ | :--------
-<ctl-p> | unleash the pawah
-<ctl-y> | create new file
-<ctl-o> | open all files
-<ctl-z> | mark for opening
+&lt;ctl-p&gt; | unleash the pawah
+&lt;ctl-y&gt; | create new file
+&lt;ctl-o&gt; | open all files
+&lt;ctl-z&gt; | mark for opening
 
 
 ## UltiSnips
 
-<tab>   insert snippet
-<c-j>   next field
-<c-j>   previous field
-<c-tab> list of snippets
+command | function
+:------ | :--------
+&lt;tab&gt; |  insert snippet
+&lt;c-j&gt; |  next field
+&lt;c-j&gt; |  previous field
+&lt;c-tab&gt; | list of snippets
 
 :UltiSnipsAddFiletypes dancer.perl
     
 ,snip open snippet window
 
-## Unimpaired
-
-### Next and Previous
-
-command | function
-:------ | :--------
-[a  |  :previous
-]a  |  :next 
-[A  |  :first 
-]A  |  :last 
-
-[b  |  :bprevious 
-]b  |  :bnext 
-
-[B  | :bfirst 
-]B  | :blast 
-
-[l  | :lprevious 
-]l  | :lnext 
-[L  | :lfirst 
-]L  | :llast 
-
-[q   | :cprevious 
-]q   | :cnext 
-[Q   | :cfirst 
-]Q   | :clast 
-
-[t   | :tprevious 
-]t   | :tnext 
-[T   | :tfirst 
-]T   | :tlast 
-
-[o   | Go to the file preceding the current one alphabetically in the current file's directory.
-]o  |                   Go to the file succeeding the current one alphabetically in the current file's directory.
-
-[n  |                    Go to the previous SCM conflict marker.  Try d[n inside a conflict.
-]n  |                    Go to the next SCM conflict marker.  Try d]n inside a conflict.
-
-### Line operations
-
-command | function
-:------ | :-------
-[&lt;Space>, ]&lt;Space>  |            Add [count] blank lines above/below the cursor.
-[e , ]e        |            Exchange the current line with [count] lines above/below it.
-
-### Encoding
-
-command | function
-:------ | :-------
-[x{motion} |     XML encode.
-[xx        |     
-{Visual}[x |
-
-]x{motion}   |    XML decode.  HTML entities are handled as well.
-]xx          |
-{Visual}]x   |
-
-[u{motion}   |           URL encode.
-[uu          |           foo bar => foo%20bar
-{Visual}[u   |
-
-]u{motion}   |           URL decode.
-]uu          |
-{Visual}]u   |
-
-[y{motion}  |            C String encode.  Backslash escape control
-[yy         |           characters, quotation marks, and backslashes.
-{Visual}[y  |
-
-]y{motion}  |            C String decode.
-]yy         |
-{Visual}]y  |
-
-[Y{motion}  |          Base64 encode.
-[YY         |          foo bar => Zm9vIGJhcg==
-{Visual}[Y  |
-]Y{motion}  |          Base64 decode
-]YY         |         Input length must be a multiple of 4.
-{Visual}]Y  |
 
 ## ZenCoding
 
-<C-Y>,         |  Expand abbreviation
-{Visual}<C-Y>, | 
+command | function
+:------ | :-------
+&lt;C-Y>,         |  Expand abbreviation
+{Visual}&lt;C-Y>, | 
 
-<C-Y>d | balance tag inward
-<C-Y>D | balance tag outward
-<C-Y>n  | go to next edit point
-<C-Y>N  | go to previous edit point
-<C-Y> | update image size
-<C-Y>k | remove tag
-<C-Y>j | join/split tag
-<C-Y>/ | toggle comment
-<C-Y>a | make anchor from url
-<C-Y>A | make quoted text from url
-<C-Y>c | code pretty
+&lt;C-Y>d | balance tag inward
+&lt;C-Y>D | balance tag outward
+&lt;C-Y>n  | go to next edit point
+&lt;C-Y>N  | go to previous edit point
+&lt;C-Y> | update image size
+&lt;C-Y>k | remove tag
+&lt;C-Y>j | join/split tag
+&lt;C-Y>/ | toggle comment
+&lt;C-Y>a | make anchor from url
+&lt;C-Y>A | make quoted text from url
+&lt;C-Y>c | code pretty
 
 
 div>p#foo$*3>a
@@ -163,4 +88,4 @@ ul>li*
 
 command | function
 :------ | :-------
-<leader> f | flip statements
+&lt;leader&gt; f | flip statements

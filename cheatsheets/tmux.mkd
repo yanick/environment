@@ -1,6 +1,5 @@
 # tmux shortcuts & cheatsheet
 
-stolen from https://gist.github.com/MohamedAlaa/2961058
 
 ## Commands
 
@@ -32,25 +31,27 @@ In tmux, hit the prefix `ctrl+b` (my modified prefix is alt+a) and then:
 
 ## Sessions
 
-command  | definition
-:------  | :---------
-:new&lt;CR&gt; |  new session
-s        | list sessions
-$        | name session
+command    | definition
+:------    | :---------
+`:new<CR>` |  new session
+`s`        | list sessions
+`$`        | name session
 
 ## Windows (tabs)
 
-    c  new window
-    w  list windows
-    f  find window
-    ,  name window
-    &  kill window
+command    | definition
+:------    | :---------
+`c`        | new window
+`w`        | list windows
+`f`        | find window
+`,`        | name window
+`&`        | kill window
 
 ## Panes (splits)
 
-    %  horizontal split
-    "  vertical split
-    
+    -  horizontal split *
+    |  vertical split *
+
     o  swap panes
     q  show pane numbers
     x  kill pane
@@ -152,6 +153,7 @@ For example, we can use "w" to jump to the next word and "b" to jump back one wo
 
 ## Resources:
 
+* [original gist from Mohamed Alaa](https://gist.github.com/MohamedAlaa/2961058)
 * [tmux: Productive Mouse-Free Development](http://pragprog.com/book/bhtmux/tmux)
 * [How to reorder windows](http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows)
 * [cheat sheet](http://cheat.errtheblog.com/s/tmux/)
