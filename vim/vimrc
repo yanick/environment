@@ -284,5 +284,9 @@ command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
 " http://learnvimscriptthehardway.stevelosh.com/chapters/07.html
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+iabbrev @@ yanick@babyl.ca
+iabbrev @cpan yanick@cpan.org
+
 " delete file
 map <leader>rm <ESC>:!rm %<CR><ESC>:bd<CR>
