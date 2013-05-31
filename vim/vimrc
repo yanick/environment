@@ -280,5 +280,9 @@ function! s:ExecuteInShell(command)
   echo 'Shell command ' . command . ' executed.'
 endfunction
 command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
+
+" http://learnvimscriptthehardway.stevelosh.com/chapters/07.html
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 " delete file
 map <leader>rm <ESC>:!rm %<CR><ESC>:bd<CR>
