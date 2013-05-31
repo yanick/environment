@@ -1,0 +1,15 @@
+#!/usr/bin/env perl
+
+use 5.10.0;
+
+use Path::Tiny;
+
+for( path('.git/config')->lines ) {
+    next unless m#url = git\@github.com:(.*)\.git#;
+
+    my $url = "https://github.com/".$1;
+
+    say $url || 'no github remote found';
+
+    exec 'firefox' => $url;
+}
