@@ -72,6 +72,8 @@
     # for merging to the master branches
     weld= commit --no-ff
 
+    wip = commit -m wip
+
 
 [color]
 	interactive = auto
