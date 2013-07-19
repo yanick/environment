@@ -1,0 +1,1 @@
+[[ -f ~/environment/xresources/solarized/solarized ]] && xrdb -merge ~/environment/xresources/solarized/solarized

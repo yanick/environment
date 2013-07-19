@@ -37,3 +37,6 @@
 [submodule "konsole-colors-solarized"]
 	path = konsole-colors-solarized
 	url = git://github.com/phiggins/konsole-colors-solarized.git
+[submodule "solarized/xresources"]
+	path = xresources/solarized
+	url = https://github.com/solarized/xresources
