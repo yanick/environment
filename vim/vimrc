@@ -11,9 +11,13 @@ call vam#ActivateAddons([ 'github:kien/ctrlp.vim'])
 call vam#ActivateAddons([ 'github:tpope/vim-surround'])
 call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
 call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
+call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
 
 let g:UltiSnipsEditSplit='vertical'
 cmap ,snip :UltiSnipsEdit<CR>
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }]
 
 
 
