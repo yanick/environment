@@ -40,3 +40,6 @@
 [submodule "solarized/xresources"]
 	path = xresources/solarized
 	url = https://github.com/solarized/xresources
+[submodule "tmux/solarized"]
+	path = tmux/solarized
+	url = https://github.com/seebi/tmux-colors-solarized
