@@ -124,6 +124,8 @@ if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
+alias gimme="sudo apt-get install"
+
 alias wp="perlbrew list"
 up () {
     local perl=$1
