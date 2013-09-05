@@ -11,7 +11,7 @@ source ~/.bash/aliases
 
 #
 # colors!
-export TERM=xterm-256color
+export TERM=screen-256color
 export ADOBE_SVG_VIEWER_PATH=/usr/lib/adobesvg
 
 source $HOME/.bash/mine.bash
