@@ -1,4 +1,4 @@
-function cdr
+function cdr --description 'cd to the repo root'
 	
 set -l repo_dir ( perl -MPath::Tiny \
     -E'$x = path(".")->absolute; while(1){ exit say $x if $x->child(".git")->is_dir; exit if $x eq "/"; $x = $x->parent }' )
