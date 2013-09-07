@@ -12,12 +12,16 @@ call vam#ActivateAddons([ 'github:tpope/vim-surround'])
 call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
 call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
 call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
+ 
+call vam#ActivateAddons([ 'github:vim-scripts/hexman.vim'])
+
+" vimwiki
+"let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',  'nested_syntaxes': { 'perl': 'perl' } }]
+let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }]
+let g:vimwiki_menu = 'Vimwiki'
 
 let g:UltiSnipsEditSplit='vertical'
 cmap ,snip :UltiSnipsEdit<CR>
-
-" vimwiki
-let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }]
 
 
 
@@ -217,7 +221,7 @@ au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
 vmap <leader>f :! ~/bin/postfix_toggle.pl<CR>
 
 " package name
-vmap <leader>pn ! ~/bin/path2packagename.pl %<CR>
+map <leader>pack ! ~/bin/path2packagename.pl %<CR>j
 
 " from http://www.slideshare.net/c9s/perlhacksonvim (Cornelius++)
 nmap <C-x><C-i> :call InstallCPANModule()<CR>
@@ -290,7 +294,54 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 iabbrev @@ yanick@babyl.ca
-iabbrev @cpan yanick@cpan.org
+iabbrev cpan@ yanick@cpan.org
 
 " delete file
 map <leader>rm <ESC>:!rm %<CR><ESC>:bd<CR>
+
+nnoremap <C-H> :Hexmode<CR>
+inoremap <C-H> <Esc>:Hexmode<CR>
+vnoremap <C-H> :<C-U>Hexmode<CR>
+
+" ex command for toggling hex mode - define mapping if desired
+command -bar Hexmode call ToggleHex()
+
+" helper function to toggle hex mode
+function ToggleHex()
+  " hex mode should be considered a read-only operation
+  " save values for modified and read-only for restoration later,
+  " and clear the read-only flag for now
+  let l:modified=&mod
+  let l:oldreadonly=&readonly
+  let &readonly=0
+  let l:oldmodifiable=&modifiable
+  let &modifiable=1
+  if !exists("b:editHex") || !b:editHex
+    " save old options
+    let b:oldft=&ft
+    let b:oldbin=&bin
+    " set new options
+    setlocal binary " make sure it overrides any textwidth, etc.
+    let &ft="xxd"
+    " set status
+    let b:editHex=1
+    " switch to hex editor
+    %!xxd
+  else
+    " restore old options
+    let &ft=b:oldft
+    if !b:oldbin
+      setlocal nobinary
+    endif
+    " set status
+    let b:editHex=0
+    " return to normal editing
+    %!xxd -r
+  endif
+  " restore values for modified and read only state
+  let &mod=l:modified
+  let &readonly=l:oldreadonly
+  let &modifiable=l:oldmodifiable
+endfunction
+
+set mouse=a

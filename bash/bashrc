@@ -135,6 +135,9 @@ up () {
     local current=$(perlbrew list | grep \* | sed -e 's/\* //')
     echo "Current perl is $current"
 }
+
+alias perll="perl -Ilib"
+
 aa_256 () {
     ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;
 
