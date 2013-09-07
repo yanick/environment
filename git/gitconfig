@@ -74,6 +74,8 @@
 
     wip = commit -m wip
 
+    cm = commit -m 
+
 
 [color]
 	interactive = auto
