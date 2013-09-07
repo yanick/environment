@@ -148,3 +148,4 @@ aa_256 () {
     done )
 }
 
+alias minecraft="java -jar ~/games/minecraft/Minecraft.jar"
