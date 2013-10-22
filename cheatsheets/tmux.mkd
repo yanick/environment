@@ -3,31 +3,90 @@
 
 ## Commands
 
-* start new
+### Starting 
 
-    tmux
+    $ tmux
+    
+    $ tmux new -s <session_name>
+    
+    name the window:
+    
+    $ tmux new -s <name> -n <name>
+    
+start in the background
 
-* start new with session name
+    $ tmux new -s foo -d 
+    
+Attach
 
-    tmux new -s myname
+    $ tmux attach -t <session_name>
+    or
+    $ tmux a -t <session_name>
+    
+Detach
 
-* attach
-
-    tmux a  #  (or at, or attach)
-
-* attach to named
-
-    tmux a -t myname
+    PREFIX d
 
 * list sessions
 
     tmux ls
+    tmux list-sessions
 
 * kill session
 
     tmux kill-session -t myname
+    
+Or `exit` within the session
 
 In tmux, hit the prefix `ctrl+b` (my modified prefix is alt+a) and then:
+
+## Misc 
+
+command | meaning
+:--- | :---
+PREFIX & | close window
+PREFIX : | command mode
+PREFIX d | detach
+PREFIX , | rename window
+
+
+    : new-window -n <name> "<command>"
+
+## Moving
+
+command | meaning
+:--- | :---
+PREFIX n | next window
+PREFIX p | previous window
+PREFIX 3 | window #3 
+PREFIX f | window by name
+PREFIX w | window list
+
+PREFIX h j k l | navigate through the panes
+
+PREFIX H J K L | resize the pane
+
+## Panes
+
+command | desc
+:-- | :--
+PREFIX \| | split vertically *
+PREFIX - | split horizontally *
+
+PREFIX o | cycle through panes
+PREFIX SPACEBAR | cycle through layouts
+PREFIX q | show pane numbers
+PREFIX x | close current pane
+
+### layouts
+
+* even-horizontal
+* even-vertical
+* main-horizontal
+* main-vertical
+* tiled
+ 
+
 
 ## Sessions
 
@@ -121,6 +180,22 @@ For example, we can use "w" to jump to the next word and "b" to jump back one wo
        Start selection         Space          C-Space
        Transpose chars                        C-t
 
+## Copy and Paste
+
+ $ tmux capture-pane
+ 
+ $ tmux show-buffer
+ $ tmux list-buffers
+ $ tmux choose-buffer
+ 
+ $ tmux save-buffer file.txt
+ 
+ (custom) PREFIX P - copy pane to paneshot.txt
+ 
+ PREFIX = | show all buffers
+ 
+ 
+
 ## Misc
 
     d  detach
@@ -150,6 +225,13 @@ For example, we can use "w" to jump to the next word and "b" to jump back one wo
     unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t tmp
     unbind Down
     bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
+    
+## My Commands
+
+command | desc
+:-- | :--
+PREFIX r | source the config file 
+PREFIX C-s | synchronize panes
 
 ## Resources:
 
