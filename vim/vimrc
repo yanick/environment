@@ -353,3 +353,17 @@ function ToggleHex()
 endfunction
 
 set mouse=a
+
+
+""""""""""""""
+" tmux fixes "
+""""""""""""""
+" thank you,
+" http://stackoverflow.com/questions/8604150/with-term-screen-256color-under-tmux-home-and-end-keys-dont-work-why
+" Handle tmux $TERM quirks in vim
+if $TERM =~ '^screen-256color'
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
+endif
