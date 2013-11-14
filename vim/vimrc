@@ -15,6 +15,14 @@ call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
  
 call vam#ActivateAddons([ 'github:vim-scripts/hexman.vim'])
 
+""" vim-tmux-navigator """""""""""""""""""""""""""""""""""""""""""""""""
+"
+
+call vam#ActivateAddons([ 'github:christoomey/vim-tmux-navigator'])
+
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " vimwiki
 "let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',  'nested_syntaxes': { 'perl': 'perl' } }]
 let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }]
