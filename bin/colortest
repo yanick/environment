@@ -1,4 +1,4 @@
-#!/usr/bin/env perl -s
+#!/usr/bin/perl -s
 
 # from http://www.vim.org/scripts/download_script.php?src_id=4568
 # by entheon, do whatever the hell you want with this file
