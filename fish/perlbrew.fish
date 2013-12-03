@@ -106,7 +106,7 @@ function perlbrew;
 end
 
 function __source_init
-    eval (perl -pe's/^export/set -x/; s/=/ /; s/$/;/;' "$PERLBREW_HOME/init")
+    perl -pe's/^export/set -x/;s/unset/set -eu/; s/=/ /; s/$/;/;' "$PERLBREW_HOME/init" | . -
 end
 
 if test -z "$PERLBREW_ROOT"
