@@ -12,6 +12,7 @@ call vam#ActivateAddons([ 'github:tpope/vim-surround'])
 call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
 call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
 call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
+call vam#ActivateAddons([ 'github:scrooloose/syntastic'])
  
 call vam#ActivateAddons([ 'github:vim-scripts/hexman.vim'])
 
