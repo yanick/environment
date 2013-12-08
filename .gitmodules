@@ -43,3 +43,6 @@
 [submodule "perldoc-complete"]
 	path = perldoc-complete
 	url = gh:ap/perldoc-complete
+[submodule "oh-my-fish"]
+	path = oh-my-fish
+	url = git://github.com/bpinto/oh-my-fish.git
