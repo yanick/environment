@@ -1,0 +1,25 @@
+# mostly stolen from
+# http://blogs.perl.org/users/ovid/2013/10/how-to-use-the-debugger-with-moose.html
+
+my $skip;
+BEGIN { $skip = '^(?:Moose|Eval::Closure|Class::MOP)' }
+
+print STDERR <<"END";
+
+Debugger skipping: /$skip/
+
+See ~/.perldb if you don't like this behavior.
+
+END
+
+use DB::Skip pkgs => [ qr/$skip/ ];
+
+sub DB::afterinit {
+    no warnings 'once';
+
+    push @DB::typeahead, "c" if $ENV{DEBUGGING};
+
+    # give a window of lines instead of a single line
+    push @DB::typeahead => "{{v"
+        unless $DB::already_curly_curly_v++;
+}
