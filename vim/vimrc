@@ -1,3 +1,4 @@
+set shell=/bin/sh
 " VAM
 set runtimepath+=~/.vim/vim-addon-manager
 call vam#ActivateAddons([ 'github:ervandew/supertab'])
@@ -12,7 +13,18 @@ call vam#ActivateAddons([ 'github:tpope/vim-surround'])
 call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
 call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
 call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
-call vam#ActivateAddons([ 'github:scrooloose/syntastic'])
+
+call vam#ActivateAddons([ 'github:bling/vim-airline' ])
+let g:airline_powerline_fonts = 1
+set laststatus=2
+set encoding=utf-8
+if has('gui_running')
+  set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
+endif
+
+call vam#ActivateAddons([ 'github:nvie/vim-togglemouse'])
+
+"call vam#ActivateAddons([ 'github:scrooloose/syntastic'])
  
 call vam#ActivateAddons([ 'github:vim-scripts/hexman.vim'])
 
@@ -52,12 +64,14 @@ call vam#ActivateAddons([ 'github:christoomey/vim-tmux-navigator'])
 
 " vimwiki
 "let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',  'nested_syntaxes': { 'perl': 'perl' } }]
-let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }]
+let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }, { 'path': '~/environment/cheatsheets/', 'syntax': 'markdown', 'ext': '.md'  }]
 let g:vimwiki_menu = 'Vimwiki'
 
 let g:UltiSnipsEditSplit='vertical'
 cmap ,snip :UltiSnipsEdit<CR>
 
+" sudo after the fact
+cmap w!! w !sudo tee % >/dev/null
 
 
 " some ideas stolen from http://items.sjbach.com/319/configuring-vim-right
@@ -68,7 +82,7 @@ set hidden
 
 runtime macros/matchit.vim
 
-set title
+set title  " set the terminal title
 
 " show line numbers
 set number
@@ -88,13 +102,14 @@ nnoremap ` '
 
 " general stuff
 
-syntax on
 filetype on
 filetype plugin on
 filetype indent on
 
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
 " visual bell
-set vb
+set visualbell
 
 
 set autoindent
@@ -118,8 +133,14 @@ set smartcase         " don't ignore case if there's a uppercase
 set incsearch         " show me right now!
 set hlsearch
 
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.,precedes:<
+autocmd filetype python set listchars=tab:>.,trail:.,extends:#,nbsp:.,precedes:<
+
 " TList
 nnoremap <silent> <F8> :Tlist<CR>
+
+set pastetoggle=<F2>
 
 
 " TagExplorer
@@ -131,10 +152,11 @@ nnoremap <silent> <F9> :NERDTree<CR>
 
 
 " backup stuff
-set backup
+set nobackup
+set noswapfile
 set writebackup
-set   backupdir=~/.vim/backup,./.backup,~/.vim/backup,.,/tmp
-set   directory=~/.vim/backup,.,./.backup,/tmp
+"set   backupdir=~/.vim/backup,./.backup,~/.vim/backup,.,/tmp
+"set   directory=~/.vim/backup,.,./.backup,/tmp
 
 function InsertTabWrapper()
    let col = col('.') - 1
@@ -199,12 +221,22 @@ set complete=.,w,b,u,t " omits ',i'. This avoids full file scans.
 
 " ================= colorscheme ==============================
 " gui
-set t_Co=256
-let g:solarized_termcolors=256
-colorscheme solarized
+"set t_Co=256
+
+if &t_Co >= 256 || has("gui_running")
+    let g:solarized_termcolors=256
+    colorscheme solarized
+endif
+
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+endif
 
 hi search ctermbg=223 ctermfg=238
 hi incsearch ctermbg=216 ctermfg=242
+
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 function! PerlMappings()
     " run the code
@@ -269,7 +301,7 @@ function! InstallCPANModule()
     echo "done\n"
 endfunction
 
-map <F12> :!ptags<CR>
+"map <F12> :!ptags<CR>
 
 " allow creation of directories on-the-fly
 function s:MkNonExDir(file, buf)
@@ -380,6 +412,15 @@ function ToggleHex()
 endfunction
 
 set mouse=a
+
+
+
+" navigation
+    " consider long lines as multiple lines
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
 
 
 """"""""""""""
