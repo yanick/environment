@@ -8,6 +8,12 @@ set -x PERLBREW_ROOT /usr/local/soft/perlbrew/
 
 . ~/.config/fish/perlbrew.fish
 
-set fish_plugins autojump git 
+# set fish_theme bobthefish
+
+set fish_plugins git
 
 . $fish_path/oh-my-fish.fish
+
+if test -f /home/yanick/.autojump/etc/profile.d/autojump.fish;
+    . /home/yanick/.autojump/etc/profile.d/autojump.fish
+end
