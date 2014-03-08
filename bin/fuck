@@ -1,0 +1,46 @@
+#!/usr/bin/env perl
+
+use 5.10.0;
+ 
+use strict;
+use warnings;
+use utf8;
+
+use Text::UpsideDown;
+use Proc::Killall;
+use List::AllUtils qw/ uniq /;
+
+binmode STDOUT, ":utf8";
+
+if ( $ARGV[0] eq 'list' ) {
+    require Proc::ProcessTable;
+
+    say for uniq sort grep { !/^[(-]/ } 
+                      map { (split q{ }, $_->cmndline)[0] =~ s#^.*/##r } 
+                      grep { $_->uid ==  $< } 
+                      @{ Proc::ProcessTable->new->table };
+    exit;
+}
+
+if ( $ARGV[0] eq 'fish' ) {
+    # in fish/completion/fuck.fish, put `eval (fuck fish)`
+    print <<'END';
+complete -c fuck -f -n "test (count (commandline -opc)) -eq 1" -a you -d "kill -9";
+complete -c fuck -f -n "test (count (commandline -opc)) -eq 1" -a off -d "kill -15";
+complete -c fuck -f -n "test (count (commandline -opc)) -eq 1" -a list -d "list of processes";
+complete -c fuck -f -n "test (count (commandline -opc)) -eq 1" -a fish -d "fish complete";
+
+complete -c fuck -f -n "test (count (commandline -opc)) -gt 1" -a '(fuck list)';
+END
+
+    exit;
+}
+
+my @flippant = ( ' (╯°□°）╯︵', ' (ﾉಥ益ಥ）ﾉ ', ' ヽ(`Д´)ﾉ︵', ' (ノಠ益ಠ)ノ彡', );
+
+my %actions = ( you => -9, off => -15 );
+my $sig = $actions{ shift @ARGV };
+
+say  killall( $sig => $_ ) 
+    ? ( $flippant[rand @flippant], upside_down($_) )
+    : qq{ (¬_¬").oO( $_: $!  )} for @ARGV;
