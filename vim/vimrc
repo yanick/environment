@@ -435,3 +435,10 @@ if $TERM =~ '^screen-256color'
     map <Esc>OF <End>
     map! <Esc>OF <End>
 endif
+
+" conflict resolution - pick this one / option 1 / option 2
+map <leader>. $?\v^[<=]{7}<CR>jy/\v^[=>]{7}<CR>?\v^[<]{7}<CR>"_d/\v^\>{7}<CR>"_ddP
+map <leader><  $?\v^[<]{7}<CR><leader>.
+map <leader>>  $?\v^[<]{7}<CR>/\v^[=]{7}<CR><leader>. 
+" ... or keep'em both
+map <leader>m  $?\v^[<]{7}<CR>"_dd/\v[=]{7}<CR>cc<ESC>/\v[>]{7}<CR>"_dd
