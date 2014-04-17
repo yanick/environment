@@ -357,6 +357,33 @@ function __yanick_prompt_sigil
     end
 end
 
+function __prompt_pwd 
+    set -l color_major green
+    set -l color_minor 005f00
+
+    set -l pwd $PWD
+
+    set -l git_root ( git rev-parse --show-toplevel )
+
+    set pwd ( echo $pwd | sed s:$HOME:~: )
+    set git_root ( echo $git_root | sed s:$HOME:~: )
+
+    if test -z $git_root
+        set_color $color_major
+        echo -n $pwd
+        set_color normal
+    end
+
+    set -l len ( echo $git_root | wc -c | tr -d ' ')
+    set pwd ( echo $pwd | cut -c {$len}- )
+
+    set_color $color_minor
+    echo -n $git_root
+    set_color $color_major
+    echo -n $pwd
+    set_color normal
+
+end
 
 # ===========================
 # Apply theme
@@ -372,12 +399,12 @@ function fish_prompt
   __yanick_prompt_current_time
   __yanick_prompt_user
   __yanick_prompt_status
-  if __bobthefish_in_git
-    __yanick_prompt_git
-  else
-    __yanick_prompt_dir
-  end
-  echo ""
+  #__bobthefish_prompt_dir
+
+  __prompt_pwd
+
+   git_prompt
+   echo ""
   __bobthefish_finish_segments
   __yanick_prompt_sigil
   __bobthefish_finish_segments
