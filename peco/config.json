@@ -1,0 +1,28 @@
+{
+    "Prompt": "[peco]",
+    "Action": {
+        "selectAllAndFinish": [
+            "peco.SelectAll",
+            "peco.Finish"
+        ]
+    },
+    "Keymap": {
+        "M-r": "peco.ToggleRangeMode",
+        "M-t": "peco.CancelRangeMode",
+        "C-c,C-c": "selectAllAndFinish",
+        "M-m": "peco.RotateMatcher",
+        "M-a": "peco.SelectAll",
+        "Tab": "peco.ToggleSelectionAndSelectNext"
+    },
+    "Style": {
+        "Basic": ["on_default", "default"],
+        "SavedSelection": ["bold", "on_yellow", "white"],
+        "Selected": ["bold", "on_cyan", "black"],
+        "Query": ["yellow", "bold"],
+        "Matched": ["red", "on_blue"]
+    },
+    "CustomMatcher": {
+        "perl regex": [ "/usr/bin/env", "perl", 
+        "-E", "$p=shift; say for grep { /$p/ } <>", "$QUERY" ]
+    }
+}
