@@ -402,9 +402,10 @@ function fish_prompt
   #__bobthefish_prompt_dir
 
   __prompt_pwd
-
-   git_prompt
+ 
    echo ""
+   git prompt
+
   __bobthefish_finish_segments
   __yanick_prompt_sigil
   __bobthefish_finish_segments

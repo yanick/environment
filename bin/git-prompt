@@ -21,7 +21,7 @@ my %symbols = (
     has_untracked_files => [ '  ', 'achtung' ], # ∿
     has_adds => [ '+ ', 'todo' ],
     has_deletes => [ '- ', 'todo' ],
-    has_deletions_cached => [ '✖ ', 'todo' ],
+    has_deletes_cached => [ '✖ ', 'todo' ],
     has_modifications => [ '✎ ', 'todo' ],
     has_modifications_cached => [ '☲ ', 'todo' ],
     ready_to_commit => [ ' ', 'okay' ], # ▪►'→ '▬►
@@ -154,6 +154,7 @@ sub print {
 
     $self->print_check( 'has_adds' );
     $self->print_check( 'has_deletes' );
+    $self->print_check( 'has_deletes_cached' );
     $self->print_check( 'has_modifications' );
     $self->print_check( 'has_modifications_cached' );
 
@@ -179,7 +180,7 @@ sub print {
             if ( $behind and $ahead ) {
                 my $symbol = $symbols{has_diverged};
                 $self->print_part( 1, sprintf(
-                        " -%d %s +%d", $behind, $symbol->[0], $ahead
+                        " -%d %s+%d ", $behind, $symbol->[0], $ahead
                     ), $symbol->[1]
                 )
             }

@@ -80,6 +80,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"  # verbose, legacy git,svn
 
 export PS1="
 ${Cyan}\A ${IRed}\u@\h ${BIBlue}\w${Green}\$(__git_ps1 ' (%s)')
+\$(git prompt)
 ${Blue}\$${Black}${Color_Off} "
 
 # https://wiki.archlinux.org/index.php/Color_Bash_Prompt
