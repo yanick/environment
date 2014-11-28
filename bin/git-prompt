@@ -1,0 +1,345 @@
+#!/usr/bin/env perl
+
+use 5.20.0;
+
+use warnings;
+
+package GitPrompt {
+
+use Term::ANSIColor;
+use Path::Tiny;
+use Git::Repository;
+use Cwd;
+
+use Moo;
+
+use experimental 'postderef', 'smartmatch', 'autoderef';
+
+my %symbols = (
+    is_git_repo => [ ' ' ],  # '❤ '  ±
+    has_stashes => [ '  ', 'yellow' ], # '★ '
+    has_untracked_files => [ '  ', 'achtung' ], # ∿
+    has_adds => [ '+ ', 'todo' ],
+    has_deletes => [ '- ', 'todo' ],
+    has_deletions_cached => [ '✖ ', 'todo' ],
+    has_modifications => [ '✎ ', 'todo' ],
+    has_modifications_cached => [ '☲ ', 'todo' ],
+    ready_to_commit => [ ' ', 'okay' ], # ▪►'→ '▬►
+    is_detached => [ '  ', 'achtung' ], # ⚯
+    is_on_a_tag => [ ' ' ], #  ⌫ '
+#    needs_to_merge  => [ 'ᄉ ' ],
+    upstream => [ '  ' ], # ⇅
+    can_fast_forward => [ ' ' ], # »
+    has_diverged => [ '  ' ], # Ⴤ
+    rebase_tracking_branch => [ ' ' ], # ↶
+    merge_tracking_branch => [ ' ' ], # ᄉ
+    should_push => [ ' ' ], # ↑
+);
+
+my %colors = (
+    okay => 'green',
+    todo => 'yellow',
+    achtung => 'red',
+);
+
+has "dir" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $dir = path(getcwd);
+        until( -d $dir->child(".git") or $dir eq '/' ) {
+            $dir = $dir->parent;
+        }
+        return $dir eq '/' ? undef : $dir;
+    },
+);
+
+sub is_git_repo { $_[0]->dir };
+
+has repo => (
+    is => 'ro',
+    lazy => 1,
+    default => sub{
+        return unless $_[0]->dir;
+        Git::Repository->new( work_tree =>  $_[0]->dir );
+    },
+);
+
+sub has_stashes { 
+    return -f $_[0]->dir->child('.git','refs','stash');
+    #my @s = $_[0]->repo->run( 'stash', 'list' );
+}
+
+has "status_counts" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+        my %status;
+        for ( $self->repo->run( qw/ status -s / ) ) {
+            $status{untracked}++ if /^\?\?/;
+            $status{add}++ if /^A/;
+            $status{delete}++ if /^.D/;
+            $status{delete_cached}++ if /^D/;
+            $status{modification_cached}++ if /^M/;
+            $status{modification}++ if /^.M/;
+        }
+
+        \%status;
+    },
+);
+
+sub has_untracked_files {
+    $_[0]->status_counts->{untracked};
+}
+
+sub has_adds {
+    $_[0]->status_counts->{add};
+}
+
+sub has_deletes {
+    $_[0]->status_counts->{delete};
+}
+
+sub has_deletes_cached {
+    $_[0]->status_counts->{delete_cached};
+}
+
+sub has_modifications_cached {
+    $_[0]->status_counts->{modification_cached};
+}
+
+sub has_modifications {
+    $_[0]->status_counts->{modification};
+}
+
+sub print_part {
+    my( $self, $cond, $symbol, $color ) = @_;
+
+    no warnings;
+    if ( my $s = $symbols{$symbol} ) {
+        $symbol = $s->[0];
+        $color = $s->[1] . ' ' . $color;
+    }
+    unless( $cond ) {
+        print ' ' x length $symbol;
+        return;
+    }
+
+    while( my ($k,$v) = each %colors ) {
+        $color =~ s/$k/$v/g;
+    }
+    $color =~ s/^\s+$//;
+
+    print $color ? colored( [ $color ], $symbol ) : $symbol;
+}
+
+sub print_check {
+    my( $self, $test ) = @_;
+
+    $self->print_part( $self->$test, $test );
+}
+
+sub print {
+    my $self = shift;
+
+    # not a repo? bail out
+    return unless $self->is_git_repo;
+
+    $self->print_check( 'is_git_repo' );
+
+    $self->print_check( 'has_stashes' );
+
+    $self->print_check( 'has_untracked_files' );
+
+    $self->print_check( 'has_adds' );
+    $self->print_check( 'has_deletes' );
+    $self->print_check( 'has_modifications' );
+    $self->print_check( 'has_modifications_cached' );
+
+    $self->print_check( 'ready_to_commit' );
+
+    $self->print_check( 'is_detached' );
+
+#    $self->print_check( 'upstream' );
+
+    if ( $self->is_detached ) {
+        if ( $self->just_init ) {
+            $self->print_part( 1, 'detached', 'achtung' );
+        }
+        else {
+            $self->print_part( 1, $self->commit_hash );
+        }
+    }
+    else {
+        if ( $self->upstream ) {
+            my $type = $self->upstream_type;
+
+            my( $behind, $ahead ) =  $self->has_diverged->@*;
+            if ( $behind and $ahead ) {
+                my $symbol = $symbols{has_diverged};
+                $self->print_part( 1, sprintf(
+                        " -%d %s +%d", $behind, $symbol->[0], $ahead
+                    ), $symbol->[1]
+                )
+            }
+            elsif( $behind ) {
+                my $symbol = $symbols{can_fast_forward};
+                $self->print_part( 1, sprintf(
+                        " -%d %s ", $behind, $symbol->[0]
+                    ), $symbol->[1]
+                )
+            }
+            elsif( $ahead ) {
+                my $symbol = $symbols{should_push};
+                $self->print_part( 1, sprintf(
+                        " %s +%d ", $symbol->[0], $ahead
+                    ), $symbol->[1]
+                )
+            }
+        }
+
+        $self->print_part( 1, $self->current_branch, 'okay' );
+
+        my $upstream_symbol = $symbols{ $self->upstream_type };
+        $self->print_part( 1, ' ' . $upstream_symbol->[0] .
+            $self->pretty_upstream, $upstream_symbol->[1] ) 
+            if $self->upstream;
+
+    }
+
+    if ( my @tags = $self->on_tags->@* ) {
+        my $tag_symbol = $symbols{'is_on_a_tag'};
+        $self->print_part( 1, $tag_symbol->[0] . join( ',', @tags ),
+            $tag_symbol->[1]  );
+    } 
+
+
+    print "\n";
+}
+
+has on_tags => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        return [ eval { grep { $_ } eval $_[0]->repo->run( qw/ describe --exact-match --tags /,
+                $_[0]->commit_hash )  } ];
+    },
+);
+
+sub pretty_upstream {
+    my $self = shift;
+    my $branch = $self->current_branch;
+    $self->upstream =~ s:/$branch::r =~ s:github: :r; 
+}
+
+sub upstream_type {
+    my $self = shift;
+
+    return( ($self->repo->run( 'config', '--get', join '.', 'branch',
+                $self->current_branch, 'rebase' ) )[0] ?
+        'rebase_tracking_branch' : 'merge_tracking_branch' );
+    
+}
+
+has "commit_hash" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+        ( ( $self->repo->run( 'rev-parse', 'HEAD' ) )[0] =~ /(^.{6})/ )[0];
+    },
+);
+
+has "just_init" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+        ! eval { scalar $self->repo->run( 'log', '-1' ); };
+    },
+);
+
+has "upstream" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+
+        my ( $value ) = eval { $self->repo->run( qw/ rev-parse --symbolic-full-name --abbrev-ref
+            @{upstream} / ) };
+
+        $value;
+
+    },
+);
+
+has has_diverged => (
+    is => 'ro',
+    lazy => 1,
+    default =>  sub {
+        my $self = shift;
+        
+        my( $behind, $ahead );
+        for ( $self->repo->run( qw/ log --pretty=oneline --topo-order
+                --left-right /, join '...', $self->commit_hash,
+                $self->upstream
+            ) ) {
+            /^</ ? $ahead++ : /^>/ ? $behind++ : ();
+        }
+        return [ $behind, $ahead ];
+    },
+);
+
+
+sub ready_to_commit {
+    my $self = shift;
+
+    my @cached;
+    while( my ( $k, $v ) = each $self->status_counts ) {
+        next if $k eq 'untracked';
+        $cached[ $k =~ /cached/ ] += $v;
+    }
+
+    return $cached[1] && ! $cached[0];
+
+
+}
+
+has "current_branch" => (
+    is => 'ro',
+    lazy => 1,
+    default => sub {
+        my $self = shift;
+
+        return (grep { s/^\*\s+// } $self->repo->run( 'branch' ))[0];
+    },
+);
+
+sub is_detached {
+    my $self = shift;
+
+    no warnings;
+    return (!$self->current_branch) || $self->current_branch =~ /detached/;
+
+}
+
+sub legend {
+    my $self = shift;
+    
+    for ( sort keys %symbols ) {
+        $self->print_part( 1, $_ );
+        print "\t", $_, "\n";
+    }
+}
+
+
+}
+
+my $gp = GitPrompt->new;
+if( grep { $_ eq 'symbols' } @ARGV ) {
+    $gp->legend;
+}
+else {
+    $gp->print;
+}
