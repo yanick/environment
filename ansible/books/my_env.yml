@@ -1,0 +1,13 @@
+---
+- name: setup my environment
+  hosts: localhost
+  tasks:
+      - name: .Xmodmap (ESC<->capslock)
+        file: >
+          src=~/environment/xresources/xmodmap
+          dest=~/.Xmodmap
+          state=link
+        register: xmodmap
+        ignore_errors: true
+      - debug: msg="vimdiff ~/.Xmodmap ~/environment/xresources/xmodmap"
+        when: xmodmap|failed
