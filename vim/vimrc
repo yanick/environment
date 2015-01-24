@@ -1,20 +1,84 @@
-set shell=/bin/sh
-" VAM
-set runtimepath+=~/.vim/vim-addon-manager
-call vam#ActivateAddons([ 'github:ervandew/supertab'])
-call vam#ActivateAddons([ 'github:altercation/vim-colors-solarized'])
-call vam#ActivateAddons([ 'github:scrooloose/nerdtree'])
-call vam#ActivateAddons([ 'github:mattn/zencoding-vim'])
-call vam#ActivateAddons([ 'github:yanick/vim-project'])
-call vam#ActivateAddons([ 'github:tpope/vim-unimpaired'])
-call vam#ActivateAddons([ 'github:tpope/vim-fugitive'])
-call vam#ActivateAddons([ 'github:kien/ctrlp.vim'])
-call vam#ActivateAddons([ 'github:tpope/vim-surround'])
-call vam#ActivateAddons([ 'github:SirVer/ultisnips'])
-call vam#ActivateAddons([ 'github:vim-perl/vim-perl'])
-call vam#ActivateAddons([ 'github:vimwiki/vimwiki'])
+let mapleader="\\"
 
-call vam#ActivateAddons([ 'github:bling/vim-airline' ])
+" fish and some plugins don't play well together
+set shell=/bin/sh
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'vimwiki/vimwiki', { 'on': [ '<Plug>VimwikiIndex', '<Plug>VimwikiTabIndex', '<Plug>VimwikiUISelect' ] }
+
+Plug 'SirVer/ultisnips'
+
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'vim-scripts/ShowTrailingWhitespace'
+Plug 'vim-scripts/DeleteTrailingWhitespace'
+
+" Plug 'junegunn/vim-github-dashboard'
+
+Plug 'vim-perl/vim-perl', { 
+    \ 'for': 'perl', 
+    \ 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' 
+    \ }
+
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+"Plug 'mattn/zencoding-vim'
+Plug 'yanick/vim-project'
+Plug 'kien/ctrlp.vim'
+
+Plug 'bling/vim-airline'
+
+Plug 'nvie/vim-togglemouse'
+Plug 'vim-scripts/hexman.vim'
+
+call plug#end()
+
+"--------- vimwiki {{{
+nmap <leader>ww <Plug>VimwikiIndex
+nmap <Leader>wt <Plug>VimwikiTabIndex
+nmap <Leader>wu <Plug>VimwikiUISelect
+
+let g:vimwiki_list = [
+    \ { 'path': '~/environment/cheatsheets/src', 'path_html': '~/environment/cheatsheets/html', 'auto_export': 1, 'template_path': '~/environment/cheatsheets/templates/', 'template_default': 'default', 'template_ext': '.html'},
+    \ { 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md' }, 
+    \ { 'path': '/home/ii/vimwiki/src', 'path_html': '/home/ii/vimwiki/html'}
+    \ ]
+
+let g:vimwiki_menu = 'Vimwiki'
+"--------- }}}
+
+"---------- trailing white spaces {{{
+
+nnoremap <silent> <Leader>t$ :<C-u>call ShowTrailingWhitespace#Toggle(0)<Bar>echo (ShowTrailingWhitespace#IsSet() ? 'Show trailing whitespace' : 'Not showing trailing whitespace')<CR>
+nnoremap <Leader>d$ :<C-u>%DeleteTrailingWhitespace<CR>
+vnoremap <Leader>d$ :DeleteTrailingWhitespace<CR>
+
+highlight ShowTrailingWhitespace ctermbg=LightGrey guibg=LightGrey
+
+let g:DeleteTrailingWhitespace = 0
+
+"-------- }}}
+
+""" colorscheme """"""""""""""""""""""""""""""""""""""""""""""""""
+"
+
+if &t_Co >= 256 || has("gui_running")
+    let g:solarized_termcolors=256
+endif
+
+if &t_Co > 2 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+endif
+set background=light
+let g:solarized_visibility='low'
+colorscheme solarized
+
 let g:airline_powerline_fonts = 1
 set laststatus=2
 set encoding=utf-8
@@ -22,18 +86,8 @@ if has('gui_running')
   set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
 endif
 
-call vam#ActivateAddons([ 'github:nvie/vim-togglemouse'])
-
-"call vam#ActivateAddons([ 'github:scrooloose/syntastic'])
- 
-call vam#ActivateAddons([ 'github:vim-scripts/hexman.vim'])
-
 """ vimux """"""""""""""""""""""""""""""""""""""""""""""""""
 "
-call vam#ActivateAddons([ 'github:benmills/vimux' ])
-
-" Run the current file with rspec
-map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
 " Prompt for a command to run
 map <Leader>vp :VimuxPromptCommand<CR>
@@ -54,18 +108,9 @@ map <Leader>vx :VimuxInterruptRunner<CR>
 """""""""""""""""""""""""""
 
 
-""" vim-tmux-navigator """""""""""""""""""""""""""""""""""""""""""""""""
-"
-
-call vam#ActivateAddons([ 'github:christoomey/vim-tmux-navigator'])
-
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" vimwiki
-"let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md',  'nested_syntaxes': { 'perl': 'perl' } }]
-let g:vimwiki_list = [{ 'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'  }, { 'path': '~/environment/cheatsheets/', 'syntax': 'markdown', 'ext': '.md'  }]
-let g:vimwiki_menu = 'Vimwiki'
 
 let g:UltiSnipsEditSplit='vertical'
 cmap ,snip :UltiSnipsEdit<CR>
