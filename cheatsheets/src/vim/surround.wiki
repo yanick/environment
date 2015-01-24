@@ -1,0 +1,13 @@
+= Vim Surround =
+
+| ds"        | delete surrounding         |
+| cs])       | change surrounding ] for ) |
+| cs"<q>     | works with html as well    |
+| ysW(       | you surround word with     |
+| <visual>S' | surround visual            |
+
+`dst` to delete surrounding tag.
+`cst<p>` change surrounding tag.
+
+`yss` surrounds line.
+`ySS` on its own line

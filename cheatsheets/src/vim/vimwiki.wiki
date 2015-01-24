@@ -1,0 +1,86 @@
+= Vimwiki =
+
+| \ww  | open wiki             |
+| \wt  | open wiki in new tab  |
+| \wu  | dropdown              |
+|      | >                     |
+| \wi  | open diary index      |
+| \w\w | open diary page       |
+| \w\t | open diary page (tab) |
+
+Can all be prefixed with a count for a specific wiki.
+
+== Local mappings ==
+
+| \wh              | Convert current wiki page to HTML.                       |
+| \whh             | Convert current wiki page to HTML and open it in         |
+|                  | ^ webbrowser.                                            |
+| \w\i             | Update diary section (delete old, insert new)            |
+|                  | ^ Only works from the diary index.                       |
+| <CR>             | Follow/create wiki link (create target wiki page if      |
+|                  | ^ needed).                                               |
+| <S-CR>           | Split and follow (create target wiki page if needed).    |
+|                  | ^May not work in some terminals. Remapping could help.   |
+| <C-CR>           | Vertical split and follow (create target wiki page if    |
+|                  | ^ needed).                                               |
+| <C-S-CR>, <D-CR> | Follow wiki link (create target wiki page if needed),    |
+|                  | ^ opening in a new tab.                                  |
+| <Backspace>      | Go back to previous wiki page.                           |
+| <Tab>            | Find next link on the current page.                      |
+| <S-Tab>          | Find previous link on the current page.                  |
+| \wd              | Delete wiki page you are in.                             |
+| \wr              | Rename wiki page you are in.                             |
+| <C-Space>        | Toggle list item on/off (checked/unchecked)              |
+| =                | Add header level. Create if needed.                      |
+| -                | Remove header level.                                     |
+| +                | Create and/or decorate links.  Depending on the          |
+|                  | ^ context, this command will: convert words into         |
+|                  | ^ Wikilinks; convert raw URLs into Wikilinks; and add    |
+|                  | ^ placeholder text to Wiki- or Weblinks that are missing |
+|                  | ^ descriptions.  Can be activated in normal mode with    |
+|                  | ^ the cursor over a word or link, or in visual mode with |
+|                  | ^ the selected text .                                    |
+| >                |                                                          |
+| glm              | Increase the indent of a single-line list item.          |
+| gll              | Decrease the indent of a single-line list item.          |
+| gl* or gl8       | Switch or insert a "*" symbol.  Only available in        |
+|                  | supported syntaxes.                                      |
+| gl# or gl3       | Switch or insert a "#" symbol.  Only available in        |
+|                  | supported syntaxes.                                      |
+| gl-              | Switch or insert a "-" symbol.  Only available in        |
+|                  | supported syntaxes.                                      |
+| gl1              | Switch or insert a "1." symbol.  Only available in       |
+|                  | supported syntaxes.                                      |
+| gqq              | Format table. If you made some changes to a table        |
+| or               | without swapping insert/normal modes this command        |
+| gww              | will reformat it.                                        |
+| <A-Left>         | Move current table column to the left.                   |
+| <A-Right>        | Move current table column to the right.                  |
+| <C-Up>           | Open the previous day's diary link if available.         |
+| <C-Down>         | Open the next day's diary link if available.             |
+| <2-LeftMouse>    | Follow wiki link (create target wiki page if needed).    |
+| <S-2-LeftMouse>  | Split and follow wiki link (create target wiki page if   |
+|                  | needed).                                                 |
+| <C-2-LeftMouse>  | Vertical split and follow wiki link (create target       |
+|                  | wiki page if needed).                                    |
+
+ <RightMouse><LeftMouse> Go back to previous wiki page. |
+ 
+== Tables ==
+
+| <CR>  | Go to the table cell beneath the current one, create a new row if on the last one. |
+| <Tab> | Go to the next table cell, create a new row if on the last cell.                   |
+
+
+== Text objects ==
+
+| ah | A section segment including trailing empty lines. |
+| ih | A section segment without trailing empty lines.   |
+| a\ | A cell in a table.                                |
+| i\ | An inner cell in a table.                         |
+| ac | A column in a table.                              |
+| ic | An inner column in a table.                       |
+
+== Commands ==
+
+| :VimwikiSearch, :VWS /pattern/ | search wiki |

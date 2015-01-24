@@ -1,0 +1,70 @@
+= Unimpaired =
+
+| [a, ]a, [A, ]A,    | :previous, :next, :first, :last           |
+| [b, ]b,  [B, ]B    | :bprevious, :bnext,  :bfirst, :blast      |
+| [l, ]l, [L, ]L     | :lprevious, :lnext, :lfirst, :llast       |
+| [<C-L>, ]<C-L>     | :lpfile, :lnfile                          |
+| ]q, [Q, ]Q         | :cnext,                   :cfirst, :clast |
+| [<C-Q>, ]<C-Q>     | :cpfile, :cnfile                          |
+| [t, ]t, [T, ]T     | :tprevious, :tnext, :tfirst, :tlast       |
+|                    |                                           |
+| [f, ]f             | previous/next file in directory           |
+| [n, ]n             | conflict markers                          |
+| d[n, d]n           | ???                                       |
+|                    |                                           |
+| [<Space>, ]<Space> | add blank lines above/under the cursor    |
+| [e, ]e             | exchange line                             |
+
+== Pasting ==
+
+| >p | Paste after linewise, increasing indent.  |
+| >P | Paste before linewise, increasing indent. |
+| <p | Paste after linewise, decreasing indent.  |
+| <P | Paste before linewise, decreasing indent. |
+| =p | Paste after linewise, reindenting.        |
+| =P | Paste before linewise, reindenting.       |
+
+== * Toggling ==
+
+| On  | Off | Toggle | Option                                           |
+| --- | --- | ---    | ---                                              |
+| [ob | ]ob | cob    | 'background' (dark is off, light is on)          |
+| [oc | ]oc | coc    | 'cursorline'                                     |
+| [od | ]od | cod    | 'diff' (actually  :diffthis / :diffoff )         |
+| [oh | ]oh | coh    | 'hlsearch'                                       |
+| [oi | ]oi | coi    | 'ignorecase'                                     |
+| [ol | ]ol | col    | 'list'                                           |
+| [on | ]on | con    | 'number'                                         |
+| [or | ]or | cor    | 'relativenumber'                                 |
+| [os | ]os | cos    | 'spell'                                          |
+| [ou | ]ou | cou    | 'cursorcolumn'                                   |
+| [ov | ]ov | cov    | 'virtualedit'                                    |
+| [ow | ]ow | cow    | 'wrap'                                           |
+| [ox | ]ox | cox    | 'cursorline' 'cursorcolumn' (x as in crosshairs) |
+
+== * Encoding ==
+
+| [x{motion} | XML encode.                                        |
+| [xx        | <foo bar="baz"> => &lt;foo bar=&quot;baz&quot;&gt; |
+| {Visual}[x |                                                    |
+|            |                                                    |
+| ]x{motion} | XML decode.  HTML entities are handled as well.    |
+| ]xx        |                                                    |
+| {Visual}]x |                                                    |
+|            |                                                    |
+| [u{motion} | URL encode.                                        |
+| [uu        | foo bar => foo%20bar                               |
+| {Visual}[u |                                                    |
+|            |                                                    |
+| ]u{motion} | URL decode.                                        |
+| ]uu        |                                                    |
+| {Visual}]u |                                                    |
+|            |                                                    |
+| [y{motion} | C String encode.  Backslash escape control         |
+| [yy        | characters, quotation marks, and backslashes.      |
+| {Visual}[y |                                                    |
+|            |                                                    |
+| ]y{motion} | C String decode.                                   |
+| ]yy        |                                                    |
+| {Visual}]y |                                                    |
+
