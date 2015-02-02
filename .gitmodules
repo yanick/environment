@@ -46,3 +46,6 @@
 [submodule "oh-my-fish"]
 	path = oh-my-fish
 	url = git://github.com/bpinto/oh-my-fish.git
+[submodule "external/rt-to-github"]
+	path = external/rt-to-github
+	url = gh:dagolden/zzz-rt-to-github

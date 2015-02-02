@@ -1,0 +1,9 @@
+---
+- name: ~/bin
+  hosts: localhost
+  tasks:
+      - name: rt-to-github
+        file: >
+            src=~/environment/external/rt-to-github/rt-to-github.pl
+            dest=~/bin/rt-to-github.pl
+            state=link
