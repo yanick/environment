@@ -35,12 +35,9 @@ $('h2').each(function(){
     )
 });
 
-$('h2').each(function(){
-    if ( ! /^\s*\*/.test( $(this).html() ) ) {
-        return
-    }
-
-    $(this).addClass('breaker').html( $(this).html().replace( /^\s*\*/, '' ) );
-});
-
+$('h2,h3')
+    .filter(function(){ return /^\s*\*/.test( $(this).html() ) })
+    .each(function(){
+        $(this).addClass('breaker').html( $(this).html().replace( /^\s*\*/, '' ) );
+    });
 });
