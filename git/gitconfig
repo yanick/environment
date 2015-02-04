@@ -82,6 +82,7 @@
     wip = commit -m wip
 
     cm = commit -m 
+	g = grep --break --heading --line-number
 
 
 [color]
