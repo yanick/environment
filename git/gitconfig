@@ -15,6 +15,8 @@
     # lots stolen from https://git.wiki.kernel.org/index.php/Aliases
     # and https://gist.github.com/992097
 
+    shove = push -f
+
     #diff
     diffc = diff --color-words
     diffstat = diff --stat -r
