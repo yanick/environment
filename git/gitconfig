@@ -1,3 +1,6 @@
+[init]
+    templatedir = ~/environment/git/templates
+
 [user]
 	email = yanick@babyl.dyndns.org
 	name = Yanick Champoux
@@ -7,6 +10,8 @@
 [diff]
 #	external = 
 [alias]
+    ctags = !.git/hooks/ctags
+
     # lots stolen from https://git.wiki.kernel.org/index.php/Aliases
     # and https://gist.github.com/992097
 
