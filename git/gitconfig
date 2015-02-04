@@ -111,3 +111,6 @@
 
 [svn]
     pushmergeinfo=true
+[grep]
+	extendRegexp = true
+	lineNumber = true
