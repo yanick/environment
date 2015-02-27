@@ -1,5 +1,9 @@
 #!/usr/bin/env perl
 
+# for exercism.io exercises
+# submit the solution for the current exercise and
+# fetch the next one
+
 use Path::Tiny;
 
 my $path = path('.');
