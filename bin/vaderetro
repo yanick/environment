@@ -1,0 +1,23 @@
+#!/usr/bin/env perl
+
+use Path::Tiny;
+
+my $path = path('.');
+
+my %find_file = (
+    scala => sub {
+        my $path = shift;
+        ( $path->child( qw/ src main scala / )->children( qr/\.scala$/) )[0]->relative($path);
+    },
+);
+
+my $subdir = join '|', keys %find_file;
+$path->absolute =~ m#exercism/($subdir)# or die;
+
+my $lang = $1;
+
+
+system 'exercism', 'submit', $find_file{$lang}->($path);
+
+system "exercism fetch $lang";
+
