@@ -10,6 +10,14 @@
 [diff]
 #	external = 
 [alias]
+    last = "!f(){ \
+        git reflog \
+        | perl -nE'BEGIN{ $i = shift @ARGV }' \
+                -E'say $1 if /moving from (.*?) to/ and ( $i eq \"all\" or ! $i-- )' $1 \
+        }; f"
+
+    colast = "!sh -c 'git checkout `git last $1`' -"
+
     ctags = !.git/hooks/ctags
 
     # lots stolen from https://git.wiki.kernel.org/index.php/Aliases
