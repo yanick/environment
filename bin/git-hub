@@ -1,15 +1,31 @@
 #!/usr/bin/env perl
 
-use 5.10.0;
+use 5.20.0;
 
-use Path::Tiny;
+use Git::Repository;
+use List::Util qw/ first /;
+use Browser::Open qw/ open_browser /;
 
-for( path('.git/config')->lines ) {
-    next unless m#url = git\@github.com:(.*)\.git#;
+my $git = Git::Repository->new( work_tree => '.' );
 
-    my $url = "https://github.com/".$1;
+my $origin = shift;
+my $branch;
 
-    say $url || 'no github remote found';
-
-    exec 'firefox' => $url;
+unless( $origin ) {
+    ($origin,$branch) = $git->run( 'status' => qw/ --short --branch / ) =~ m#\.\.\.([^/]+)/(.*)#;
 }
+
+# have to go through 'git remote' to expand insteadOfs
+my( $url ) = 
+    map { $_ .= '/tree/' . $branch if $branch; $_ }
+    map { $_ = "http://$_" unless /^http/ }
+    map { y#:#/#; $_ }
+    map { s/^.*?\@//r } 
+    map { $_->[1] }
+    first { $_->[0] eq $origin } 
+    map { [ split ] } $git->run( 'remote', '-v' );
+
+say "opening $url";
+
+open_browser($url);
+

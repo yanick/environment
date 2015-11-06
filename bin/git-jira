@@ -1,0 +1,17 @@
+#!/usr/bin/env perl
+
+use 5.20.0;
+
+use Git::Repository;
+use Browser::Open qw/ open_browser /;
+
+my $git = Git::Repository->new( work_tree => '.' );
+
+my $root_url  = $git->run( 'config', '--get', 'jira.url' );
+
+my $re = $git->run( 'config', '--get', 'jira.regex' );
+
+$git->run( qw/ status --short --branch / ) =~ /$re/ 
+    or  die "can't figure out the ticket number\n";
+
+open_browser( join '/', $root_url, 'browse', $& );
