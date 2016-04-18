@@ -353,25 +353,24 @@ function __yanick_prompt_sigil
         echo -n "# "
     case '*'
         __yanick_start_segment $med_grey
-        echo -n "\$ "
+        echo -n "⥼ "
     end
 end
 
 function __prompt_pwd 
-    set -l color_major green
-    set -l color_minor 005f00
+    set -l color_minor green
+    set -l color_major 005f00
 
-    set -l pwd $PWD
+    set -l git_root ( git rev-parse --show-toplevel 2> /dev/null )
 
-    set -l git_root ( git rev-parse --show-toplevel )
-
-    set pwd ( echo $pwd | sed s:$HOME:~: )
-    set git_root ( echo $git_root | sed s:$HOME:~: )
+    set -l pwd ( echo $PWD | sed s:$HOME:~: )
+    set git_root ( echo $git_root | sed s:$HOME:~: | tr -d ' ')
 
     if test -z $git_root
         set_color $color_major
         echo -n $pwd
         set_color normal
+        return
     end
 
     set -l len ( echo $git_root | wc -c | tr -d ' ')
@@ -395,7 +394,11 @@ end
 
 function fish_prompt
     set -g last_status $status
+
   echo ""
+
+  __task.prompt
+
   __yanick_prompt_current_time
   __yanick_prompt_user
   __yanick_prompt_status
@@ -404,6 +407,8 @@ function fish_prompt
   __prompt_pwd
  
    echo ""
+   #test -f ~/.TimeTracker/current; and task_prompt.pl ( cat /home/yanick/.TimeTracker/current )
+ 
    git prompt
 
   __bobthefish_finish_segments
