@@ -248,7 +248,7 @@ has "commit_hash" => (
     lazy => 1,
     default => sub {
         my $self = shift;
-        ( ( $self->repo->run( 'rev-parse', 'HEAD' ) )[0] =~ /(^.{6})/ )[0];
+        ( ( $self->repo->run( 'rev-parse', 'HEAD' ) )[0] =~ /(^[0-9a-f]{6,})/ )[0];
     },
 );
 
@@ -313,7 +313,7 @@ has "current_branch" => (
     default => sub {
         my $self = shift;
 
-        return (grep { s/^\*\s+// } $self->repo->run( 'branch' ))[0];
+        return (grep { s/^\*\s+// } $self->repo->run( 'branch', '--no-color' ))[0];
     },
 );
 
