@@ -1,0 +1,52 @@
+#!/usr/bin/env perl
+
+use strict;
+
+use Term::ANSIColor;
+use File::Serialize;
+
+use Getopt::Long;
+
+use experimental 'signatures', 'current_sub';
+
+GetOptions(
+    'rules=s' => \my $rules,
+);
+
+my @rules = @{ deserialize_file grep { -f } $rules, 'groom.yaml', $ENV{GROOM_RULES} };
+
+print_colored($_) while <>;
+
+sub print_colored($line) {
+    print process( $line, @rules );
+}
+
+sub process( $line, $rule=undef, @rules ) {
+    return $line unless $rule;
+
+    my( $regex, $arg ) = %$rule;
+
+    unless ( $line =~ $regex ) {
+        @_ = ( $line, @rules );
+        goto __SUB__;
+    }
+
+    return $line = colored [ $arg ], $line unless ref $arg;
+
+    if( my $e = $arg->{eval} ) {
+        $_ = $line;
+        eval $e;
+        warn $@ if $@;
+        $line = $_;
+    }
+
+    $regex = '.*' unless $arg->{only_match};
+
+    $line =~ s/$regex/colored [ $arg->{color} ], $&/e
+        if $arg->{color};
+
+    return $line unless $arg->{fallthrough};
+
+    @_ = ( $line, @rules );
+    goto __SUB__;
+}
