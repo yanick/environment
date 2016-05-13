@@ -13,6 +13,14 @@ my %find_file = (
         my $path = shift;
         ( $path->child( qw/ src main scala / )->children( qr/\.scala$/) )[0]->relative($path);
     },
+    perl6 => sub {
+        my $path = shift;
+        ( $path->children( qr/\.pm$/) )[0]->relative($path);
+    },
+    javascript => sub {
+        my $path = shift;
+        ( $path->children( qr/\.js$/) )[0]->relative($path);
+    },
 );
 
 my $subdir = join '|', keys %find_file;
