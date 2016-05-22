@@ -1,0 +1,82 @@
+#!/usr/bin/env perl
+
+package App::Git::ShowMeta;
+
+use 5.10.0;
+
+use Git::Wrapper;
+
+use Moose;
+
+use MooseX::App::Simple;
+
+use MooseX::MungeHas 'is_ro';
+
+use Config::GitLike::Git;
+use List::AllUtils qw/ pairgrep pairmap /;
+use JSON;
+use Data::Printer;
+
+use experimental 'signatures', 'postderef';
+
+has git => sub { Git::Wrapper->new('.') };
+
+option branch => (
+    is            => 'ro',
+    isa           => 'ArrayRef',
+    predicate     => 'has_branch',
+    documentation => 'target branches',
+);
+
+parameter key_filter   => ( is => 'ro' );
+parameter value_filter => ( is => 'ro' );
+
+option format => (
+    is      => 'ro',
+    isa     => 'Str',
+    default => '',
+);
+
+has git_config => sub {
+    Config::GitLike::Git->new->load('.');
+};
+
+sub run($self) {
+
+    my %branches;
+    $branches{$_->[0]}{$_->[1]}  = $_->[2] for pairmap {
+            [ ( split /\./, $a, 2 ), $b ]
+    } pairgrep { $a =~ s/^branch\.// } $self->git_config->%*;
+
+    if ( $self->has_branch ) {
+        my %keepers = map { $self->git->rev_parse( qw/ --abbrev-ref /, $_ ) => 1 } $self->branch->@*;
+        %branches = pairgrep { $keepers{$a} } %branches;
+    }
+
+    if( my $k = $self->key_filter ) {
+        %branches = pairmap { $a => { $k => $b } } pairgrep { $b } pairmap { $a => $b->{$k} } %branches;
+
+        if( my $v = $self->value_filter ) {
+            %branches = pairgrep { $b->{$k} eq $v } %branches;
+        }
+    }
+
+
+    if ( $self->format eq 'json' ) {
+        say to_json( \%branches, { canonical => 1, pretty => 1 } );
+    }
+    elsif ( $self->format eq 'column' ) {
+        for my $branch ( sort keys %branches ) {
+            for my $key ( sort keys $branches{$branch}->%* ) {
+                say join ' ', $branch, $key, $branches{$branch}{$key};
+            }
+        }
+    }
+    else {
+        p %branches, output => 'stdout';
+    }
+}
+
+__PACKAGE__->meta->make_immutable;
+
+__PACKAGE__->new_with_options->run unless caller;

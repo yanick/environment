@@ -1,0 +1,48 @@
+#!/usr/bin/env perl
+
+package App::Git::Meta;
+
+use 5.10.0;
+
+use strict;
+use warnings;
+
+use Git::Wrapper;
+
+use Moose;
+use MooseX::App::Simple;
+use MooseX::MungeHas 'is_ro';
+
+use experimental 'signatures';
+
+has git => sub { Git::Wrapper->new('.') };
+
+option branch => (
+    is            => 'ro',
+    isa           => 'Str',
+    lazy          => 1,
+    default       => 'HEAD',
+    documentation => 'target branch',
+);
+
+parameter key => (
+    is       => 'ro',
+    required => 1,
+);
+
+parameter value => (
+    is       => 'ro',
+    required => 1,
+);
+
+sub run($self) {
+    my( $branch ) = $self->git->rev_parse( qw/ --abbrev-ref /, $self->branch );
+
+    $self->git->config( "branch.$branch." . $self->key => $self->value );
+
+    say join ' ', $branch, $self->key, $self->value;
+}
+
+__PACKAGE__->meta->make_immutable;
+
+__PACKAGE__->new_with_options->run unless caller;
