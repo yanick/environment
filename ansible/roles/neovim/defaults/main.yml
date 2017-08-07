@@ -1,0 +1,2 @@
+nvim_home: ~/.config/nvim
+nvim_files: "{{ ansible_env.PWD }}/roles/neovim/files"

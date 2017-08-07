@@ -1,0 +1,27 @@
+- name: add nvim repo
+  apt_repository: repo=ppa:neovim-ppa/unstable
+  become: true
+- name: install nvim package
+  apt: name={{item}}
+  with_items:
+       - neovim
+       - python-dev 
+       - python-pip 
+       - python3-dev 
+       - python3-pip
+  become: true
+- name: Python module
+  pip: name=neovim executable=pip2
+  become: true
+- name: Python3 module
+  pip: name=neovim executable=pip3
+  become: true
+- name: nvim config file
+  file:
+      src: "{{ nvim_files }}/init.vim"
+      dest: "{{ nvim_home }}/init.vim"
+      state: link      
+- name: vim-plug directory
+  file: dest=~/.config/nvim/autoload state=directory
+- name: vim-plug
+  get_url:  url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim dest=~/.config/nvim/autoload/plug.vim

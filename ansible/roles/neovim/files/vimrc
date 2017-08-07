@@ -1,0 +1,383 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
+
+autocmd filetype mkd map <C-A> :s/^/#<CR>
+autocmd filetype mkd map <C-X> :s/^#/<CR>
+
+Plug 'junegunn/vim-easy-align'
+vmap <Enter> <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
+Plug 'blindFS/vim-taskwarrior'
+
+Plug 'diepm/vim-rest-console'
+
+
+Plug 'danro/rename.vim'
+
+
+Plug 'vim-scripts/ShowTrailingWhitespace'
+Plug 'vim-scripts/DeleteTrailingWhitespace'
+
+Plug 'vim-perl/vim-perl', { 
+    \ 'for': 'perl', 
+    \ 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' 
+    \ }
+
+
+Plug 'ervandew/supertab'
+Plug 'kien/ctrlp.vim'
+
+
+Plug 'nvie/vim-togglemouse'
+Plug 'vim-scripts/hexman.vim'
+
+call plug#end()
+
+" vim-orgmode
+let g:org_agenda_files = ['~/org/index.org']
+
+"---------- trailing white spaces {{{
+
+nnoremap <silent> <Leader>t$ :<C-u>call ShowTrailingWhitespace#Toggle(0)<Bar>echo (ShowTrailingWhitespace#IsSet() ? 'Show trailing whitespace' : 'Not showing trailing whitespace')<CR>
+nnoremap <Leader>d$ :<C-u>%DeleteTrailingWhitespace<CR>
+vnoremap <Leader>d$ :DeleteTrailingWhitespace<CR>
+
+highlight ShowTrailingWhitespace ctermbg=LightGrey guibg=LightGrey
+
+let g:DeleteTrailingWhitespace = 0
+
+"-------- }}}
+
+""" colorscheme """"""""""""""""""""""""""""""""""""""""""""""""""
+"
+
+
+if has('gui_running')
+"  set guifont=Dejavu\ Sans\ Mono\ for\ Powerline\ 10
+   set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ Mono\ 10
+"  set guifont=Dejavu\ Sans\ Mono
+endif
+
+
+
+""" vimux """"""""""""""""""""""""""""""""""""""""""""""""""
+"
+
+" Prompt for a command to run
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Run last command executed by VimuxRunCommand
+map <Leader>vl :VimuxRunLastCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>vq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>vx :VimuxInterruptRunner<CR>
+
+"
+"""""""""""""""""""""""""""
+
+
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+runtime macros/matchit.vim
+
+
+
+nnoremap ' `
+nnoremap ` '
+
+" general stuff
+
+iab phdr #! /usr/bin/perl -w
+iab pdbg use Data::Dumper 'Dumper';<CR>warn Dumper [];^[hi
+
+
+
+
+" TList
+nnoremap <silent> <F8> :Tlist<CR>
+
+set pastetoggle=<F2>
+
+
+" TagExplorer
+let TE_Ctags_Path = 'exuberant-ctags'
+nnoremap <silent> <F7> :TagExplorer<CR>
+
+
+
+function InsertTabWrapper()
+   let col = col('.') - 1
+   if !col || getline('.')[col - 1] !~ '\k'
+       return "\<tab>"
+   else
+       return "\<c-p>"
+   endif
+endfunction
+
+"inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+
+" comment delimiters
+map ,~ i#<ESC>59a~<ESC>o<ESC>
+map ,# 60i#<ESC>o<ESC>
+
+
+
+
+"autocmd FileType perl source ~/.vim/my/perl_map.vim
+"autocmd FileType perl map ,~ i3<ESC>59a~<ESC>o<ESC>
+"autocmd FileType perl map ,3 60i3<ESC>o<ESC>
+
+" Perl stuff
+
+let g:Perl_AuthorName      = 'Yanick Champoux'     
+let g:Perl_AuthorRef       = 'YANICK'                         
+let g:Perl_Email           = 'yanick@cpan.org'            
+let g:Perl_Company         = ''    
+
+let tlist_perl_settings  = 'perl;c:constants;l:labels;p:package;s:subroutines;d:POD'
+
+" ack for grep
+set grepprg=ack\ --nocolor\ --nogroup\ '$*'\ *\ /dev/null
+
+" begone, vile HTML indentation
+autocmd BufEnter *.html setlocal indentexpr= 
+
+
+
+function! PerlMappings()
+    " run the code
+    noremap <buffer> <leader>r :!perl %<cr>
+ 
+    " or check that it compiles
+    noremap <buffer> <leader>r :!perl -c %<cr>
+ 
+    " or run tall of the tests for it
+    noremap <buffer> <leader>t :call TestModuleCoverage()<cr>
+endfunction
+ 
+function! PerlTestMappings()
+    noremap <buffer> <leader>r :!prove -vl %<cr>
+ 
+    " or check that it compiles
+    noremap <buffer> <leader>r :!perl -c %<cr>
+ 
+    noremap <buffer> <leader>t :!prove -vl %<CR>
+endfunction
+ 
+function! TestModuleCoverage()
+    let filename = bufname('%')
+ 
+    let tests = system('covered covering --source_file="'. filename .'"')
+ 
+    let result  = split( tests, "\n" )
+ 
+    if empty(result)
+        echomsg "No tests found for: ". filename
+    else
+        execute ':!prove  ' . join(result)
+    endif
+endfunction
+
+au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
+
+au BufRead,BufNewFile entry* set filetype=galuga
+
+map ,rf <Esc>:'<,'>! ~/bin/extract_perl_sub.pl<CR>
+
+" copy filepath (relative) in unnamed buffer
+nmap cf :let @"=expand("%")<CR>
+
+" perlprove
+au BufRead,BufNewFile *.t set filetype=perl | compiler perlprove
+
+" http://babyl.dyndns.org/techblog/entry/statement-toggler
+vmap <leader>f :! ~/bin/postfix_toggle.pl<CR>
+
+" package name
+map <leader>pack ! ~/bin/path2packagename.pl %<CR>j
+
+" from http://www.slideshare.net/c9s/perlhacksonvim (Cornelius++)
+nmap <C-x><C-i> :call InstallCPANModule()<CR>
+function! InstallCPANModule()
+    let l = getline('.')
+    let cw = substitute( expand('<cWORD>'), ";$", "", "g" )
+    let cw = substitute( cw, "['\"]", "", "g" )
+    echo "installing module " . cw . "\n"
+    exec "!cpanm " . cw
+    echo "done\n"
+endfunction
+
+"map <F12> :!ptags<CR>
+
+
+map <S-F1> <ESC>:call Perl_perldoc()<CR>
+
+" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+" function!" s:RunShellCommand(cmdline)
+"  echo a:cmdline
+"  let expanded_cmdline = a:cmdline
+"  for part in split(a:cmdline, ' ')
+"     if part[0] =~ '\v[%#<]'
+"        let expanded_part = fnameescape(expand(part))
+"        let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+"     endif
+"  endfor
+"  botright new
+"  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+"  call setline(1, 'You entered:    ' . a:cmdline)
+"  call setline(2, 'Expanded Form:  ' .expanded_cmdline)
+"  call setline(3,substitute(getline(2),'.','=','g'))
+"  execute '$read !'. expanded_cmdline
+"  setlocal nomodifiable
+"  1
+" endfunction
+
+function! s:ExecuteInShell(command)
+  let command = join(map(split(a:command), 'expand(v:val)'))
+  let winnr = bufwinnr('^' . command . '$')
+  silent! execute  winnr < 0 ? 'botright new ' . fnameescape(command) : winnr . 'wincmd w'
+  setlocal buftype=nowrite bufhidden=wipe nobuflisted noswapfile nowrap number
+  echo 'Execute ' . command . '...'
+  silent! execute 'silent %!'. command
+  silent! execute 'resize ' . line('$')
+  silent! redraw
+  silent! execute 'au BufUnload <buffer> execute bufwinnr(' . bufnr('#') . ') . ''wincmd w'''
+  silent! execute 'nnoremap <silent> <buffer> <LocalLeader>r :call <SID>ExecuteInShell(''' . command . ''')<CR>'
+  echo 'Shell command ' . command . ' executed.'
+endfunction
+command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>)
+
+" delete file
+"map <leader>rm <ESC>:!rm %<CR><ESC>:bd<CR>
+
+nnoremap <C-H> :Hexmode<CR>
+inoremap <C-H> <Esc>:Hexmode<CR>
+vnoremap <C-H> :<C-U>Hexmode<CR>
+
+" ex command for toggling hex mode - define mapping if desired
+command -bar Hexmode call ToggleHex()
+
+" helper function to toggle hex mode
+function ToggleHex()
+  " hex mode should be considered a read-only operation
+  " save values for modified and read-only for restoration later,
+  " and clear the read-only flag for now
+  let l:modified=&mod
+  let l:oldreadonly=&readonly
+  let &readonly=0
+  let l:oldmodifiable=&modifiable
+  let &modifiable=1
+  if !exists("b:editHex") || !b:editHex
+    " save old options
+    let b:oldft=&ft
+    let b:oldbin=&bin
+    " set new options
+    setlocal binary " make sure it overrides any textwidth, etc.
+    let &ft="xxd"
+    " set status
+    let b:editHex=1
+    " switch to hex editor
+    %!xxd
+  else
+    " restore old options
+    let &ft=b:oldft
+    if !b:oldbin
+      setlocal nobinary
+    endif
+    " set status
+    let b:editHex=0
+    " return to normal editing
+    %!xxd -r
+  endif
+  " restore values for modified and read only state
+  let &mod=l:modified
+  let &readonly=l:oldreadonly
+  let &modifiable=l:oldmodifiable
+endfunction
+
+set mouse=a
+
+
+
+" navigation
+    " consider long lines as multiple lines
+nnoremap j gj
+nnoremap k gk
+nnoremap <down> gj
+nnoremap <up> gk
+
+
+""""""""""""""
+" tmux fixes "
+""""""""""""""
+" thank you,
+" http://stackoverflow.com/questions/8604150/with-term-screen-256color-under-tmux-home-and-end-keys-dont-work-why
+" Handle tmux $TERM quirks in vim
+if $TERM =~ '^screen-256color'
+    map <Esc>OH <Home>
+    map! <Esc>OH <Home>
+    map <Esc>OF <End>
+    map! <Esc>OF <End>
+endif
+
+perl unshift @INC, '/home/yanick/work/perl-modules/Vim-X/lib';
+perl push @INC, '/home/yanick/.vim/vimx/';
+perl use Vim::X;
+
+function! Vimx_load(plugin)
+   let l = "perl use Vim::X::Plugin::" . a:plugin
+   execute l
+   return ''
+endfunction
+
+perl Vim::X::source_function_dir('~/.vim/vimx/javascript')
+
+autocmd BufNewFile,BufRead **/perlweekly/src/*.mkd 
+            \ perl Vim::X::source_function_dir('~/.vim/vimx/perlweekly')
+
+perl Vim::X::source_function_dir('~/.vim/vimx');
+
+autocmd BufEnter,BufWrite *.pm perl grep { /use\s+Dancer/ } vim_lines() and VIM::DoCommand('UltiSnipsAddFiletypes dancer')
+
+let g:netrw_browsex_viewer="firefox"
+
+
+"====[ Show when lines extend past column 80 "]==============================>
+
+highlight ColorColumn ctermbg=lightred guibg=lightred
+function! MarkMargin (on)
+    if exists('b:MarkMargin')
+        try
+            call matchdelete(b:MarkMargin)
+        catch /./
+        endtry
+        unlet b:MarkMargin
+    endif
+        
+    if a:on
+        let b:MarkMargin = matchadd('ColorColumn', '\%81v', 100)
+    endif
+endfunction
+
+augroup MarkMargin
+autocmd!
+autocmd BufEnter * :call MarkMargin(1)
+autocmd BufEnter *.vp* :call MarkMargin(0)
+augroup END
+
+set synmaxcol=120
+
+
