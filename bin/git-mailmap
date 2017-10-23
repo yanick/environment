@@ -1,0 +1,113 @@
+#!/usr/bin/env perl
+
+=head1 SYNOPSIS
+
+    git mailmap <initial regex>
+
+    commands:
+
+        /foo  - set the filter to be the regex 'foo'
+        2 3 4 - set the addresses 3 and 4 to be aliases for 2
+        2 *   - set all addresses selected to be aliases to 2
+
+        a Yanick <y@a.com> - add address to the list
+
+        q - quit
+
+    numbers can be separated by spaces or commas.
+
+    regex is case-insensitive by default
+
+
+=cut
+
+use 5.20.0;
+use warnings;
+
+use List::AllUtils qw/ uniq /;
+use Git::Wrapper;
+use Path::Tiny;
+use IO::Prompt::Simple;
+use Term::ANSIColor qw/ colored /;
+
+use MooseX::App::Simple;
+
+use experimental 'smartmatch';
+
+has authors => (
+    is => 'rw',
+    traits => [ 'Array' ],
+    default => sub { [
+        uniq( Git::Wrapper->new('.')->RUN( 'log', { pretty => '%aN <%aE>' } ) )
+    ] },
+    handles => {
+        all_authors  => 'sort',
+        grep_authors => 'grep',
+        add_author   => 'push',
+    },
+);
+
+parameter regex => (
+    is => 'rw',
+    default => '',
+);
+
+sub selected_authors {
+    my $self = shift;
+
+    my $regex = $self->regex or return $self->all_authors;
+
+    return $self->grep_authors(sub { /$regex/i });
+}
+
+sub set_aliases {
+    my ( $self, $line ) = @_;
+
+    my @authors = $self->selected_authors;
+
+    my( $real, @clones ) = 
+        uniq map { $_ eq '*' ? @authors : $authors[$_] }
+                split /,|\s+/;
+
+    path( '.mailmap' )->append( map { "$real $_\n" } @clones );
+
+    $self->authors(
+        [ $self->grep_authors(sub{ not $_ ~~ @clones } ) ]
+    );
+}
+
+sub run {
+    my $self = shift;
+
+    while() {
+
+        $self->print_authors;
+
+        given ( prompt "[@{[ $self->regex ]}]" ) {
+
+            $self->regex($1)       when m#^/(.*)#; 
+
+            $self->add_author($1)  when /^a +(.*)/;
+
+            $self->set_aliases($_) when /^\d/;
+
+            return                 when /^q/;
+        }
+    }
+}
+
+sub print_authors {
+    my $self = shift;
+    my @authors = $self->selected_authors;
+
+    my $length = length scalar @authors;
+    my $i = 0;
+
+    printf colored( ['Blue'], '%'.$length."d" ) 
+            . ". %-20s "
+            . colored( [ 'Green' ], '%s' )."\n", 
+            $i++, split /(?=<)/, $_ 
+        for @authors;
+}
+
+__PACKAGE__->new_with_options->run;
