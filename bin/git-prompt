@@ -1,5 +1,7 @@
 #!/usr/bin/env perl
 
+BEGIN { exit if $] < 5.020 }
+
 use 5.20.0;
 
 use warnings;
@@ -13,10 +15,11 @@ use Cwd;
 
 use Moo;
 
-use experimental 'postderef', 'smartmatch', 'autoderef';
+use experimental 'postderef', 'smartmatch';
 
 my %symbols = (
     is_git_repo => [ ' ' ],  # '❤ '  ±
+    is_got_repo => [ '🍺 ' ], # 1F37A, beer mug 
     has_stashes => [ '  ', 'yellow' ], # '★ '
     has_untracked_files => [ '  ', 'achtung' ], # ∿
     has_adds => [ '+ ', 'todo' ],
@@ -26,7 +29,7 @@ my %symbols = (
     has_modifications_cached => [ '☲ ', 'todo' ],
     ready_to_commit => [ ' ', 'okay' ], # ▪►'→ '▬►
     is_detached => [ '  ', 'achtung' ], # ⚯
-    is_on_a_tag => [ ' ' ], #  ⌫ '
+    is_on_a_tag => [ '  ' ], #  ⌫ '
 #    needs_to_merge  => [ 'ᄉ ' ],
     upstream => [ '  ' ], # ⇅
     can_fast_forward => [ ' ' ], # »
@@ -55,6 +58,7 @@ has "dir" => (
 );
 
 sub is_git_repo { $_[0]->dir };
+sub is_got_repo { $_[0]->repo->run('config','got.this') };
 
 has repo => (
     is => 'ro',
@@ -137,7 +141,11 @@ sub print_part {
 sub print_check {
     my( $self, $test ) = @_;
 
-    $self->print_part( $self->$test, $test );
+    my $check = $self->$test;
+
+    $self->print_part( $check, $test );
+
+    return $check;
 }
 
 sub print {
@@ -146,7 +154,7 @@ sub print {
     # not a repo? bail out
     return unless $self->is_git_repo;
 
-    $self->print_check( 'is_git_repo' );
+    $self->print_part( 1, $self->is_got_repo ? 'is_got_repo' : 'is_git_repo' );
 
     $self->print_check( 'has_stashes' );
 
@@ -211,8 +219,8 @@ sub print {
 
     if ( my @tags = $self->on_tags->@* ) {
         my $tag_symbol = $symbols{'is_on_a_tag'};
-        $self->print_part( 1, $tag_symbol->[0] . join( ',', @tags ),
-            $tag_symbol->[1]  );
+        $self->print_part( 1, $tag_symbol->[0], $tag_symbol->[1]  );
+        print join ',', @tags;
     } 
 
 
@@ -223,8 +231,8 @@ has on_tags => (
     is => 'ro',
     lazy => 1,
     default => sub {
-        return [ eval { grep { $_ } eval $_[0]->repo->run( qw/ describe --exact-match --tags /,
-                $_[0]->commit_hash )  } ];
+        return [ eval { grep { chomp; $_ } $_[0]->repo->run( qw/ describe --exact-match --tags /,
+                $_[0]->commit_hash ) } ];
     },
 );
 
@@ -261,7 +269,7 @@ has "just_init" => (
     },
 );
 
-has "upstream" => (
+has upstream => (
     is => 'ro',
     lazy => 1,
     default => sub {
@@ -296,8 +304,10 @@ has has_diverged => (
 sub ready_to_commit {
     my $self = shift;
 
+    use experimental 'postderef';
+
     my @cached;
-    while( my ( $k, $v ) = each $self->status_counts ) {
+    while( my ( $k, $v ) = each $self->status_counts->%* ) {
         next if $k eq 'untracked';
         $cached[ $k =~ /cached/ ] += $v;
     }
