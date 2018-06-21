@@ -1,0 +1,13 @@
+- get_url:
+    url: "https://github.com/peco/peco/releases/download/v{{peco_version}}/peco_linux_amd64.tar.gz"
+    dest: /tmp/peco.tar.gz
+    force: yes
+- unarchive:
+    remote_src: true
+    src: /tmp/peco.tar.gz
+    dest: /tmp
+- copy:
+    remote_src: true
+    src: /tmp/peco_linux_amd64/peco
+    dest: /usr/local/bin/peco
+  become: true

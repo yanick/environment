@@ -1,0 +1,12 @@
+- name: peco config file
+  import_tasks: peco_config.yml
+- name: check for installed peco
+  shell: "peco --version 2>&1 | perl -nE'say $1 if /v(\\d\\S+)/'"
+  register: installed_peco
+  ignore_errors: true
+- debug: 
+    msg: "local peco: {{ installed_peco.stdout }}"
+- name: install new peco
+  when: "installed_peco.stdout != peco_version"
+  import_tasks: install_peco.yml
+  

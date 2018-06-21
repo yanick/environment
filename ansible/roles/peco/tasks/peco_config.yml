@@ -1,0 +1,8 @@
+- name: ensure we have the config directory
+  file:
+    dest: "{{ansible_user_dir}}/.config/peco"
+    state: directory
+- name: link config file
+  file:
+    src:  "{{role_path}}/files/config.json"
+    dest: "{{ansible_user_dir}}/.config/peco/config.json"
