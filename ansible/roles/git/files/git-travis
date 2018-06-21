@@ -1,0 +1,5 @@
+#!/usr/bin/env fish
+
+firefox https://travis-ci.org/(git remote -v \
+    | grep '^github' | head -1 \
+    | perl -pe's /.*github.com:(.*?)\.git.*/$1/')

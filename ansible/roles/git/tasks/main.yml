@@ -1,0 +1,12 @@
+- file: 
+    src: "{{role_path}}/files/gitconfig"
+    dest: ~/.gitconfig
+    state: link
+- name: link custom git commands to ~/bin
+  file: 
+    src: "{{role_path}}/files/{{item}}"
+    dest: "~/bin/{{item}}"
+    state: link
+  with_items:
+      - git-last
+      - git-travis
