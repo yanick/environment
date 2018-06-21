@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+git reflog \
+    | perl -E"\$max = '$1' || 10;" \
+        -nE'say -$i+1, " $2" if /HEAD\@\{(\d+)\}.*?moving from .*? to (\S+)/ and $i++;' \
+        -E'last if $i > $max;'
