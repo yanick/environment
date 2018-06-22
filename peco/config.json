@@ -20,9 +20,5 @@
         "Selected": ["bold", "on_cyan", "black"],
         "Query": ["yellow", "bold"],
         "Matched": ["red", "on_blue"]
-    },
-    "CustomMatcher": {
-        "perl regex": [ "/usr/bin/env", "perl", 
-        "-E", "$p=shift; say for grep { /$p/ } <>", "$QUERY" ]
     }
 }
