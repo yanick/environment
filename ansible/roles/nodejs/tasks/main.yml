@@ -1,0 +1,14 @@
+- name: disable nvm 
+  command: fish -c "fisher rm nvm"
+
+- name: enable fnm
+  command: fish -c "fisher install fnm"
+
+- name: add cache in .npmrc 
+  lineinfile:
+    path: "{{ansible_user_dir}}/.npmrc"
+    create: no
+    regexp: ^cache=
+    backup: yes
+    line: cache={{ansible_user_dir}}/.npm
+  
