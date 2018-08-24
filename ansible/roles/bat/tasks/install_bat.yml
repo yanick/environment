@@ -1,0 +1,11 @@
+- name: download the deb 
+  get_url:
+    dest: /tmp/{{ bat_url | basename }}
+    url: "{{ bat_url }}"
+
+- name: install the deb 
+  apt:
+    deb: /tmp/{{ bat_url | basename }}
+  become: yes 
+
+

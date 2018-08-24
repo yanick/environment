@@ -1,0 +1,21 @@
+---
+- name: check for installed bat
+  shell: "bat --version 2>&1 | perl -nE'say $1 if /([\\d.]+)/'"
+  register: installed_bat
+  ignore_errors: true 
+  check_mode: no
+
+- debug: 
+    msg: "local bat: {{ installed_bat.stdout }}"
+
+- name: install new bat
+  when: "installed_bat.stdout != bat_target_version"
+  import_tasks: install_bat.yml
+  
+- name: add theme choice in fish config 
+  lineinfile:
+    path: "{{ ansible_user_dir}}/.config/fish/config.fish"
+    regexp: BAT_THEME
+    backup: yes
+    line: set -x BAT_THEME 'Monokai Extended Light'
+  
