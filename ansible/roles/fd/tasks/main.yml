@@ -1,0 +1,14 @@
+---
+- name: check for installed fd
+  shell: "fd --version 2>&1 | perl -nE'say $1 if /([\\d.]+)/'"
+  register: installed_fd
+  ignore_errors: true 
+  check_mode: no
+
+- debug: 
+    msg: "local fd: {{ installed_fd.stdout }}"
+
+- name: install new fd
+  when: "installed_fd.stdout != fd_target_version"
+  import_tasks: install_fd.yml
+  
