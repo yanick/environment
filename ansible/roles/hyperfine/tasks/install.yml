@@ -1,0 +1,11 @@
+- name: download the deb 
+  get_url:
+    dest: /tmp/{{ hyperfine_url | basename }}
+    url: "{{ hyperfine_url }}"
+
+- name: install the deb 
+  apt:
+    deb: /tmp/{{ hyperfine_url | basename }}
+  become: yes 
+
+
