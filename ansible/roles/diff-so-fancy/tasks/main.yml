@@ -1,0 +1,19 @@
+- name: check if it's already there
+  stat: path=/usr/local/bin/diff-so-fancy
+  register: dsf 
+  check_mode: false
+
+- name: download the script
+  become: yes 
+  when: dsf.stat.exists == False
+  get_url:
+    dest: /usr/local/bin/diff-so-fancy
+    url: https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+    backup: no
+    mode: a+x
+    owner: root
+    force: no
+  
+- name: update the git config to use it 
+  command: git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+

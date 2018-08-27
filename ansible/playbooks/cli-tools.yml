@@ -3,4 +3,5 @@
   roles: 
     - { role: bat, tags: [ bat ] }
     - { role: prettyping, tags: [ prettyping ] }
+    - { role: diff-so-fancy, tags: [ diff-so-fancy ] }
 
