@@ -1,4 +1,6 @@
 ---
 - hosts: localhost
-  roles: [ { role: bat, tags: [ bat ] } ]
+  roles: 
+    - { role: bat, tags: [ bat ] }
+    - { role: prettyping, tags: [ prettyping ] }
 

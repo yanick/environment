@@ -1,0 +1,16 @@
+- name: check if it's already there
+  stat: path=/usr/local/bin/prettyping
+  register: prettyping 
+  check_mode: false
+
+- name: download the script
+  become: yes 
+  when: prettyping.stat.exists == False
+  get_url:
+    dest: /usr/local/bin/prettyping
+    url: https://raw.githubusercontent.com/denilsonsa/prettyping/master/prettyping
+    backup: no
+    mode: a+x
+    owner: root
+    force: no
+  
