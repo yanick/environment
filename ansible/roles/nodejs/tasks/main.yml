@@ -12,3 +12,27 @@
     backup: yes
     line: cache={{ansible_user_dir}}/.npm
   
+- name: vim-import-js 
+  include_role:
+    name: vim-plugged-plugin 
+  vars:
+    plugged_line: "'Galooshi/vim-import-js'"
+    plugin_name: vim-import-js 
+    config_block: ~
+
+- name: vim-jest-snippets
+  include_role:
+    name: vim-plugged-plugin 
+  vars:
+    plugged_line: "'joaohkfaria/vim-jest-snippets'"
+    plugin_name: vim-jest-snippets
+    config_block: ~
+
+- name: manode 
+  tags: [ fish ]
+  copy:
+    dest: "{{ansible_user_dir}}/.config/fish/functions/manode.fish"
+    src: "{{role_path}}/files/manode.fish"
+    force: no
+    backup: yes
+  
