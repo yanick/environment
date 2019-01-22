@@ -1,0 +1,15 @@
+- name: fish repo
+  become: yes
+  apt_repository:
+    repo: ppa:fish-shell/release-3
+
+- name: install fish
+  apt:
+    name: fish
+
+- name: download fisherman
+  get_url: url=http://git.io/fisherman dest=~/.config/fish/functions/fisher.fish
+  #  - name: fishfile file: src: state: link
+- debug: var=role_path
+- name: fishfile
+  file: src={{role_path}}/files/fishfile dest=~/.config/fish/fishfile state=link
