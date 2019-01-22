@@ -1,9 +1,10 @@
 ---
 - hosts: localhost
-  roles: 
+  roles:
     - { role: bat, tags: [ bat ] }
     - { role: prettyping, tags: [ prettyping ] }
     - { role: diff-so-fancy, tags: [ diff-so-fancy ] }
     - { role: fd, tags: [fd ] }
     - { role: hyperfine, tags: [hyperfine ] }
+    - { role: fx, tags: [fx ] }
 

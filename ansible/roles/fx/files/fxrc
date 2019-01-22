@@ -1,0 +1,8 @@
+const fs = require('fs')
+
+Object.assign(global, require('lodash/fp'))
+
+global.save = json => {
+  fs.writeFileSync(process.argv[2], JSON.stringify(json, null, 2))
+  return json
+}

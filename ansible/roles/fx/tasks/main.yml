@@ -1,0 +1,13 @@
+- name: install fx
+  npm: name=fx global=yes
+
+- name: install lodash as well
+  npm: name=lodash global=yes
+
+- name: .fxrc
+  copy:
+    dest: "{{ ansible_user_dir }}/.fxrc"
+    src: ../files/fxrc
+    force: no
+    backup: yes
+
