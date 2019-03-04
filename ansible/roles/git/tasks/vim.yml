@@ -1,0 +1,8 @@
+
+- name: vim-flog
+  include_role:
+    name: vim-plugged-plugin
+  vars:
+    plugged_line: "'rbong/vim-flog'"
+    plugin_name: 'vim-flog'
+    config_block: ~

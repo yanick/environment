@@ -1,12 +1,15 @@
-- file: 
+- file:
     src: "{{role_path}}/files/gitconfig"
     dest: ~/.gitconfig
     state: link
 - name: link custom git commands to ~/bin
-  file: 
+  file:
     src: "{{role_path}}/files/{{item}}"
     dest: "~/bin/{{item}}"
     state: link
   with_items:
       - git-last
       - git-travis
+- name: vim plugins
+  tags: [ vim ]
+  import_tasks: ./vim.yml
