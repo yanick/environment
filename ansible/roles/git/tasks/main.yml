@@ -13,3 +13,7 @@
 - name: vim plugins
   tags: [ vim ]
   import_tasks: ./vim.yml
+
+- name: vim aliases
+  tags: [ aliases ]
+  import_tasks: ./aliases.yml
