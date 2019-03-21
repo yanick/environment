@@ -1,0 +1,2 @@
+vim_config_file: "{{ansible_user_dir}}/.config/nvim/init.vim"
+config_block: ~

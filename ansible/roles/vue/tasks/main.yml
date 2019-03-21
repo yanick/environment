@@ -1,0 +1,20 @@
+- name: plugins
+  include_role:
+    name: vim-plugins
+    tasks_from: "{{item}}"
+  with_items:
+    - nrrwrgn
+    - vue-vim
+
+- name: vim vue config
+  include_role:
+      name: vim-utils
+      tasks_from: config_block
+  vars:
+      config_id: vue-related
+      config_block: |
+              " \\nt for *n*arrow *t*emplate
+              au FileType vue map <leader>nt 1G:/<template>/+1,/<\/template>/-1 NN html<CR>
+              au FileType vue map <leader>nc 1G:/<script>/+1,/<\/script>/-1 NN javascript<CR>
+              au FileType vue map <leader>ns 1G:/<style/+1,/<\/style>/-1 NN css<CR>
+

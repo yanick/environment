@@ -1,0 +1,9 @@
+- name: add plugin config
+  when: config_block is not none
+  blockinfile:
+    marker_begin: '{'
+    marker_end: '}'
+    path: "{{vim_config_file}}"
+    marker: '"{mark} {{config_id}}'
+    block: "{{ config_block }}"
+    backup: yes

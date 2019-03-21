@@ -1,0 +1,10 @@
+- name: NrrwRgn
+  include_role:
+    name: vim-plugged-plugin
+  vars:
+    plugged_line: "'chrisbra/NrrwRgn'"
+    plugin_name: 'nrrwrgn'
+    config_block: |
+        command! -nargs=* -bang -range -complete=filetype NN
+                      \ :<line1>,<line2> call nrrwrgn#NrrwRgn('',<q-bang>)
+                      \ | set filetype=<args>

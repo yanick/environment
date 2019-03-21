@@ -1,0 +1,30 @@
+- name:  add plugged line
+  lineinfile:
+    path: "{{vim_config_file}}"
+    insertbefore: call plug\#end
+    backup: yes
+    line:   Plug {{plugged_line}}
+    regexp: "{{plugged_regexp | default( plugged_line | regex_escape() )}}"
+
+# - name: add plugin config
+#   when: config_block is not none
+#   blockinfile:
+#     marker_begin: '{'
+#     marker_end: '}'
+#     path: "{{vim_config_file}}"
+#     marker: '"{mark} {{plugin_name}}'
+#     block: |
+#       " {{ config_block_dir + '/' + plugin_name + '.vim' }}
+
+#       {{ lookup('file', config_block_dir + '/' + plugin_name + '.vim' ) }}
+#     backup: yes
+
+- name: add plugin config
+  when: config_block is not none
+  blockinfile:
+    marker_begin: '{'
+    marker_end: '}'
+    path: "{{vim_config_file}}"
+    marker: '"{mark} {{plugin_name}}'
+    block: "{{ config_block }}"
+    backup: yes
