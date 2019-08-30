@@ -1,0 +1,30 @@
+- name: set fish homedir
+  set_fact:
+    fish_dir: "{{lookup('env','HOME')}}/.config/fish"
+
+- name: add fish helper functions
+  copy:
+    dest: "{{fish_dir}}/functions/{{item}}"
+    src: "{{item}}"
+    force: no
+    backup: yes
+  loop:
+    - __timew.fish
+    - __timew_prompt.fish
+
+- name: add the timew prompt
+  lineinfile:
+    path: "{{fish_dir}}/functions/fish_prompt.fish"
+    create: no
+    insertafter: '# prompt bits go there'
+    regexp: __timew_prompt
+    backup: yes
+    line: '  __timew_prompt'
+
+- name: activate the timew watcher
+  lineinfile:
+    path: "{{fish_dir}}/config.fish"
+    create: no
+    regexp: '. ~/.config/fish/functions/__timew.fish'
+    backup: yes
+    line: '. ~/.config/fish/functions/__timew.fish'
