@@ -1,0 +1,31 @@
+- name: make sure git directory exist
+  file:
+    path: "{{ansible_user_dir}}/git"
+    force: no
+    state: directory
+
+- name: message template
+  copy:
+    dest: "{{ansible_user_dir}}/git/gitmessage"
+    src: files/gitmessage
+    force: no
+    backup: yes
+
+- name: commit section
+  lineinfile:
+    path: "{{ansible_user_dir}}/.gitconfig"
+    create: yes
+    regexp: "\\[commit\\]"
+    backup: yes
+    line: "[commit]"
+
+- name: template
+  lineinfile:
+    path: "{{ansible_user_dir}}/.gitconfig"
+    insertafter: "\\[commit\\]"
+    create: yes
+    regexp: template = ~/git/gitmessage
+    backup: yes
+    line: "    template = ~/git/gitmessage"
+
+
