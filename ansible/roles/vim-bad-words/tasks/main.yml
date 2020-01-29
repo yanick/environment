@@ -1,0 +1,18 @@
+- set_fact:
+    vim_config_file: /home/yanick/.config/nvim/init.vim
+- name: add bad words block
+  blockinfile:
+    marker_begin: '{'
+    marker_end: '}'
+    path: "{{vim_config_file}}"
+    marker: '"{mark} bad-words'
+    backup: yes
+    block: |
+
+      " baaaad words!
+      highlight badWords ctermbg=red ctermfg=white
+      fun! HiBadWords()
+          match badWords /\c\<\(obviously\|basically\|simply\|of\scourse\|clearly\|just\|everyone\sknows\|however\|so,\|easy\)\>/
+      endfun
+      autocmd InsertEnter *.md call HiBadWords()
+      autocmd InsertLeave *.md call HiBadWords()
