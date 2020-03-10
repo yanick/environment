@@ -1,0 +1,13 @@
+- name: get the local version
+  script: "{{role_path}}/files/get_facts.pl"
+  check_mode: no
+  register: broot_facts
+
+- debug: var=broot_facts
+
+- set_fact:
+    broot: '{{ broot_facts.stdout | from_yaml }}'
+
+- when: broot['num_version'] < target_broot_version
+  import_tasks: ./get_broot.yml
+

@@ -1,0 +1,13 @@
+- file:
+    path: /tmp/broot
+    state: directory
+
+- get_url:
+    src: https://dystroy.org/broot/download/x86_64-linux/broot
+    dest: /tmp/broot
+
+- copy:
+    dest: '{{ansible_user_dir}}/bin/broot'
+    src: /tmp/broot/broot
+
+
